@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+pulls.txt
+
 # bash scriipts
 .deploy.sh
 
