@@ -1,0 +1,19 @@
+.title {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 44px;
+
+  &.light {
+    color: $primary-text-color;
+  }
+
+  @include media(tablet) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @include media(desktop) {
+    font-size: 56px;
+    line-height: 64px;
+  }
+}

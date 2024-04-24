@@ -1,0 +1,20 @@
+.header {
+  text-align: center;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media(desktop) {
+    padding: 24px 64px;
+  }
+}
+
+.logo {
+  font-size: 40px;
+}

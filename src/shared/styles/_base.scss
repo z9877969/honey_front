@@ -1,0 +1,72 @@
+@import './colors';
+@import './variables';
+
+:root {
+  font-family: $primary-font-family, sans-serif;
+  font-weight: 500;
+
+  color: $primary-text-color;
+  background-color: $light-bg-color;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --path: 'red';
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+  font-family: $secondary-font-family;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: inherit;
+}
+a:hover {
+  color: inherit;
+}
