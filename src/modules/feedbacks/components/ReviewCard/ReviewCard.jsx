@@ -1,12 +1,12 @@
 import s from './ReviewCard.module.scss';
 
-const ReviewCard = ({ review: { name, review } }) => {
+const ReviewCard = ({ data: { photo, name, review } }) => {
   return (
     <div className={s.card}>
-      <img src="" alt="photo" />
-      <div>
-        <h3>{name}</h3>
-        <p>{review}</p>
+      <img className={s.photo} src={photo} alt="photo" />
+      <div className={s.content}>
+        <h3 className={s.name}>{name}</h3>
+        <p className={s.review}>{review}</p>
       </div>
     </div>
   );
