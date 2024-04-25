@@ -1,11 +1,11 @@
 import { MainPageHero } from 'modules/mainPageHero';
-import PopUpInfoProduct from '../modules/mainPageHero/components/MainPageHero/PopUpInfoProduct/PopUpInfoProduct';
+import { ProductPopup } from 'modules/productPopup';
 
 const MainPage = () => {
   return (
     <>
       <MainPageHero />
-      <PopUpInfoProduct />
+      <ProductPopup />
     </>
   );
 };

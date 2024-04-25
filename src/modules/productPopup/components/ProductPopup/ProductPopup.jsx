@@ -1,4 +1,4 @@
-import s from './PopUpInfoProduct.module.scss';
+import s from './ProductPopup.module.scss';
 
 const PopUpInfoProduct = () => {
   return (
