@@ -1,4 +1,8 @@
-const NavigationList = ({ categoriseList, chooseCategory }) => {
+const NavigationList = ({
+  categoriseList,
+  chooseCategory,
+  // currentCategory,
+}) => {
   return (
     <ul>
       {categoriseList.length > 0 &&
