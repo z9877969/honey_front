@@ -11,8 +11,14 @@ const ProductsList = ({ productsList }) => {
   const showArrows = productsList.length > 3;
 
   useEffect(() => {
-    setIsDesktop(window.innerWidth > 768);
-  }, [isDesktop]);
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   if (!isDesktop) {
     return (
