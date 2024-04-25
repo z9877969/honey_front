@@ -34,7 +34,7 @@ const OurProducts = () => {
         <NavigationList
           categoriseList={dbCategories}
           chooseCategory={handleCategoryChange}
-          // currentCategory={currentCategory}
+          currentCategory={currentCategory}
         />
         <ProductsList productsList={products} />
       </Container>
