@@ -1,4 +1,4 @@
-export const dbCategories = [
+const dbCategories = [
     {
         key: 'honey',
         name: 'Мед'
@@ -16,3 +16,5 @@ export const dbCategories = [
         name: 'Пилок'
     },
 ];
+
+export default dbCategories;

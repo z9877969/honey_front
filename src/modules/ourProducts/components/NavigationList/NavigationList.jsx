@@ -1,7 +1,16 @@
-// import dbCategories from '../../data/dbCategories';
-
-const NavigationList = () => {
-  return <>Categorise</>;
+const NavigationList = ({ categoriseList, chooseCategory }) => {
+  return (
+    <ul>
+      {categoriseList.length > 0 &&
+        categoriseList.map((category) => (
+          <li key={category.key}>
+            <h3 onClick={() => chooseCategory(category.key)}>
+              {category.name}
+            </h3>
+          </li>
+        ))}
+    </ul>
+  );
 };
 
 export default NavigationList;

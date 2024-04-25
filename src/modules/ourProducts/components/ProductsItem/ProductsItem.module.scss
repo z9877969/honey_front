@@ -1,0 +1,9 @@
+.imgProduct {
+  width: 335px;
+  height: 320px;
+
+  @include media(desktop) {
+    width: 384px;
+    height: 364px;
+  }
+}
