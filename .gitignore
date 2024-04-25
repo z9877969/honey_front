@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-pulls.txt
-
 # bash scriipts
 .deploy.sh
 
@@ -33,3 +31,6 @@ _productsList/
 
 # Local Netlify folder
 .netlify
+
+# developer own files
+pulls.txt
