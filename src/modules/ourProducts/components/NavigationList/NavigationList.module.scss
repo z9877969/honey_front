@@ -1,0 +1,11 @@
+.categoriesList {
+  display: flex;
+  margin-bottom: 32px;
+
+  @include media(tablet) {
+    margin-bottom: 40px;
+  }
+  @include media(desktop) {
+    margin-bottom: 52px;
+  }
+}

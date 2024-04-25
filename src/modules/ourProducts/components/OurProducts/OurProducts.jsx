@@ -1,4 +1,4 @@
-import { MainTitle } from 'shared/components';
+import { Container, MainTitle } from 'shared/components';
 import NavigationList from '../NavigationList/NavigationList';
 import ProductsList from '../ProductsList/ProductsList';
 import style from './OurProducts.module.scss';
@@ -26,13 +26,18 @@ const OurProducts = () => {
 
   return (
     <section>
-      <MainTitle title={'Наша продукція'} className={style.ourProductsTitle} />
-      <NavigationList
-        categoriseList={dbCategories}
-        chooseCategory={handleCategoryChange}
-        // currentCategory={currentCategory}
-      />
-      <ProductsList productsList={products} />
+      <Container>
+        <MainTitle
+          title={'Наша продукція'}
+          className={style.ourProductsTitle}
+        />
+        <NavigationList
+          categoriseList={dbCategories}
+          chooseCategory={handleCategoryChange}
+          // currentCategory={currentCategory}
+        />
+        <ProductsList productsList={products} />
+      </Container>
     </section>
   );
 };

@@ -1,10 +1,12 @@
+import style from './NavigationList.module.scss';
+
 const NavigationList = ({
   categoriseList,
   chooseCategory,
   // currentCategory,
 }) => {
   return (
-    <ul>
+    <ul className={style.categoriesList}>
       {categoriseList.length > 0 &&
         categoriseList.map((category) => (
           <li key={category.key}>
