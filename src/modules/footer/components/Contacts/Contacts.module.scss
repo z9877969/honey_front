@@ -1,6 +1,4 @@
 .contacts {
-  margin-top: 32px;
-
   :not(:last-child) {
     margin-bottom: 12px;
   }
@@ -13,9 +11,6 @@
     &:focus {
       color: $primary-hover-color;
     }
-  }
-
-  @include media(tablet) {
   }
 
   @include media(desktop) {

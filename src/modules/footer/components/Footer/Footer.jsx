@@ -1,4 +1,4 @@
-import { Container, Logo } from 'shared/components';
+import { Button, Container, Logo } from 'shared/components';
 import s from './Footer.module.scss';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import Contacts from '../Contacts/Contacts';
@@ -20,10 +20,12 @@ const Footer = () => {
             <SocialIcons />
           </div>
         </div>
-        {/* add Button component */}
-        <button type="button" className={s.footBtn}>
-          Created by GoIT
-        </button>
+        <Button
+          type="button"
+          className={s.createdByBtn}
+          title={'Created by GoIT'}
+          onClick={() => {}}
+        />
       </Container>
     </footer>
   );
