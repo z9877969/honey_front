@@ -1,8 +1,10 @@
-const IconButton = ({ width, height, className, ...rest }) => {
+import sprite from '../../icons/sprite.svg';
+
+const IconButton = ({ id, width, height, className, ...rest }) => {
   return (
-    <button width={width} height={height} className={className} {...rest}>
-      <svg>
-        <use href=""></use>
+    <button className={className} {...rest}>
+      <svg width={width} height={height} className={`icon icon-${id}`}>
+        <use xlinkHref={`${sprite}#${id}`}></use>
       </svg>
     </button>
   );
