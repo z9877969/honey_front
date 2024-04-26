@@ -6,3 +6,11 @@
   padding-bottom: 24px;
   background-color: $dark-bg-color;
 }
+
+.link {
+  display: flex;
+
+  p {
+    color: $primary-white-color;
+  }
+}
