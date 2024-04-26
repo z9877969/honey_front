@@ -31,3 +31,6 @@ _productsList/
 
 # Local Netlify folder
 .netlify
+
+# developer own files
+pulls.txt
