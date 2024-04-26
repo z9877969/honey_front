@@ -8,8 +8,8 @@ const GoBackButton = ({
   type = 'button',
   onClick,
   className,
-  width,
-  height,
+  iconWidth,
+  iconHeight,
   ...rest
 }) => {
   return (
@@ -20,8 +20,8 @@ const GoBackButton = ({
       {...rest}
     >
       <svg
-        width={width}
-        height={height}
+        width={iconWidth}
+        height={iconHeight}
         className={`icon icon-${id}`}
         role="img"
       >
