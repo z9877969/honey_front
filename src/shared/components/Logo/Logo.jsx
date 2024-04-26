@@ -9,7 +9,7 @@ const Logo = ({ id, iconWidth, iconHeight, className }) => {
       <svg
         width={iconWidth}
         height={iconHeight}
-        className={`icon icon-${id}`}
+        className={clsx(s.icon, className && className)}
         role="img"
       >
         <use xlinkHref={`${sprite}#${id}`} />
