@@ -1,0 +1,38 @@
+.sectionMain {
+  padding: 40px 0;
+
+  @include media(tablet) {
+    padding: 60px 0;
+  }
+
+  @include media(desktop) {
+    padding: 74px 0;
+  }
+}
+
+.sectionHero {
+  padding-top: 52px;
+  padding-bottom: 40px;
+
+  @include media(tablet) {
+    padding-top: 64px;
+    padding-bottom: 60px;
+  }
+
+  @include media(desktop) {
+    padding-top: 84px;
+    padding-bottom: 100px;
+  }
+}
+.sectionFooter {
+  padding-top: 40px;
+  padding-bottom: 0;
+
+  @include media(tablet) {
+    padding-top: 60px;
+  }
+
+  @include media(desktop) {
+    padding-top: 74px;
+  }
+}
