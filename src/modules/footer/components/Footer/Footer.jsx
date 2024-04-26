@@ -20,6 +20,7 @@ const Footer = () => {
             <SocialIcons />
           </div>
         </div>
+        {/* add Button component */}
         <button type="button" className={s.footBtn}>
           Created by GoIT
         </button>
