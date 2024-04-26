@@ -3,9 +3,17 @@ const ProductItem = ({ product }) => {
   return (
     <div>
       <img className={style.imgProduct} src={product.img} alt={product.name} />
-      <h3>{product.name}</h3>
-      <h4>Вага</h4> <p>{product.weight}</p>
-      <h4>Ціна</h4> <p>{product.price}</p>
+      <div className={style.productInfo}>
+        <h3 className={style.nameTitle}>{product.name}</h3>
+        <div className={style.infoThumb}>
+          <h4 className={style.titleInfo}>Вага:</h4>{' '}
+          <p className={style.weight}>{product.weight}</p>
+        </div>
+        <div className={style.infoThumb}>
+          <h4 className={style.titleInfo}>Ціна:</h4>{' '}
+          <p className={style.price}>{product.price}</p>
+        </div>
+      </div>
     </div>
   );
 };

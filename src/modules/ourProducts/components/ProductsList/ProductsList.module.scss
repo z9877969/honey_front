@@ -1,6 +1,5 @@
 .thumbList {
   position: relative;
-  margin-bottom: 60px;
 }
 
 .prevButton {
@@ -13,4 +12,10 @@
   position: absolute;
   top: 158px;
   right: -60px;
+}
+.productItem {
+  border-bottom: 1px solid $primary-darkgrey-color;
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
 }

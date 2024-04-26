@@ -26,7 +26,7 @@ const ProductsList = ({ productsList }) => {
         {productsList.length > 0 && (
           <ul>
             {productsList.map((product) => (
-              <li key={product.id}>
+              <li key={product.id} className={style.productItem}>
                 <ProductItem product={product} />
               </li>
             ))}
