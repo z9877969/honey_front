@@ -2,7 +2,8 @@
   display: flex;
   border-bottom: 1px solid $primary-darkgrey-color;
   margin-bottom: 32px;
-  // overflow-x: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 
   @include media(tablet) {
     margin-bottom: 40px;
@@ -12,20 +13,17 @@
   }
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
 
-.categoriesList::-webkit-scrollbar {
-  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .categoriesItem {
+  position: relative;
   padding: 8px 24px;
   white-space: nowrap;
   cursor: pointer;
-
-  @include media(desktop) {
-    padding: 12px 48px;
-  }
 
   &.active {
     position: relative;
@@ -42,12 +40,35 @@
       background-color: $primary-accent-color;
     }
   }
+
+  @include media(desktop) {
+    padding: 12px 48px;
+
+    &::after {
+      position: absolute;
+      z-index: 2;
+      content: '';
+      display: block;
+      background-color: $primary-accent-color;
+      width: 0;
+      height: 3px;
+      transition: width 0.5s ease;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+  }
 }
 
 .category {
   @include font(18, 28);
   font-weight: normal;
   letter-spacing: 0.02em;
+  transition: font-weight 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   &.active {
     font-weight: 600;
   }
