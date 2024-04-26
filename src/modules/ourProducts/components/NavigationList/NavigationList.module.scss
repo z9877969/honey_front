@@ -1,12 +1,25 @@
 .categoriesList {
+  position: relative;
   display: flex;
-  border-bottom: 1px solid $primary-darkgrey-color;
   margin-bottom: 32px;
+  padding-bottom: 2px;
   overflow-x: auto;
-  overflow-y: hidden;
 
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 550px;
+    height: 1px;
+    background-color: $primary-darkgrey-color;
+    bottom: 1px;
+  }
   @include media(tablet) {
+    overflow-x: hidden;
     margin-bottom: 40px;
+    &::after {
+      width: 100%;
+    }
   }
   @include media(desktop) {
     margin-bottom: 52px;
@@ -52,9 +65,9 @@
       background-color: $primary-accent-color;
       width: 0;
       height: 3px;
-      transition: width 0.5s ease;
       bottom: -2px;
       left: 50%;
+      transition: width 0.5s ease;
       transform: translateX(-50%);
     }
     &:hover::after,
