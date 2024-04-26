@@ -1,0 +1,60 @@
+.honeyTitle {
+    text-align: center;
+}
+
+.honeyArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    // width: 100%;
+    // height: 100%;
+    padding: 64px;
+    background-color: $primary-background-accent-color;
+
+    @include media(tablet) {
+        flex-direction: center;
+        padding: 0;
+    }
+
+}
+
+.honeyFeatureThumb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    width: 344px;
+    height: 100%;
+}
+
+.sotaArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 106px;
+    height: 96px;
+    background-image: url('../../images/sota.svg');
+}
+
+.honeyText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 344px;
+    height: 100%;
+}
+
+.firstLine {
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.secondLine {
+    font-size: 18px;
+    text-align: center;
+}
