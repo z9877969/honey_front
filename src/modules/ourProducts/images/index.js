@@ -1,0 +1,11 @@
+export { default as pollen } from './pollen.jpg';
+export { default as cashewHoney } from './cashew-honey.jpg';
+export { default as honeyWithAlmonds } from './honey-with-almonds.jpg';
+export { default as honeyWithHazelnuts } from './honey-with-hazelnuts.jpg';
+export { default as honeyWithNutsMix } from './honey-with-nuts-mix.jpg';
+export { default as honeyWithWalnuts } from './honey-with-walnuts.jpg';
+export { default as honeycombs } from './honeycombs.jpg';
+export { default as naturalAcaciaHoney } from './natural-acacia-honey.jpg';
+export { default as naturalFloralHoney } from './natural-floral-honey.jpg';
+export { default as naturalRapeseedHoney } from './natural-rapeseed-honey.jpg';
+export { default as naturalSunflowerHoney } from './natural-sunflower-honey.jpg';
