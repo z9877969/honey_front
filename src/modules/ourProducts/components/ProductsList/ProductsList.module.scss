@@ -8,24 +8,33 @@
   position: relative;
 }
 
+.swiperWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
 .prevButton {
   position: absolute;
   top: 158px;
   left: -60px;
+  &:disabled {
+    fill: $primary-grey-color;
+  }
 }
 
 .nextButton {
   position: absolute;
   top: 158px;
   right: -60px;
+  &:disabled {
+    fill: $primary-grey-color;
+  }
 }
 
 .productItem {
   flex-basis: 100%;
   @include media(tablet) {
     flex-basis: calc((100% - 32px) / 2);
-    @include media(desktop) {
-      flex-basis: calc((100% - 64px) / 3);
-    }
   }
 }

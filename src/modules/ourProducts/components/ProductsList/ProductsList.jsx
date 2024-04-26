@@ -2,17 +2,15 @@ import { useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
 import icons from '../../../../shared/icons/sprite.svg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 
 const ProductsList = ({ productsList }) => {
-  const [swiper, setSwiper] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const showArrows = productsList.length > 3;
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
+      setIsDesktop(window.innerWidth > 1024);
     };
 
     window.addEventListener('resize', handleResize);
@@ -20,6 +18,16 @@ const ProductsList = ({ productsList }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const handlePrevClick = () => {
+    setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex((prevIndex) =>
+      Math.min(productsList.length - 3, prevIndex + 1)
+    );
+  };
 
   if (!isDesktop) {
     return (
@@ -42,7 +50,8 @@ const ProductsList = ({ productsList }) => {
       {showArrows && (
         <button
           className={style.prevButton}
-          onClick={() => swiper && swiper.slidePrev()}
+          onClick={handlePrevClick}
+          disabled={currentIndex === 0}
         >
           <svg width="48" height="48">
             <use xlinkHref={`${icons}#arrow-left`} />
@@ -51,23 +60,20 @@ const ProductsList = ({ productsList }) => {
       )}
 
       {productsList.length > 0 && (
-        <Swiper
-          onSwiper={setSwiper}
-          slidesPerView={3}
-          className={style.swiperWrapper}
-        >
-          {productsList.map((product) => (
-            <SwiperSlide key={product.id} className={style.productItem}>
+        <ul className={style.swiperWrapper}>
+          {productsList.slice(currentIndex, currentIndex + 3).map((product) => (
+            <li key={product.id}>
               <ProductItem product={product} />
-            </SwiperSlide>
+            </li>
           ))}
-        </Swiper>
+        </ul>
       )}
 
       {showArrows && (
         <button
           className={style.nextButton}
-          onClick={() => swiper && swiper.slideNext()}
+          onClick={handleNextClick}
+          disabled={currentIndex === productsList.length - 3}
         >
           <svg width="48" height="48">
             <use xlinkHref={`${icons}#arrow-right`} />
