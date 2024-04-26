@@ -1,0 +1,32 @@
+.contacts {
+  margin-top: 32px;
+
+  :not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  a {
+    @include font(16, 24);
+    font-family: $primary-font-family;
+    color: $primary-white-color;
+
+    &:focus {
+      color: $primary-hover-color;
+    }
+  }
+
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+    @media (hover: hover) {
+      a {
+        @include font(18, 28);
+
+        &:hover {
+          color: $primary-hover-color;
+        }
+      }
+    }
+  }
+}
