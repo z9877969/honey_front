@@ -5,7 +5,7 @@ const ReviewCard = ({ data: { photo, name, review } }) => {
   return (
     <div className={s.card}>
       <div className={s.photoContainer}>
-        <svg width={190} height={172}>
+        <svg className={s.svgClassName}>
           <use
             xlinkHref={`${sprite}#polygon`}
             className={s.iconClassName}

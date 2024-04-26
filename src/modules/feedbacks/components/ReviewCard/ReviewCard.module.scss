@@ -1,11 +1,31 @@
 @import '../../../../shared/styles/colors';
 
 .card {
+  @include media(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 524px;
+    padding: 32px;
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
+  }
+
   @include media(tablet) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 312px;
+    padding: 76px 64px;
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
   }
 
   @include media(desktop) {
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 356px;
     padding: 80px 104px;
     border-radius: 24px;
     background-color: $primary-background-accent-color;
@@ -13,24 +33,61 @@
 }
 
 .photoContainer {
+  position: relative;
+  margin: 0px 61.5px 24px 61.5px;
+  width: 148px;
+  height: 136px;
+
   @include media(tablet) {
+    position: relative;
+    margin: 12px 24px 12px 0px;
+    width: 148px;
+    height: 136px;
   }
   @include media(desktop) {
     position: relative;
+    margin: 0;
     width: 212px;
     height: 196px;
   }
 }
 
+.svgClassName {
+  width: 132px;
+  height: 120px;
+
+  @include media(tablet) {
+    width: 132px;
+    height: 120px;
+  }
+  @include media(desktop) {
+    width: 190px;
+    height: 172px;
+  }
+}
+
 .photo {
   position: absolute;
-  width: 180px;
-  height: 180px;
-  background-image: url(../../foto/photo.png);
-  background-repeat: no-repeat;
-  background-size: contain;
+  width: 124px;
+  height: 124px;
   bottom: 0;
   right: 0;
+
+  @include media(tablet) {
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    bottom: 0;
+    right: 0;
+  }
+
+  @include media(desktop) {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .iconClassName {
@@ -38,10 +95,38 @@
   fill: $primary-accent-color;
   bottom: 0;
   left: 0;
+  @include media(tablet) {
+    position: absolute;
+    fill: $primary-accent-color;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include media(desktop) {
+    position: absolute;
+    fill: $primary-accent-color;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .content {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 271px;
+
   @include media(tablet) {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 404px;
   }
 
   @include media(desktop) {
