@@ -1,0 +1,40 @@
+@import '../../../../shared/styles/colors';
+
+.card {
+  display: flex;
+  padding: 80px 104px;
+  border-radius: 24px;
+  background-color: $primary-background-accent-color;
+}
+
+.photo {
+  position: relative;
+  width: 212px;
+  height: 196px;
+  background-image: url(../../foto/photo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 32px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 764px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.review {
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
