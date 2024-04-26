@@ -44,8 +44,8 @@
     padding: 24px;
 
     border-radius: 24px;
-    // background-color: $primary-background-accent-color;
-    background-color: #f7f5ed;
+    background-color: $primary-background-accent-color;
+    // background-color: #f7f5ed;
 
     @include media(tablet) {
         gap: 32px;
