@@ -1,40 +1,81 @@
 @import '../../../../shared/styles/colors';
 
 .card {
-  display: flex;
-  padding: 80px 104px;
-  border-radius: 24px;
-  background-color: $primary-background-accent-color;
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+    display: flex;
+    padding: 80px 104px;
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
+  }
+}
+
+.photoContainer {
+  @include media(tablet) {
+  }
+  @include media(desktop) {
+    position: relative;
+    width: 212px;
+    height: 196px;
+  }
 }
 
 .photo {
-  position: relative;
-  width: 212px;
-  height: 196px;
+  position: absolute;
+  width: 180px;
+  height: 180px;
   background-image: url(../../foto/photo.png);
   background-repeat: no-repeat;
   background-size: contain;
+  bottom: 0;
+  right: 0;
+}
+
+.iconClassName {
+  position: absolute;
+  fill: $primary-accent-color;
+  bottom: 0;
+  left: 0;
 }
 
 .content {
-  display: inline-flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-left: 32px;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  width: 764px;
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 32px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 764px;
+  }
 }
 
 .name {
   font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
+  @include font(18, 28);
+
+  @include media(tablet) {
+    @include font(20, 28);
+  }
+  @include media(desktop) {
+    @include font(24, 32);
+  }
 }
 
 .review {
   margin-top: 24px;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
+  @include font(16, 24);
+
+  @include media(tablet) {
+    @include font(16, 24);
+  }
+  @include media(desktop) {
+    @include font(18, 28);
+  }
 }
