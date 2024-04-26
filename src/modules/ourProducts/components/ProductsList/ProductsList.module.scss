@@ -1,0 +1,31 @@
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.thumbList {
+  position: relative;
+}
+
+.prevButton {
+  position: absolute;
+  top: 158px;
+  left: -60px;
+}
+
+.nextButton {
+  position: absolute;
+  top: 158px;
+  right: -60px;
+}
+
+.productItem {
+  flex-basis: 100%;
+  @include media(tablet) {
+    flex-basis: calc((100% - 32px) / 2);
+    @include media(desktop) {
+      flex-basis: calc((100% - 64px) / 3);
+    }
+  }
+}
