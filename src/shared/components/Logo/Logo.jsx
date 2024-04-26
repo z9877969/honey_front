@@ -3,13 +3,13 @@ import s from './Logo.module.scss';
 import LogoText from '../LogoText/LogoText';
 import sprite from '../../icons/sprite.svg';
 
-const Logo = ({ id, iconWidth, iconHeight, className }) => {
+const Logo = ({ id, iconWidth, iconHeight, iconClassName, linkClassName }) => {
   return (
-    <a className={clsx(s.logo, className && className)} href="#">
+    <a className={clsx(s.link, linkClassName && linkClassName)} href="#">
       <svg
         width={iconWidth}
         height={iconHeight}
-        className={clsx(s.icon, className && className)}
+        className={clsx(s.icon, iconClassName && iconClassName)}
         role="img"
       >
         <use xlinkHref={`${sprite}#${id}`} />

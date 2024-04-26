@@ -7,7 +7,8 @@ const GoBackButton = ({
   title,
   type = 'button',
   onClick,
-  className,
+  btnClassName,
+  iconClassName,
   iconWidth,
   iconHeight,
   ...rest
@@ -16,13 +17,13 @@ const GoBackButton = ({
     <button
       type={type}
       onClick={onClick}
-      className={clsx(s.button, className && className)}
+      className={clsx(s.button, btnClassName && btnClassName)}
       {...rest}
     >
       <svg
         width={iconWidth}
         height={iconHeight}
-        className={`icon icon-${id}`}
+        className={clsx(s.icon, iconClassName && iconClassName)}
         role="img"
       >
         <use xlinkHref={`${sprite}#${id}`}></use>
