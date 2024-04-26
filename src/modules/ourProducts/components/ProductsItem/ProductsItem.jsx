@@ -1,7 +1,7 @@
 import style from './ProductsItem.module.scss';
 const ProductItem = ({ product }) => {
   return (
-    <div>
+    <div className={style.productInfoBlock}>
       <img className={style.imgProduct} src={product.img} alt={product.name} />
       <div className={style.productInfo}>
         <h3 className={style.nameTitle}>{product.name}</h3>

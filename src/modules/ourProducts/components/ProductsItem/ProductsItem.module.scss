@@ -1,3 +1,9 @@
+.productInfoBlock {
+  @include media(desktop) {
+    width: 384px;
+  }
+}
+
 .imgProduct {
   width: 335px;
   height: 320px;
@@ -17,11 +23,19 @@
 }
 
 .nameTitle {
+  height: 56px;
   @include font(18, 28);
   font-weight: 600;
   letter-spacing: 0.02em;
 
-  margin-bottom: 50px;
+  margin-bottom: 16px;
+
+  @include media(tablet) {
+    @include font(20, 28);
+  }
+  @include media(desktop) {
+    @include font(24, 32);
+  }
 }
 
 .infoThumb {
@@ -49,4 +63,10 @@
   @include font(18, 28);
   font-weight: 600;
   letter-spacing: 0.02em;
+  @include media(tablet) {
+    @include font(20, 28);
+  }
+  @include media(desktop) {
+    @include font(24, 32);
+  }
 }

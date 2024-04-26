@@ -24,7 +24,7 @@ const ProductsList = ({ productsList }) => {
     return (
       <div>
         {productsList.length > 0 && (
-          <ul>
+          <ul className={style.productsList}>
             {productsList.map((product) => (
               <li key={product.id} className={style.productItem}>
                 <ProductItem product={product} />
@@ -56,7 +56,7 @@ const ProductsList = ({ productsList }) => {
           className={style.swiperWrapper}
         >
           {productsList.map((product) => (
-            <SwiperSlide key={product.id} className={style.swiperSlide}>
+            <SwiperSlide key={product.id} className={style.productItem}>
               <ProductItem product={product} />
             </SwiperSlide>
           ))}
