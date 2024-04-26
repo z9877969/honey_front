@@ -1,0 +1,72 @@
+.productInfoBlock {
+  @include media(desktop) {
+    width: 384px;
+  }
+}
+
+.imgProduct {
+  width: 335px;
+  height: 320px;
+
+  border-radius: 24px;
+
+  margin-bottom: 24px;
+
+  @include media(desktop) {
+    width: 384px;
+    height: 364px;
+  }
+}
+
+.productInfo {
+  margin-bottom: 24px;
+}
+
+.nameTitle {
+  height: 56px;
+  @include font(18, 28);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  margin-bottom: 16px;
+
+  @include media(tablet) {
+    @include font(20, 28);
+  }
+  @include media(desktop) {
+    @include font(24, 32);
+  }
+}
+
+.infoThumb {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.titleInfo {
+  @include font(16, 24);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.weight {
+  @include font(16, 24);
+  letter-spacing: 0.04em;
+}
+
+.price {
+  @include font(18, 28);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  @include media(tablet) {
+    @include font(20, 28);
+  }
+  @include media(desktop) {
+    @include font(24, 32);
+  }
+}

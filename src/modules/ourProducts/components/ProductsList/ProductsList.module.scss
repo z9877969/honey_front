@@ -1,0 +1,39 @@
+.productsList {
+  @include media(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+
+.thumbList {
+  position: relative;
+}
+
+.prevButton {
+  position: absolute;
+  top: 158px;
+  left: -60px;
+}
+
+.nextButton {
+  position: absolute;
+  top: 158px;
+  right: -60px;
+}
+
+.productItem {
+  border-bottom: 1px solid $primary-darkgrey-color;
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  @include media(tablet) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    flex-basis: calc((100% - 32px) / 2);
+  }
+  @include media(desktop) {
+    flex-basis: calc((100% - 64px) / 3);
+  }
+}
