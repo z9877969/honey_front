@@ -1,0 +1,45 @@
+.icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 144px;
+  height: 128px;
+  fill: $primary-accent-color;
+
+  @include media(tablet) {
+    top: -54px;
+    left: 0px;
+    width: 190px;
+    height: 172px;
+  }
+
+  @include media(desktop) {
+    top: -88px;
+    left: 50px;
+  }
+}
+
+.iconTextLink {
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 9.36; // 150%
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: justify;
+  color: inherit;
+
+  @include media(tablet) {
+    top: -42px;
+    left: 46px;
+  }
+
+  @include media(desktop) {
+    top: -80px;
+    left: 92px;
+    font-size: 18px;
+    line-height: 8.67; // 156%
+  }
+}
