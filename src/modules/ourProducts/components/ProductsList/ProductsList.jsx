@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import style from './ProductsList.module.scss';
 import icons from '../../../../shared/icons/sprite.svg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const ProductsList = ({ productsList }) => {
   const [swiper, setSwiper] = useState(null);
@@ -14,6 +14,7 @@ const ProductsList = ({ productsList }) => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 768);
     };
+
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);

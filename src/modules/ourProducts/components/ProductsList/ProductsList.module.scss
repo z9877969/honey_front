@@ -1,9 +1,7 @@
 .productsList {
-  @include media(tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .thumbList {
@@ -23,17 +21,11 @@
 }
 
 .productItem {
-  border-bottom: 1px solid $primary-darkgrey-color;
-  &:not(:last-child) {
-    margin-bottom: 32px;
-  }
+  flex-basis: 100%;
   @include media(tablet) {
-    &:not(:last-child) {
-      margin-bottom: 0;
-    }
     flex-basis: calc((100% - 32px) / 2);
-  }
-  @include media(desktop) {
-    flex-basis: calc((100% - 64px) / 3);
+    @include media(desktop) {
+      flex-basis: calc((100% - 64px) / 3);
+    }
   }
 }
