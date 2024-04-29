@@ -13,7 +13,7 @@ const Footer = () => {
   }, [setModal]);
 
   return (
-    <footer className={s.footer}>
+    <footer className={s.footer} id="footer">
       <Container className={s.container}>
         <div className={s.contentWrap}>
           <Logo
