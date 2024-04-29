@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useState } from 'react';
 import { icons } from 'shared/icons';
-// import { useDispatch, useSelector } from 'react-redux';
+// import icon from '../../../../shared/icons/sprite.svg';
 // import { useEffect } from 'react';
 // import { fetchReviews } from 'modules/feedbacks/service/service';
 
@@ -57,35 +57,22 @@ export default Reviews;
 
 // const Reviews = () => {
 //   const [swiper, setSwiper] = useState(null);
-//   const dispatch = useDispatch();
-//   const { reviews, status, error } = useSelector((state) => state.reviews);
+//   const [data, seData] = useState(null)
+//   const [error, setError] = useState(null)
 
 //   useEffect(() => {
-//     dispatch(fetchReviews());
-//   }, [dispatch]);
+//     const fetchData = async () => {
+//       try {
+//           const res = fetchReviews()
+//           setData(res)
 
-//   const renderContent = () => {
-//     if (status === 'loading') {
-//       return <div>Loading...</div>;
-//     }
+//     } catch (error) {
+//           setError(error.message)
+//         }
+//       }
 
-//     if (status === 'failed') {
-//       return <div>Error: {error}</div>;
-//     }
-
-//     return (
-//       <Swiper
-//        onSwiper={setSwiper}
-//        slidesPerView={1}
-//        >
-//         {reviews.map((data) => (
-//           <SwiperSlide key={data.id}>
-//             <ReviewCard data={data} />
-//           </SwiperSlide>
-//         ))}
-//       </Swiper>
-//     );
-//   };
+//       fetchData()
+//     }, [])
 
 //   return (
 //     <section>
@@ -99,7 +86,18 @@ export default Reviews;
 //              <use xlinkHref={`${icon}#arrow-left`} />
 //            </svg>
 //          </button>
-//            {renderContent()}
+//            {(
+//            <Swiper
+//              onSwiper={setSwiper}
+//              slidesPerView={1}
+//              >
+//              {data.map((data) => (
+//                <SwiperSlide key={data.id}>
+//                  <ReviewCard data={data} />
+//                </SwiperSlide>
+//              ))}
+//            </Swiper>
+//            )}
 //          <button
 //          className={s.nextButton}
 //          onClick={() => swiper && swiper.slideNext()}

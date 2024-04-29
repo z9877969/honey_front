@@ -1,10 +1,13 @@
 import clsx from 'clsx';
 import s from './Logo.module.scss';
 import LogoText from '../LogoText/LogoText';
+
 import { icons as sprite } from 'shared/icons';
+
 
 const Logo = ({ id, iconWidth, iconHeight, iconClassName, linkClassName }) => {
   return (
+
     <a className={clsx(s.link, linkClassName && linkClassName)} href="#">
       <svg
         width={iconWidth}
@@ -13,6 +16,7 @@ const Logo = ({ id, iconWidth, iconHeight, iconClassName, linkClassName }) => {
         role="img"
       >
         <use xlinkHref={`${sprite}#${id}`} />
+
       </svg>
       <LogoText title={'Бджола та Шершень'} />
     </a>
