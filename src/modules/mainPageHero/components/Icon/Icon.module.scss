@@ -14,32 +14,32 @@
   }
 
   @include media(desktop) {
-    top: -88px;
+    top: -86px;
     left: 50px;
   }
 }
 
 .iconTextLink {
   position: absolute;
-  top: -10px;
+  top: 54px;
   left: 25px;
   font-weight: 600;
   font-size: 16px;
-  line-height: 9.36; // 150%
+  line-height: 1.5; // 150%
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: justify;
   color: inherit;
 
   @include media(tablet) {
-    top: -42px;
-    left: 46px;
+    top: 20px;
+    left: 48px;
   }
 
   @include media(desktop) {
-    top: -80px;
+    top: -12px;
     left: 92px;
     font-size: 18px;
-    line-height: 8.67; // 156%
+    line-height: 1.56; // 156%
   }
 }
