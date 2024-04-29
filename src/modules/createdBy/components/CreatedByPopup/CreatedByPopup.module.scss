@@ -10,11 +10,26 @@
 
 .cardList {
   max-height: 560px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 32px;
+}
+
+.cardList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardList::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: $primary-accent-color;
+}
+
+.cardList::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: $primary-background-accent-color;
 }
 
 .title {
