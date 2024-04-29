@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import sprite from '../../icons/sprite.svg';
+import { icons as sprite } from 'shared/icons';
 import s from './IconButton.module.scss';
 
 const IconButton = ({

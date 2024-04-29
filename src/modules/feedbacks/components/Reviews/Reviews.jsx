@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useState } from 'react';
-import icon from '../../../../shared/icons/sprite.svg';
+import { icons } from 'shared/icons';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { useEffect } from 'react';
 // import { fetchReviews } from 'modules/feedbacks/service/service';
@@ -26,7 +26,7 @@ const Reviews = () => {
           onClick={() => swiper && swiper.slidePrev()}
         >
           <svg width="48" height="48">
-            <use xlinkHref={`${icon}#arrow-left`} />
+            <use xlinkHref={`${icons}#arrow-left`} />
           </svg>
         </button>
 
@@ -45,7 +45,7 @@ const Reviews = () => {
           onClick={() => swiper && swiper.slideNext()}
         >
           <svg width="48" height="48">
-            <use xlinkHref={`${icon}#arrow-right`} />
+            <use xlinkHref={`${icons}#arrow-right`} />
           </svg>
         </button>
       </Container>

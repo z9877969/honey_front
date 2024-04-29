@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import s from './Logo.module.scss';
 import LogoText from '../LogoText/LogoText';
-import sprite from '../../icons/sprite.svg';
+import { icons as sprite } from 'shared/icons';
 
 const Logo = ({ id, iconWidth, iconHeight, iconClassName, linkClassName }) => {
   return (

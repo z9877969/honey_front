@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
-import icons from '../../../../shared/icons/sprite.svg';
+import { icons } from 'shared/icons';
 
 const ProductsList = ({ productsList }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

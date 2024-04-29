@@ -1,5 +1,5 @@
 import s from './PopUpDetailedInfo.module.scss';
-import icons from '../../../shared/icons/sprite.svg';
+import { icons } from 'shared/icons';
 import { useState } from 'react';
 // import dbProducts from '../../../modules/ourProducts/data/dbProducts';
 // import dbCategories from '../data/dbCategories';
