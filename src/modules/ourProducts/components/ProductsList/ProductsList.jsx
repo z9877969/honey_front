@@ -62,7 +62,7 @@ const ProductsList = ({ productsList }) => {
       {productsList.length > 0 && (
         <ul className={style.swiperWrapper}>
           {productsList.slice(currentIndex, currentIndex + 3).map((product) => (
-            <li key={product.id}>
+            <li key={product.id} className={style.listDesctop}>
               <ProductItem product={product} />
             </li>
           ))}
