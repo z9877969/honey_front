@@ -1,5 +1,60 @@
 .container {
   background-color: white;
-  min-width: 295px;
+  max-height: 728px;
+  min-width: 335px;
+  max-width: 89.3vw;
   padding: 40px 20px;
+  border-radius: 24px;
+  position: relative;
+}
+
+.cardList {
+  max-height: 560px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.title {
+  @include font(18, 28);
+  width: 204px;
+
+  @include media(tablet) {
+    @include font(20, 28);
+  }
+
+  @include media(desktop) {
+    @include font(24, 32);
+  }
+}
+
+.closeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  &:focus {
+    background-color: $primary-hover-color;
+  }
+  transition: background-color $animation-time-function;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $primary-hover-color;
+    }
+  }
+
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+  }
+}
+
+.closeIcon {
+  fill: $primary-black-color;
 }

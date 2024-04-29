@@ -4,12 +4,12 @@ import SocialIcons from '../SocialIcons/SocialIcons';
 import Contacts from '../Contacts/Contacts';
 import { useModal } from 'hooks/useModal';
 import { useCallback } from 'react';
-import CreatedBy from 'modules/createdBy/components/CreatedBy/CreatedBy';
+import CreatedByPopup from 'modules/createdBy/components/CreatedByPopup/CreatedByPopup';
 
 const Footer = () => {
   const setModal = useModal();
   const openModal = useCallback(() => {
-    setModal(<CreatedBy />);
+    setModal(<CreatedByPopup />);
   }, [setModal]);
 
   return (
