@@ -1,0 +1,11 @@
+.sectionMain {
+  padding: 40px 0;
+
+  @include media(tablet) {
+    padding: 60px 0;
+  }
+
+  @include media(desktop) {
+    padding: 74px 0;
+  }
+}
