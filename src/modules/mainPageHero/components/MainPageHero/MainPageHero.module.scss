@@ -1,31 +1,58 @@
+.container {
+  padding: 0 16px;
+
+  @include media(mobile) {
+    padding: 0 20px;
+  }
+
+  @include media(tablet) {
+    padding: 0 32px;
+  }
+
+  @include media(desktop) {
+    padding: 0 112px;
+  }
+}
+
 .section {
   background-color: $light-bg-color;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 40px;
+
+  @include media(tablet) {
+    padding-bottom: 60px;
+  }
+
+  @include media(desktop) {
+    padding-bottom: 40px;
+  }
 
   .wrapper {
     display: flex;
     flex-direction: column;
-    padding-bottom: 40px;
 
     .imagesBlock {
       position: relative;
       display: flex;
       flex-direction: row;
-      justify-content: center;
       margin-top: 16px;
+
+      @include media(tablet) {
+        margin-top: 0;
+      }
 
       @include media(desktop) {
         margin-top: 0;
 
         &::after {
           position: absolute;
-          bottom: 87px;
+          bottom: 0px;
           left: 176px;
           content: '';
-          border: 1px solid #858585;
           width: 312px;
-          height: 0px;
+          height: 1px;
+          background-color: #858585;
         }
       }
     }
@@ -41,15 +68,21 @@
     }
 
     .mainPicture {
+      width: auto;
+      max-width: 100%;
       object-fit: cover;
-      margin: 64px 0 0 24px;
+      margin: 64px 0 0 16px;
+
+      @include media(mobile) {
+        margin: 64px 0 0 24px;
+      }
 
       @include media(tablet) {
         margin: 32px 0 0 96px;
       }
 
       @include media(desktop) {
-        margin: 0 0 159px 144px;
+        margin: 0 0 72px 144px;
       }
     }
 
@@ -74,10 +107,11 @@
         position: static;
         visibility: visible;
         pointer-events: auto;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
         height: auto;
         margin: 0 0 0 32px;
-        padding: 44px 0 87px 0;
+        padding: 44px 0 0 0;
         text-indent: 0;
         white-space: normal;
         overflow: visible;
