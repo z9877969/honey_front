@@ -1,0 +1,23 @@
+.quote {
+  align-self: flex-end;
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  text-align: right;
+
+  .highlighting {
+    font-weight: 600;
+  }
+
+  @include media(tablet) {
+    max-width: 522px;
+  }
+
+  @include media(desktop) {
+    font-size: 18px;
+    line-height: 156%;
+    max-width: 586px;
+  }
+}

@@ -1,5 +1,5 @@
 import s from './ReviewCard.module.scss';
-import sprite from '../../../../shared/icons/sprite.svg';
+import { icons as sprite } from 'shared/icons';
 
 const ReviewCard = ({ data: { photo, name, review } }) => {
   return (
