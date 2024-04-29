@@ -1,11 +1,15 @@
 .prevButton {
   position: absolute;
+  border-radius: 50%;
+  background-color: none;
   top: 600px;
   left: 140px;
   z-index: 2;
 
   @include media(tablet) {
     position: absolute;
+    border-radius: 50%;
+    background-color: none;
     top: 375px;
     left: 40px;
     z-index: 2;
@@ -13,20 +17,30 @@
 
   @include media(desktop) {
     position: absolute;
+    border-radius: 50%;
+    background-color: none;
     top: 450px;
     left: 125px;
     z-index: 2;
   }
 }
 
+.prevButton:hover {
+  background-color: $primary-white-color;
+}
+
 .nextButton {
   position: absolute;
+  border-radius: 50%;
+  background-color: none;
   top: 600px;
   right: 140px;
   z-index: 1;
 
   @include media(tablet) {
     position: absolute;
+    border-radius: 50%;
+    background-color: none;
     top: 375px;
     right: 40px;
     z-index: 1;
@@ -34,10 +48,16 @@
 
   @include media(desktop) {
     position: absolute;
+    border-radius: 50%;
+    background-color: none;
     top: 450px;
     right: 125px;
     z-index: 1;
   }
+}
+
+.nextButton:hover {
+  background-color: $primary-white-color;
 }
 
 .section {
