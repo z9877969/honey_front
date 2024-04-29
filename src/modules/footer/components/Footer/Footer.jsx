@@ -2,8 +2,16 @@ import { Button, Container, Logo } from 'shared/components';
 import s from './Footer.module.scss';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import Contacts from '../Contacts/Contacts';
+import { useModal } from 'hooks/useModal';
+import { useCallback } from 'react';
+import CreatedBy from 'modules/createdBy/components/CreatedBy/CreatedBy';
 
 const Footer = () => {
+  const setModal = useModal();
+  const openModal = useCallback(() => {
+    setModal(<CreatedBy />);
+  }, [setModal]);
+
   return (
     <footer className={s.footer}>
       <Container className={s.container}>
@@ -24,7 +32,7 @@ const Footer = () => {
           type="button"
           className={s.createdByBtn}
           title={'Created by GoIT'}
-          onClick={() => {}}
+          onClick={openModal}
         />
       </Container>
     </footer>
