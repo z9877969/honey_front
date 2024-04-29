@@ -1,22 +1,32 @@
 import clsx from 'clsx';
 import s from './GoBackButton.module.scss';
+import { icons as sprite } from 'shared/icons';
 
 const GoBackButton = ({
+  id,
   title,
   type = 'button',
   onClick,
-  className,
+  btnClassName,
+  iconClassName,
+  iconWidth,
+  iconHeight,
   ...rest
 }) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={clsx(s.button, className && className)}
+      className={clsx(s.button, btnClassName && btnClassName)}
       {...rest}
     >
-      <svg width="12" height="28">
-        <use href="../../icons/sprite.svg#arrow-left"></use>
+      <svg
+        width={iconWidth}
+        height={iconHeight}
+        className={clsx(s.icon, iconClassName && iconClassName)}
+        role="img"
+      >
+        <use xlinkHref={`${sprite}#${id}`}></use>
       </svg>
       {title}
     </button>

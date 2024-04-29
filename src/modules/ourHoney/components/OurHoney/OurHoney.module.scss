@@ -1,0 +1,61 @@
+.section {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $light-bg-color;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.honeyTitle {
+    width: 213px;
+    height: auto;
+    height: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 32px;
+    @include font(32, 32);
+
+    @include media(tablet) {
+        width: 400px;
+        margin-bottom: 48px;
+        @include font(60, 60);
+    }
+
+    @include media(desktop) {
+        width: 531px;
+        margin-bottom: 64px;
+        @include font(80, 80);
+    }
+}
+
+.honeyArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+    width: 335px;
+    padding: 24px;
+
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
+
+    @include media(tablet) {
+        gap: 32px;
+        width: 704px;
+        padding: 64px;
+
+    }
+
+    @include media(desktop) {
+        flex-direction: row;
+        width: 1216px;
+
+    }
+}

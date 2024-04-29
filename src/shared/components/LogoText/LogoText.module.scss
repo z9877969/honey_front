@@ -1,19 +1,18 @@
 .title {
   font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
+  @include font(16, 24);
 
   &.light {
     color: $primary-text-color;
   }
 
   @include media(tablet) {
-    font-size: 20px;
-    line-height: 56px;
+
+    @include font(20, 32);
+
   }
 
   @include media(desktop) {
-    font-size: 56px;
-    line-height: 64px;
+    @include font(20, 32);
   }
 }

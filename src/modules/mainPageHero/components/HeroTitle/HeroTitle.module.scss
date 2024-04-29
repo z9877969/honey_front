@@ -1,0 +1,24 @@
+.title {
+  padding-top: 52px;
+  padding-bottom: 32px;
+  font-family: $secondary-font-family;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 116%;
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+
+  @include media(tablet) {
+    font-size: 80px;
+    line-height: 110%;
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+
+  @include media(desktop) {
+    padding-top: 84px;
+    padding-bottom: 64px;
+    font-size: 106px;
+    line-height: 112%;
+  }
+}
