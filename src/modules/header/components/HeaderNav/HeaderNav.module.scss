@@ -1,3 +1,8 @@
+@import '../../../../shared/styles/mixins';
+@import '../../../../shared/styles/colors';
+@import '../../../../shared/styles/base';
+@import '../../../../shared/styles/variables';
+
 .navList {
   display: none;
 
@@ -11,4 +16,86 @@
 
 .navListItem {
   @include font(14, 20);
+}
+
+.burgerIcon {
+  width: 24px;
+  height: 24px;
+
+  @include media(tablet) {
+    width: 36px;
+    height: 36px;
+  }
+
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.cartIcon {
+  width: 24px;
+  height: 24px;
+
+  @include media(tablet) {
+    width: 36px;
+    height: 36px;
+  }
+
+  @include media(desktop) {
+    width: 36px;
+    height: 36px;
+  }
+}
+.closeIcon {
+  width: 16px;
+  height: 16px;
+
+  @include media(tablet) {
+    width: 36px;
+    height: 36px;
+  }
+
+  @include media(desktop) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.dropDown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  border-radius: 0 0 24px 24px;
+  width: 100%;
+  background: $primary-accent-color;
+  @include media(mobile) {
+    width: $mobile;
+  }
+
+  @include media(tablet) {
+    width: $tablet;
+  }
+
+  @include media(desktop) {
+    width: $desktop;
+    background-color: $light-bg-color;
+  }
+}
+
+.navListOpen {
+  display: block;
+  margin-top: 56px;
+  margin-bottom: 40px;
+}
+
+.navListItem {
+  color: $primary-text-color;
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  padding-bottom: 24px;
 }
