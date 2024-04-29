@@ -1,12 +1,12 @@
 import { Cart } from 'modules/cart';
 import { Footer } from 'modules/footer';
-import { Header } from 'modules/header';
+// import { Header } from 'modules/header';
 import { Toastify } from '..';
 
 const SharedLayout = ({ children }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {children}
       <Footer />
       <Cart />
