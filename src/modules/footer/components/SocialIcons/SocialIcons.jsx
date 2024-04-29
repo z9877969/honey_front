@@ -1,7 +1,25 @@
 import s from './SocialIcons.module.scss';
+import sprite from '../../../../shared/icons/sprite.svg';
 
 const SocialIcons = () => {
-  return <h3 className={s.tille}>Social Icons List</h3>;
+  return (
+    <ul className={s.iconsList}>
+      <li>
+        <a href="">
+          <svg width={32} height={32} className={s.icon}>
+            <use xlinkHref={`${sprite}#telegram`}></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <svg width={32} height={32} className={s.icon}>
+            <use xlinkHref={`${sprite}#instagram`}></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  );
 };
 
 export default SocialIcons;
