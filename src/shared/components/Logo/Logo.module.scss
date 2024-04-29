@@ -1,4 +1,28 @@
+@import '../../styles//mixins';
+
 .logo {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  @include media(tablet) {
+    gap: 12px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.icon {
+  width: 24px;
+  height: 24px;
+
+  @include media(tablet) {
+    width: 36px;
+    height: 36px;
+  }
+
+  @include media(desktop) {
+    width: 36px;
+    height: 36px;
+  }
 }
