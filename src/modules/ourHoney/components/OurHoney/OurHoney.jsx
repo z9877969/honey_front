@@ -1,9 +1,8 @@
 import { Container, MainTitle } from 'shared/components';
-
-import ourHoneySet from '../../images/ourHoneySet.svg';
-
-import s from './OurHoney.module.scss';
 import HoneyFeature from '../HoneyFeature/HoneyFeature';
+import ourHoneySet from '../../images/ourHoneySet.svg';
+import s from './OurHoney.module.scss';
+
 const OurHoney = () => {
   return (
     <section className={s.section}>
