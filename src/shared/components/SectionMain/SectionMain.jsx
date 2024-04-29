@@ -3,7 +3,7 @@ import s from './SectionMain.module.scss';
 
 const SectionMain = ({ children, sectionStyles }) => {
   return (
-    <section className={clsx(sectionStyles ? sectionStyles : s.sectionMain)}>
+    <section className={clsx(s.sectionMain, sectionStyles && sectionStyles)}>
       {children}
     </section>
   );
