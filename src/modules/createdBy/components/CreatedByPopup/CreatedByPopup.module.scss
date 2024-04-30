@@ -1,11 +1,16 @@
 .container {
   background-color: white;
   max-height: 728px;
-  min-width: 335px;
-  max-width: 89.3vw;
+  width: 335px;
   padding: 40px 20px;
   border-radius: 24px;
   position: relative;
+
+  @include media(tablet) {
+    width: 704px;
+    max-height: 796.5px;
+    padding: 48px 32px;
+  }
 }
 
 .cardList {
@@ -16,6 +21,14 @@
   flex-direction: column;
   gap: 16px;
   margin-top: 32px;
+
+  @include media(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 24px;
+    max-height: 640px;
+  }
 }
 
 .cardList::-webkit-scrollbar {
@@ -34,10 +47,11 @@
 
 .title {
   @include font(18, 28);
-  width: 204px;
+  width: 206px;
+  letter-spacing: 0.02em;
 
   @include media(tablet) {
-    @include font(20, 28);
+    width: 306px;
   }
 
   @include media(desktop) {
@@ -52,18 +66,10 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  &:focus {
-    background-color: $primary-hover-color;
-  }
-  transition: background-color $animation-duration $animation-time-function;
-
-  @media (hover: hover) {
-    &:hover {
-      background-color: $primary-hover-color;
-    }
-  }
 
   @include media(tablet) {
+    top: 22px;
+    right: 22px;
   }
 
   @include media(desktop) {

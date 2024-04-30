@@ -5,8 +5,8 @@ import IconButton from 'shared/components/IconButton/IconButton';
 
 //TODO: tabl and desc styles
 //TODO: put evth into commponents
-//TODO: Animations duration -  SocIcons, links
 //TODO: Check everything
+//DONE: Animations duration -  SocIcons, links
 //DONE: put img into div and add LI icon, style div, remove img styles
 //DONE: wrap cards into links + hover effects
 
@@ -15,11 +15,7 @@ const CreatedByPopup = ({ onClose }) => {
 
   return (
     <div className={s.container}>
-      <h3 className={s.title}>
-        Команда,
-        <br />
-        яка створила сайт
-      </h3>
+      <h3 className={s.title}>Команда, яка створила сайт</h3>
       <IconButton
         id={'cross-close'}
         iconClassName={s.closeIcon}
