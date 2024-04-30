@@ -27,6 +27,7 @@
 .cardImg {
   object-fit: cover;
   height: 100%;
+  border-radius: 50%;
 }
 
 .cardImgWrap {
@@ -35,7 +36,6 @@
   height: 40px;
   background-color: #d9d9d9;
   border-radius: 50%;
-  //   overflow: hidden;
 }
 
 .cardImgIcon {

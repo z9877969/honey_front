@@ -6,7 +6,7 @@ import { icons as sprite } from 'shared/icons';
 const CreatorCard = ({ data }) => {
   return (
     <li>
-      <a href={data.link} className={s.card}>
+      <a href={data.link} className={s.card} target="_blank">
         <div className={s.cardImgWrap}>
           <img
             className={s.cardImg}
