@@ -2,14 +2,15 @@ import { Formik, Form } from 'formik';
 import {
   contactFormValidationSchema,
   orderFormInitialValues,
-} from 'modules/order/data/formikData';
+} from 'modules/order/data';
 import { Button } from 'shared/components';
-import ContactForm from '../ContactForm/ContactForm';
-import AddressForm from '../AddressForm/AddressForm';
+import { ContactForm, AddressForm } from 'modules/order/components';
 import s from './OrderForm.module.scss';
 
 const OrderForm = () => {
   const handleSubmit = (values, actions) => {
+    console.log(values);
+
     actions.resetForm();
   };
 

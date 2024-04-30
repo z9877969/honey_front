@@ -1,11 +1,16 @@
-.cartWrapper {
+.orderCartWrapper {
   width: 100%;
-  height: 500px; //
+  padding: 20px 16px;
   position: relative;
-  // background-color: $primary-lightgrey-color;
+  background-color: $primary-lightgrey-color;
   border-radius: 24px;
+  height: fit-content;
+  @include media(tablet) {
+    padding: 32px;
+  }
   @include media(desktop) {
     width: calc((100% - 32px) / 2);
+    padding: 64px 32px;
   }
 }
 .orderGoBack {
@@ -13,7 +18,60 @@
   height: 24px;
   right: 0;
   top: -48px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
   svg {
-    display: none;
+    width: 24px;
+    height: 24px;
+    @include media(desktop) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+.orderCartTitle {
+  margin-bottom: 20px;
+  @include media(tablet) {
+    margin-bottom: 32px;
+  }
+}
+.orderCartList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  min-height: 344px;
+  overflow-y: auto;
+
+  @include media(tablet) {
+    max-height: 628px;
+    margin-bottom: 24px;
+    gap: 24px;
+  }
+  @include media(desktop) {
+    max-height: 536px;
+    margin-bottom: 34px;
+    gap: 16px;
+  }
+}
+.orderCartItem {
+  display: flex;
+  gap: 12px;
+  @include media(tablet) {
+    gap: 24px;
+  }
+}
+.price {
+  padding-top: 20px;
+  border-top: 1px solid $primary-darkgrey-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    @include font(16, 24);
+  }
+  @include media(desktop) {
+    @include font(18, 28);
   }
 }

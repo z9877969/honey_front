@@ -1,7 +1,5 @@
 import { Container, MainTitle } from 'shared/components';
-import OrderHeader from '../OrderHeader/OrderHeader';
-import OrderForm from '../OrderForm/OrderForm';
-import OrderCart from '../OrderCart/OrderCart';
+import { OrderHeader, OrderForm, OrderCart } from 'modules/order/components';
 import s from './OrderCheckoutPage.module.scss';
 
 const OrderCheckoutPage = () => {

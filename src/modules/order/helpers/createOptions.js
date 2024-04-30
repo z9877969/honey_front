@@ -1,6 +1,6 @@
-import { createLabel } from './createLable';
+import { createSettlementDescription } from './createSettlementDescription';
 
-export function createOptionsForLocationSelect(arr) {
+export function createOptionsForLocationSelect(arr, deliveryType) {
   const locationOptions =
     arr.length > 0
       ? arr.map(
@@ -8,14 +8,26 @@ export function createOptionsForLocationSelect(arr) {
             Description,
             SettlementTypeDescription,
             AreaDescription,
+            RegionsDescription,
             Ref,
           }) => {
             return {
-              value: { city: Description, cityId: Ref },
-              label: createLabel(
+              value: {
+                city: createSettlementDescription(
+                  deliveryType,
+                  Description,
+                  SettlementTypeDescription,
+                  AreaDescription,
+                  RegionsDescription
+                ),
+                cityId: Ref,
+              },
+              label: createSettlementDescription(
+                deliveryType,
                 Description,
                 SettlementTypeDescription,
-                AreaDescription
+                AreaDescription,
+                RegionsDescription
               ),
             };
           }

@@ -1,10 +1,12 @@
 import Select from 'react-select';
 import AsyncSelect from 'react-select/async';
 import { Field } from 'formik';
-import useNovaPoshta from 'hooks/useNovaPosha';
-import { deliveryTypeOptions } from 'modules/order/data/selectOptions';
-import { selectStyles } from 'modules/order/data/selectStyles';
-import { defaultOptionsForLocationSelect } from 'modules/order/data/selectOptions';
+import { useNovaPoshta } from 'hooks/useNovaPosha';
+import {
+  deliveryTypeOptions,
+  defaultOptionsForLocationSelect,
+  selectStyles,
+} from 'modules/order/data';
 import OrderTitle from '../shared/OrderTitle/OrderTitle';
 import InputField from '../shared/InputField/InputField';
 import DropdownIndicator from '../shared/DropdownIndicator/DropdownIndicator';

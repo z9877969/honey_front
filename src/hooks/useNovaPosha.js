@@ -9,7 +9,7 @@ import {
   fetchNPSettlementsByQuery,
 } from 'services/novaPoshtaApi';
 
-const useNovaPoshta = (deliveryType, cityId) => {
+export const useNovaPoshta = (deliveryType, cityId) => {
   const [divisions, setDivisions] = useState([]);
   const [valueForSelect, setValueForSelect] = useState({
     deliveryType: [],
@@ -20,7 +20,7 @@ const useNovaPoshta = (deliveryType, cityId) => {
   async function getSettlementsList(inputValue) {
     try {
       const result = await fetchNPSettlementsByQuery(inputValue, deliveryType);
-      return createOptionsForLocationSelect(result);
+      return createOptionsForLocationSelect(result, deliveryType);
     } catch (error) {
       error;
     }
@@ -64,5 +64,3 @@ const useNovaPoshta = (deliveryType, cityId) => {
     getDivisionsList,
   };
 };
-
-export default useNovaPoshta;
