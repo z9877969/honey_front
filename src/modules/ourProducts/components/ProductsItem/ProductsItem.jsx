@@ -1,17 +1,32 @@
 import style from './ProductsItem.module.scss';
+import { naturalAcaciaHoney } from '../../images/index';
+
 const ProductItem = ({ product }) => {
+  const firstWeightValue = product.variants[0].size;
+  const lastWeightValue = product.variants[product.variants.length - 1].size;
+  const firstPriceValue = product.variants[0].price;
+  const lastpriceValue = product.variants[product.variants.length - 1].price;
+
   return (
     <div className={style.productInfoBlock}>
-      <img className={style.imgProduct} src={product.img} alt={product.name} />
+      <img
+        className={style.imgProduct}
+        src={naturalAcaciaHoney}
+        alt={product.name}
+      />
       <div className={style.productInfo}>
-        <h3 className={style.nameTitle}>{product.name}</h3>
+        <h3 className={style.nameTitle}>{product.prodName}</h3>
         <div className={style.infoThumb}>
           <h4 className={style.titleInfo}>Вага:</h4>{' '}
-          <p className={style.weight}>{product.weight}</p>
+          <p className={style.weight}>
+            {firstWeightValue} - {lastWeightValue}
+          </p>
         </div>
         <div className={style.infoThumb}>
           <h4 className={style.titleInfo}>Ціна:</h4>{' '}
-          <p className={style.price}>{product.price}</p>
+          <p className={style.price}>
+            {firstPriceValue} - {lastpriceValue}
+          </p>
         </div>
       </div>
     </div>

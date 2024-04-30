@@ -2,11 +2,22 @@ import { useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
 import { icons } from 'shared/icons';
+// import { selectIsLoading } from '@redux/products/selectors';
+import { useSelector } from 'react-redux';
+import { selectContacts } from '@redux/products/selectors';
 
-const ProductsList = ({ productsList }) => {
+const ProductsList = ({ currentCategory }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  const productsList = useSelector(selectContacts);
+  // const isLoading = useSelector(selectIsLoading);
+
   const showArrows = productsList.length > 3;
+
+  const filteredProducts = productsList.filter(
+    (product) => product.category === currentCategory
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,16 +36,16 @@ const ProductsList = ({ productsList }) => {
 
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) =>
-      Math.min(productsList.length - 3, prevIndex + 1)
+      Math.min(filteredProducts.length - 3, prevIndex + 1)
     );
   };
 
   if (!isDesktop) {
     return (
       <div>
-        {productsList.length > 0 && (
-          <ul className={style.productsList}>
-            {productsList.map((product) => (
+        {filteredProducts.length > 0 && (
+          <ul className={style.filteredProducts}>
+            {filteredProducts.map((product) => (
               <li key={product.id} className={style.productItem}>
                 <ProductItem product={product} />
               </li>
@@ -59,13 +70,15 @@ const ProductsList = ({ productsList }) => {
         </button>
       )}
 
-      {productsList.length > 0 && (
+      {filteredProducts.length > 0 && (
         <ul className={style.swiperWrapper}>
-          {productsList.slice(currentIndex, currentIndex + 3).map((product) => (
-            <li key={product.id} className={style.listDesctop}>
-              <ProductItem product={product} />
-            </li>
-          ))}
+          {filteredProducts
+            .slice(currentIndex, currentIndex + 3)
+            .map((product) => (
+              <li key={product.id} className={style.listDesctop}>
+                <ProductItem product={product} />
+              </li>
+            ))}
         </ul>
       )}
 
@@ -73,7 +86,7 @@ const ProductsList = ({ productsList }) => {
         <button
           className={style.nextButton}
           onClick={handleNextClick}
-          disabled={currentIndex === productsList.length - 3}
+          disabled={currentIndex === filteredProducts.length - 3}
         >
           <svg width="48" height="48">
             <use xlinkHref={`${icons}#arrow-right`} />
