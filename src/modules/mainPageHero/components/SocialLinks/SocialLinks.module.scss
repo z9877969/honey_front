@@ -12,9 +12,9 @@
 
   &::before {
     content: '';
-    border: 1px solid #858585;
-    width: 0px;
+    width: 1px;
     height: 80px;
+    background-color: #858585;
   }
 
   .link {

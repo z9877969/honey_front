@@ -16,23 +16,38 @@
 
 .prevButton {
   position: absolute;
+  display: flex;
   top: 158px;
   left: -60px;
+  border-radius: 24px;
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &:disabled {
     fill: $primary-grey-color;
+  }
+  &:hover,
+  :focus {
+    background-color: $primary-background-accent-color;
   }
 }
 
 .nextButton {
   position: absolute;
+  display: flex;
   top: 158px;
   right: -60px;
+  border-radius: 24px;
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &:disabled {
     fill: $primary-grey-color;
+  }
+  &:hover,
+  :focus {
+    background-color: $primary-background-accent-color;
   }
 }
 
 .productItem {
+  border-bottom: 1px solid $primary-darkgrey-color;
   flex-basis: 100%;
   @include media(tablet) {
     flex-basis: calc((100% - 32px) / 2);
@@ -40,19 +55,14 @@
 }
 
 .listDesctop {
-  border-bottom: 1px solid $primary-darkgrey-color;
-  box-shadow: none;
-  transition:
-    border-bottom 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 300ms,
-    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-    border-bottom: none;
-    box-shadow:
-      0px 1px 6px rgba(46, 47, 66, 0.08),
-      0px 1px 1px rgba(46, 47, 66, 0.16),
-      0px 2px 1px rgba(46, 47, 66, 0.08);
+  @include media(desktop) {
+    border-bottom: 1px solid $primary-darkgrey-color;
+    box-shadow: none;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    &:hover,
+    :focus {
+      transform: scale(1.05);
+    }
   }
 }

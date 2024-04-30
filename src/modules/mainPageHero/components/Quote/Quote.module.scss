@@ -1,9 +1,10 @@
 .quote {
   align-self: flex-end;
   width: 100%;
+  font-family: $primary-font-family;
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5; //150%;
   letter-spacing: 0.04em;
   text-align: right;
 
@@ -12,12 +13,12 @@
   }
 
   @include media(tablet) {
-    max-width: 522px;
+    max-width: 462px;
   }
 
   @include media(desktop) {
     font-size: 18px;
-    line-height: 156%;
-    max-width: 586px;
+    line-height: 1.56; // 156%;
+    max-width: 520px;
   }
 }

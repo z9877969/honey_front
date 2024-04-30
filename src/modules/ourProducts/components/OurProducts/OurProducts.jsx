@@ -5,6 +5,7 @@ import style from './OurProducts.module.scss';
 import dbCategories from 'modules/ourProducts/data/dbCategories';
 import dbProducts from 'modules/ourProducts/data/dbProducts';
 import { useEffect, useState } from 'react';
+import SectionMain from 'shared/components/SectionMain/SectionMain';
 
 const OurProducts = () => {
   const [products, setProducts] = useState([]);
@@ -25,7 +26,7 @@ const OurProducts = () => {
   };
 
   return (
-    <section>
+    <SectionMain>
       <Container>
         <MainTitle
           title={'Наша продукція'}
@@ -38,7 +39,7 @@ const OurProducts = () => {
         />
         <ProductsList productsList={products} />
       </Container>
-    </section>
+    </SectionMain>
   );
 };
 
