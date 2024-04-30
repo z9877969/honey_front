@@ -5,9 +5,9 @@ import { OrderCheckoutPage } from 'modules/order';
 function App() {
   return (
     <>
-      {/* <SharedLayout>
+      <SharedLayout>
         <MainPage />
-      </SharedLayout> */}
+      </SharedLayout>
       <OrderCheckoutPage />
     </>
   );

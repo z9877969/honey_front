@@ -9,8 +9,6 @@ import s from './OrderForm.module.scss';
 
 const OrderForm = () => {
   const handleSubmit = (values, actions) => {
-    console.log(values);
-
     actions.resetForm();
   };
 
