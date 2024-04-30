@@ -14,7 +14,6 @@
 .honeyTitle {
     width: 213px;
     height: auto;
-    height: 32px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 32px;
@@ -45,7 +44,6 @@
 
     border-radius: 24px;
     background-color: $primary-background-accent-color;
-    // background-color: #f7f5ed;
 
     @include media(tablet) {
         gap: 32px;

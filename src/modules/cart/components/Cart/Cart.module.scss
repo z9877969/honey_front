@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(31, 27, 26, 0.5);
+  z-index: 100;
 }
 
 .modalContainer {
@@ -13,21 +14,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
   //   width: 375px;
-  // height: 100%;
   padding: 32px 20px 24px 20px;
+  padding-right: 0;
   border-radius: 0;
-  background-color: #fafafa;
+  background-color: $light-bg-color;
 
-  @media screen and (min-width: 768px) {
+  @include media(tablet) {
     // width: 672px;
     padding: 48px;
+    padding-right: 32px;
     border-radius: 24px;
-    background-color: #fafafa;
   }
 
-  @media screen and (min-width: 1440px) {
+  @include media(desktop) {
     // width: 1216px;
     padding: 64px;
+    padding-right: 48px;
   }
 }
 
@@ -40,19 +42,18 @@
   border: none;
   width: 32px;
   height: 32px;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color $animation-time-function;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: #ebb41c;
+    background-color: $primary-hover-color;
   }
 
-  @media screen and (min-width: 768px) {
+  @include media(tablet) {
     top: 24px;
     right: 24px;
     width: 40px;
@@ -61,440 +62,35 @@
 }
 
 .modalCloseIcon {
-  stroke: #111;
+  fill: $primary-text-color;
+  width: 32px;
+  height: 32px;
+
+  @include media(tablet) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @include media(desktop) {
+  }
 }
 
 .modalTitle {
+  @include font(32, 32);
   margin-bottom: 24px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: $secondary-font-family;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 1;
   letter-spacing: 0.02em;
   text-align: left;
-  color: #1f1b1a;
+  color: $primary-text-color;
 
-  @media screen and (min-width: 768px) {
+  @include media(tablet) {
+    @include font(60, 60);
     margin-bottom: 32px;
-    font-size: 60px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @include media(desktop) {
+    @include font(80, 80);
     margin-bottom: 64px;
-    font-size: 80px;
-  }
-}
-
-.listContainer {
-  height: 556px;
-  width: 355px;
-  overflow-y: auto;
-  margin-bottom: 20px;
-  // scrollbar-width: 4px;
-  // scrollbar-color: rgb(250, 207, 90) #f4f4f4; /* Track color and thumb color */
-
-  @media screen and (min-width: 768px) {
-    height: 628px;
-    width: 592px;
-    margin-bottom: 24px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    height: 536px;
-    width: 1106px;
-    margin-bottom: 32px;
-  }
-}
-
-.listContainer::-webkit-scrollbar {
-  width: 4px;
-}
-
-.listContainer::-webkit-scrollbar-track {
-  background-color: #f7f5ed;
-  height: 268px;
-  border-radius: 6px;
-}
-
-.listContainer::-webkit-scrollbar-thumb {
-  background-color: #facf5a;
-  height: 200px;
-  border-radius: 6px;
-}
-
-.listBorderWrapper {
-  height: 556px;
-  width: 335px;
-  border-bottom: 1px solid #858585;
-
-  @media screen and (min-width: 768px) {
-    height: 628px;
-    width: 576px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    height: 536px;
-    width: 1088px;
-  }
-}
-
-.list {
-  padding: 0;
-  margin: 0;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-}
-
-.listItem {
-  height: 192px;
-  width: 335px;
-  margin-bottom: 20px;
-  border-radius: 24px;
-  background-color: #f6f6f6;
-  display: flex;
-  border-radius: 24px;
-  overflow: hidden;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: 768px) {
-    height: 216px;
-    width: 576px;
-    margin-bottom: 24px;
-    border-radius: 24px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1088px;
-  }
-}
-
-.imgWrapper {
-  border-radius: 24px;
-  overflow: hidden;
-
-  @media screen and (min-width: 768px) {
-  }
-}
-
-.itemImg {
-  width: 80px;
-  height: 80px;
-  border-radius: 24px;
-  overflow: hidden;
-
-  @media screen and (min-width: 768px) {
-    width: 204px;
-    height: 216px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 216px;
-  }
-}
-
-.descriptionWrapper {
-  padding: 16px;
-  position: relative;
-
-  @media screen and (min-width: 768px) {
-    padding: 16px 16px 16px 24px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding: 24px 24px 24px 32px;
-    flex-grow: 1;
-  }
-}
-
-.itemTitle {
-  width: 223px;
-  height: 56px;
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.55556;
-  letter-spacing: 0.02em;
-  color: #1f1b1a;
-  margin-bottom: 8px;
-
-  @media screen and (min-width: 768px) {
-    width: 332px;
-    height: 56px;
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 16px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 524px;
-    height: 32px;
-    font-size: 24px;
-    line-height: 1.33333;
-  }
-}
-
-.itemVolume {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 8px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #1f1b1a;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 16px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-}
-
-.itemQuantityWrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 18px;
-  }
-}
-
-.itemQuantityText {
-  display: none;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.55556;
-  letter-spacing: 0.04em;
-  color: #1f1b1a;
-  margin-right: 32px;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-    display: block;
-  }
-}
-
-.quantityBtn {
-  width: 28px;
-  height: 28px;
-  background-color: transparent;
-  border-radius: 50%;
-  border-color: grey;
-  outline: none;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-align: center;
-  color: #1f1b1a;
-
-  @media screen and (min-width: 768px) {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-}
-
-.itemQuantity {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-align: center;
-  color: #1f1b1a;
-  margin-left: 8px;
-  margin-right: 8px;
-
-  @media screen and (min-width: 768px) {
-    line-height: 1.55556;
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-}
-
-.itemBottomWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.itemPrice {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #1f1b1a;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-}
-
-.deleteBtn {
-  width: 24px;
-  height: 24px;
-  // position: absolute;
-  // bottom: 16px;
-  // right: 16px;
-  background-color: transparent;
-  outline: none;
-  border: none;
-
-  @media screen and (min-width: 768px) {
-    width: 28px;
-    height: 28px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    bottom: 24px;
-    right: 24px;
-  }
-}
-
-.modalBottomWrapper {
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.linkWrapper {
-  margin-bottom: 12px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 16px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 0;
-  }
-}
-
-.modalLink {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #1f1b1a;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: #ebb41c;
-  }
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-}
-
-.modalSubmitWrapper {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 1440px) {
-    gap: 32px;
-  }
-}
-
-.totalPrice {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
-  color: #1f1b1a;
-  text-align: right;
-  margin-bottom: 12px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 24px;
-    line-height: 1.33333;
-    margin-bottom: 0;
-  }
-}
-
-.modalSubmitBtn {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #1f1b1a;
-  background: #facf5a;
-  border-radius: 12px;
-  padding: 12px 32px;
-  width: 100%;
-  height: 48px;
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover,
-  &:focus,
-  &:active {
-    background: #ebb41c;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 255px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 1.55556;
-    width: 279px;
-    height: 52px;
   }
 }

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import s from './GoBackButton.module.scss';
-import sprite from '../../icons/sprite.svg';
+import { icons as sprite } from 'shared/icons';
 
 const GoBackButton = ({
   id,

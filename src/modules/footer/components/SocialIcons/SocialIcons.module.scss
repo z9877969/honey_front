@@ -1,15 +1,19 @@
-.title {
-  width: 208px;
-  height: 40px;
+.iconsList {
   display: flex;
-  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
 
-  @include media(tablet) {
-    width: 240px;
-    height: 48px;
-  }
-  @include media(desktop) {
-    margin-bottom: 73px;
-    margin-top: 64px;
+a:focus .icon {
+  fill: $primary-hover-color;
+}
+
+.icon {
+  fill: $primary-accent-color;
+
+  @media (hover: hover) {
+    &:hover {
+      fill: $primary-hover-color;
+    }
   }
 }

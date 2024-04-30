@@ -1,6 +1,5 @@
-import s from './HoneyFeature.module.scss';
-
 import sota from '../../images/ourHoneySet.svg';
+import s from './HoneyFeature.module.scss';
 
 const HoneyFeature = ({ svg, firstLine, secondLine }) => {
   return (

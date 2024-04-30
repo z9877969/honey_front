@@ -1,8 +1,78 @@
 .footer {
-  font-size: 40px;
+  font-size: 16px;
   width: 100%;
+  color: $primary-white-color;
   text-align: left;
   padding-top: 48px;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   background-color: $dark-bg-color;
+
+  @include media(tablet) {
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+
+  @include media(desktop) {
+    padding-top: 80px;
+  }
+}
+
+.container {
+  @include media(desktop) {
+    padding: 0 112px;
+  }
+}
+
+.contentWrap {
+  @include media(tablet) {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+}
+
+.socialWrap {
+  margin-top: 32px;
+
+  @include media(tablet) {
+    margin-top: 0;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  p {
+    color: $primary-white-color;
+  }
+
+  @include media(tablet) {
+    gap: 12px;
+
+    svg {
+      height: 36px;
+      width: 36px;
+    }
+  }
+}
+
+.createdByBtn {
+  @include font(16, 28);
+  font-family: $primary-font-family;
+  display: block;
+  max-width: 129px;
+  margin: 40px auto 0;
+  text-decoration: underline;
+
+  @include media(tablet) {
+    @include font(18, 28);
+    max-width: 145px;
+    margin-top: 32px;
+  }
+
+  @include media(desktop) {
+    margin-top: 24px;
+  }
 }

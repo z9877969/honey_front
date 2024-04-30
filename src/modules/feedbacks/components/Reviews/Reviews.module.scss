@@ -1,13 +1,99 @@
+.prevButton {
+  position: absolute;
+  border-radius: 50%;
+  background-color: none;
+  top: 600px;
+  left: 140px;
+  z-index: 2;
+
+  @include media(tablet) {
+    position: absolute;
+    border-radius: 50%;
+    background-color: none;
+    top: 375px;
+    left: 40px;
+    z-index: 2;
+  }
+
+  @include media(desktop) {
+    position: absolute;
+    border-radius: 50%;
+    background-color: none;
+    top: 450px;
+    left: 125px;
+    z-index: 2;
+  }
+}
+
+.prevButton:hover {
+  background-color: $primary-white-color;
+}
+
+.nextButton {
+  position: absolute;
+  border-radius: 50%;
+  background-color: none;
+  top: 600px;
+  right: 140px;
+  z-index: 1;
+
+  @include media(tablet) {
+    position: absolute;
+    border-radius: 50%;
+    background-color: none;
+    top: 375px;
+    right: 40px;
+    z-index: 1;
+  }
+
+  @include media(desktop) {
+    position: absolute;
+    border-radius: 50%;
+    background-color: none;
+    top: 450px;
+    right: 125px;
+    z-index: 1;
+  }
+}
+
+.nextButton:hover {
+  background-color: $primary-white-color;
+}
+
 .section {
-  padding: 148px 112px;
+  position: relative;
+  padding: 40px 20px;
+
+  @include media(tablet) {
+    position: relative;
+    padding: 60px 32px;
+  }
+  @include media(desktop) {
+    position: relative;
+    padding: 74px 112px;
+  }
 }
 
 .sectionHeader {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 64px;
-  font-size: 80px;
-  font-weight: 600px;
-  line-height: 80px;
+  margin-bottom: 32px;
+  @include font(32, 32);
+
+  @include media(tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+    @include font(60, 60);
+  }
+  @include media(desktop) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 64px;
+    font-weight: 600px;
+    @include font(80, 80);
+  }
 }
