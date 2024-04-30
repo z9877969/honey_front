@@ -21,6 +21,7 @@
     color: inherit;
     width: 32px;
     height: 32px;
+    cursor: pointer;
 
     &:nth-child(1) {
       margin-top: 16px;
@@ -35,6 +36,7 @@
     width: 32px;
     height: 32px;
     fill: $primary-accent-color;
+    transition: fill $animation-duration $animation-time-function;
 
     &:hover {
       fill: $primary-hover-color;
