@@ -37,7 +37,9 @@ const AboutUs = () => {
   return (
     <SectionMain>
       <Container className={css.container}>
-        <h2 className={css.aboutUsTitle}>Про нас</h2>
+        <h2 id="aboutUS" className={css.aboutUsTitle}>
+          Про нас
+        </h2>
 
         <div className={css.companyInfo}>
           <div className={css.aboutBlock1}>

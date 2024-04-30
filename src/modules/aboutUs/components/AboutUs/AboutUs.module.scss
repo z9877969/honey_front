@@ -82,7 +82,7 @@
   color: rgb(31, 27, 26);
   font-family: $primary-font-family;
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.039em;
   text-align: left;
   @include font(16, 24);
   @include media(desktop) {
@@ -151,7 +151,7 @@
 .quote {
   position: relative;
   @include media(tablet) {
-    width: 340.5px;
+    width: 340px;
     margin-left: 32px;
     &::before {
       content: ' ';
