@@ -40,9 +40,9 @@ const ProductsList = ({ currentCategory }) => {
 
   if (!isDesktop) {
     return (
-      <div>
+      <>
         {filteredProducts.length > 0 && (
-          <ul className={style.filteredProducts}>
+          <ul className={style.productsList}>
             {filteredProducts.map((product) => (
               <li key={product.id} className={style.productItem}>
                 <ProductItem product={product} />
@@ -50,7 +50,7 @@ const ProductsList = ({ currentCategory }) => {
             ))}
           </ul>
         )}
-      </div>
+      </>
     );
   }
 
