@@ -5,7 +5,7 @@ const OrderHeader = () => {
   return (
     <div className={s.orderHeader}>
       <Container className={s.orderContainer}>
-        <Logo linkClassName={s.orderLogo} id="logo" />
+        <Logo linkClassName={s.orderLogo} />
       </Container>
     </div>
   );

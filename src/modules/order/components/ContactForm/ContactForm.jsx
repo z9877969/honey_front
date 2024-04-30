@@ -1,7 +1,7 @@
 import { useId } from 'react';
 import InputField from '../shared/InputField/InputField';
-import s from './ContactForm.module.scss';
 import OrderTitle from '../shared/OrderTitle/OrderTitle';
+import s from './ContactForm.module.scss';
 
 const ContactForm = () => {
   const formId = {

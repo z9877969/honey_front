@@ -5,9 +5,9 @@ import { SharedLayout } from 'shared/components';
 function App() {
   return (
     <>
-      <SharedLayout>
+      {/* <SharedLayout>
         <MainPage />
-      </SharedLayout>
+      </SharedLayout> */}
       <OrderCheckoutPage />
     </>
   );

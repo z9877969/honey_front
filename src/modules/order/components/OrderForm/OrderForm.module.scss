@@ -13,9 +13,10 @@
 .orderButton {
   height: 48px;
   border-radius: 12px;
-  background: $primary-accent-color;
+  background-color: $primary-accent-color;
   font-weight: 600;
   letter-spacing: 0.04em;
+  transition: background-color $animation-duration $animation-time-function;
   @include media(tablet) {
     width: 332px;
     margin-left: auto;
@@ -25,4 +26,8 @@
     height: 52px;
     @include font(18, 28);
   }
+}
+.orderButton:hover,
+.orderButton:active {
+  background-color: $primary-hover-color;
 }

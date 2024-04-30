@@ -1,14 +1,11 @@
 import { Formik, Form } from 'formik';
-
 import {
   contactFormValidationSchema,
   orderFormInitialValues,
-} from 'modules/order/data';
-
+} from 'modules/order/data/formikData';
 import { Button } from 'shared/components';
 import ContactForm from '../ContactForm/ContactForm';
 import AddressForm from '../AddressForm/AddressForm';
-
 import s from './OrderForm.module.scss';
 
 const OrderForm = () => {

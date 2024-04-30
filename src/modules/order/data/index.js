@@ -1,3 +1,5 @@
-export { deliveryTypeOptions } from './data';
-export { orderFormInitialValues } from './data';
-export { contactFormValidationSchema } from './data';
+export { orderFormInitialValues } from './formikData';
+export { contactFormValidationSchema } from './formikData';
+export { deliveryTypeOptions } from './selectOptions';
+export { defaultOptionsForLocationSelect } from './selectOptions';
+export { selectStyles } from './selectStyles';
