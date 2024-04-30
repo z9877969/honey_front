@@ -1,16 +1,16 @@
-import { useModal } from 'hooks/useModal';
-import { useCallback } from 'react';
 import creatorsData from '../../data/creators.json';
 import CreatorCard from '../CreatorCard/CreatorCard';
 import s from './CreatedByPopup.module.scss';
 import IconButton from 'shared/components/IconButton/IconButton';
 
-const CreatedByPopup = () => {
-  const setModal = useModal();
-  const closeModal = useCallback(() => {
-    setModal();
-  }, [setModal]);
+//TODO: tabl and desc styles
+//TODO: put evth into commponents
+//TODO: Animations duration -  SocIcons, links
+//TODO: Check everything
+//DONE: put img into div and add LI icon, style div, remove img styles
+//DONE: wrap cards into links + hover effects
 
+const CreatedByPopup = ({ onClose }) => {
   const { creators } = creatorsData;
 
   return (
@@ -26,11 +26,8 @@ const CreatedByPopup = () => {
         btnClassName={s.closeBtn}
         iconHeight={32}
         iconWidth={32}
-        onClick={closeModal}
+        onClick={onClose}
       />
-      {/* <button className={s.closeBtn} type="button" onClick={closeModal}>
-        X
-      </button> */}
       <ul className={s.cardList}>
         {creators.map((item) => {
           return <CreatorCard key={item.id} data={item} />;
