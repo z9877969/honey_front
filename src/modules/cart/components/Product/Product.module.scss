@@ -1,0 +1,202 @@
+.imgWrapper {
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media(tablet) {
+  }
+}
+
+.itemImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @include media(tablet) {
+    width: 204px;
+    height: 216px;
+  }
+
+  @include media(desktop) {
+    width: 216px;
+  }
+}
+
+.descriptionWrapper {
+  padding: 16px;
+  position: relative;
+
+  @include media(tablet) {
+    padding: 16px 16px 16px 24px;
+  }
+
+  @include media(desktop) {
+    padding: 24px 24px 24px 32px;
+    flex-grow: 1;
+  }
+}
+
+.itemTitle {
+  width: 223px;
+  height: 56px;
+  font-family: $secondary-font-family;
+  font-weight: 600;
+  @include font(18, 28);
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+  margin-bottom: 8px;
+
+  @include media(tablet) {
+    width: 332px;
+    height: 56px;
+    @include font(20, 28);
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    width: 524px;
+    height: 32px;
+    @include font(24, 32);
+  }
+}
+
+.itemVolume {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  @include font(16, 24);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+
+  @include media(tablet) {
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    @include font(18, 28);
+  }
+}
+
+.itemQuantityWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  @include media(tablet) {
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 18px;
+  }
+}
+
+.itemQuantityText {
+  display: none;
+
+  @include media(desktop) {
+    display: block;
+    font-family: $primary-font-family;
+    font-weight: 600;
+    @include font(18, 28);
+    letter-spacing: 0.04em;
+    color: $primary-text-color;
+    margin-right: 32px;
+  }
+}
+
+.quantityBtn {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+  }
+}
+
+.quantityIcon {
+  width: 32px;
+  height: 32px;
+  stroke: $primary-text-color;
+}
+
+.itemQuantity {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  @include font(16, 24);
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: $primary-text-color;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  @include media(tablet) {
+    @include font(18, 28);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.itemBottomWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemPrice {
+  font-family: $primary-font-family;
+  font-weight: 600;
+  @include font(16, 24);
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+    @include font(18, 28);
+  }
+}
+
+.deleteBtn {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media(tablet) {
+    width: 28px;
+    height: 28px;
+  }
+
+  @include media(desktop) {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
+.bucketIcon {
+  width: 24px;
+  height: 24px;
+  stroke: $primary-darkgrey-color;
+
+  @include media(tablet) {
+    width: 28px;
+    height: 28px;
+  }
+
+  @include media(desktop) {
+  }
+}

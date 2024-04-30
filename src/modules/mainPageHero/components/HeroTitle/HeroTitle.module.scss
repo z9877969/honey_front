@@ -4,13 +4,14 @@
   font-family: $secondary-font-family;
   font-weight: 600;
   font-size: 38px;
-  line-height: 116%;
+  line-height: 1.16; //116%;
   letter-spacing: 0.02em;
   color: $primary-text-color;
+  width: 100%;
 
   @include media(tablet) {
     font-size: 80px;
-    line-height: 110%;
+    line-height: 1.1; // 110%;
     padding-top: 64px;
     padding-bottom: 48px;
   }
@@ -19,6 +20,8 @@
     padding-top: 84px;
     padding-bottom: 64px;
     font-size: 106px;
-    line-height: 112%;
+    line-height: 1.12; //112%;
+    letter-spacing: 0.008em;
+    white-space: pre-line;
   }
 }

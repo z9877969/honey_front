@@ -1,0 +1,233 @@
+.listContainer {
+  height: 556px;
+  width: 355px;
+  overflow-y: auto;
+  // scrollbar-width: thin;
+  // scrollbar-color: $primary-accent-color $primary-background-accent-color;
+
+  @include media(tablet) {
+    height: 628px;
+    width: 592px;
+  }
+
+  @include media(desktop) {
+    height: 536px;
+    width: 1106px;
+  }
+}
+
+.listContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.listContainer::-webkit-scrollbar-track {
+  background-color: $primary-background-accent-color;
+  height: 268px;
+  border-radius: 6px;
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+  background-color: $primary-accent-color;
+  height: 200px;
+  border-radius: 6px;
+}
+
+.listBorderWrapper {
+  height: 556px;
+  width: 335px;
+  border-bottom: 1px solid $primary-darkgrey-color;
+
+  @include media(tablet) {
+    height: 628px;
+    width: 576px;
+  }
+
+  @include media(desktop) {
+    height: 536px;
+    width: 1088px;
+  }
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+
+  @include media(tablet) {
+  }
+
+  @include media(desktop) {
+  }
+}
+
+.listItem {
+  height: 192px;
+  width: 335px;
+  margin-bottom: 20px;
+  border-radius: 24px;
+  background-color: $primary-lightgrey-color;
+  display: flex;
+  border-radius: 24px;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media(tablet) {
+    height: 216px;
+    width: 576px;
+    margin-bottom: 24px;
+    border-radius: 24px;
+  }
+
+  @include media(desktop) {
+    width: 1088px;
+  }
+}
+
+.listBorder {
+  height: 1px;
+  width: 335px;
+  background-color: $primary-darkgrey-color;
+  margin-bottom: 20px;
+
+  @include media(tablet) {
+    width: 576px;
+    margin-bottom: 24px;
+  }
+
+  @include media(desktop) {
+    width: 1088px;
+    margin-bottom: 32px;
+  }
+}
+
+.modalBottomWrapper {
+  padding-right: 20px;
+
+  @include media(tablet) {
+    padding-right: 16px;
+  }
+
+  @include media(desktop) {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 16px;
+  }
+}
+
+.linkWrapper {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+
+  @include media(tablet) {
+    margin-bottom: 16px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.modalLink {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  @include font(16, 24);
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition:
+    color $animation-time-function,
+    fill $animation-time-function;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary-hover-color;
+    fill: $primary-hover-color;
+  }
+
+  @include media(desktop) {
+    @include font(18, 28);
+  }
+}
+
+.backArrowIcon {
+  width: 24px;
+  height: 24px;
+
+  @include media(desktop) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.modalSubmitWrapper {
+  @include media(tablet) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include media(desktop) {
+    gap: 32px;
+  }
+}
+
+.totalPrice {
+  font-family: $secondary-font-family;
+  font-weight: 600;
+  @include font(20, 28);
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+  text-align: right;
+  margin-bottom: 12px;
+
+  @include media(tablet) {
+    margin-bottom: 0;
+  }
+
+  @include media(desktop) {
+    @include font(24, 32);
+    margin-bottom: 0;
+  }
+}
+
+.modalSubmitBtn {
+  font-family: $primary-font-family;
+  font-weight: 600;
+  @include font(16, 24);
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+  background: $primary-accent-color;
+  border-radius: 12px;
+  padding: 12px 32px;
+  width: 100%;
+  height: 48px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color $animation-time-function;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $primary-hover-color;
+  }
+
+  @include media(tablet) {
+    width: 261px;
+  }
+
+  @include media(desktop) {
+    @include font(18, 28);
+    width: 282px;
+    height: 52px;
+  }
+}
