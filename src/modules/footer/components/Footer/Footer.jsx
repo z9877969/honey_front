@@ -8,9 +8,11 @@ import CreatedByPopup from 'modules/createdBy/components/CreatedByPopup/CreatedB
 
 const Footer = () => {
   const setModal = useModal();
+
   const closeModal = useCallback(() => {
     setModal();
   }, [setModal]);
+
   const openModal = useCallback(() => {
     setModal(<CreatedByPopup onClose={closeModal} />);
   }, [setModal, closeModal]);

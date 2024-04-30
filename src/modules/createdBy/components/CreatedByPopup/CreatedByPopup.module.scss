@@ -55,7 +55,7 @@
   &:focus {
     background-color: $primary-hover-color;
   }
-  transition: background-color $animation-time-function;
+  transition: background-color $animation-duration $animation-time-function;
 
   @media (hover: hover) {
     &:hover {
