@@ -26,7 +26,7 @@ const OurProducts = () => {
   };
 
   return (
-    <SectionMain>
+    <SectionMain id="ourProduct">
       <Container>
         <MainTitle
           title={'Наша продукція'}
