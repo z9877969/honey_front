@@ -1,0 +1,57 @@
+.contactsWrapper {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  label {
+    @include font(16, 24);
+    margin-bottom: 8px;
+    font-style: normal;
+    letter-spacing: 0.04em;
+
+    @include media(desktop) {
+      @include font(18, 28);
+    }
+  }
+
+  label > span {
+    color: $error-input-color;
+  }
+
+  input {
+    @include font(16, 24);
+    height: 48px;
+    padding-left: 16px;
+    border-radius: 12px;
+    border: none;
+    background: $primary-lightgrey-color;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    outline: none;
+
+    @include media(desktop) {
+      height: 52px;
+      @include font(18, 28);
+    }
+  }
+  input:placeholder {
+    color: $primary-black-color;
+  }
+}
+.inputWrapper.invalid > input {
+  margin-bottom: 4px;
+}
+
+.inputWrapper.invalid > span {
+  @include font(14, 20);
+  color: $error-input-color;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}

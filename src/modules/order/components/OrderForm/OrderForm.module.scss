@@ -1,0 +1,28 @@
+.orderForm {
+  @include media(desktop) {
+    width: calc((100% - 32px) / 2);
+  }
+}
+.userAgreement {
+  @include font(12, 16);
+  font-family: $primary-font-family;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+}
+.orderButton {
+  height: 48px;
+  border-radius: 12px;
+  background: $primary-accent-color;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  @include media(tablet) {
+    width: 332px;
+    margin-left: auto;
+  }
+  @include media(desktop) {
+    width: 279px;
+    height: 52px;
+    @include font(18, 28);
+  }
+}
