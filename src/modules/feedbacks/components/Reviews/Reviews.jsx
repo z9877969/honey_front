@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useState } from 'react';
 import { icons } from 'shared/icons';
+import SectionMain from 'shared/components/SectionMain/SectionMain';
 // import icon from '../../../../shared/icons/sprite.svg';
 // import { useEffect } from 'react';
 // import { fetchReviews } from 'modules/feedbacks/service/service';
@@ -17,7 +18,7 @@ const Reviews = () => {
   const [swiper, setSwiper] = useState(null);
 
   return (
-    <section>
+    <SectionMain id="reviews">
       <Container className={s.section}>
         <MainTitle title={'Відгуки покупців'} className={s.sectionHeader} />
 
@@ -49,7 +50,7 @@ const Reviews = () => {
           </svg>
         </button>
       </Container>
-    </section>
+    </SectionMain>
   );
 };
 
