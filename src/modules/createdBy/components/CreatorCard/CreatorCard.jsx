@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import s from './CreatorCard.module.scss';
 import cardEmptyPhoto from '../../images/cardPhoto_empty.png';
+import { icons as sprite } from 'shared/icons';
+
 const CreatorCard = ({ data }) => {
   return (
     <li>
@@ -11,6 +13,10 @@ const CreatorCard = ({ data }) => {
             src={data.picture === '' ? cardEmptyPhoto : data.picture}
             alt={`${data.name} photo`}
           />
+
+          <svg width={16} height={16} className={s.cardImgIcon}>
+            <use xlinkHref={`${sprite}#linkedin`}></use>
+          </svg>
         </div>
         <div className={s.infoWrap}>
           <p className={s.cardText}>{data.name}</p>
