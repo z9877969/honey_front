@@ -29,12 +29,13 @@ import {
   desktopHoneycomb2_1x,
   desktopHoneycomb2_2x,
 } from '../../images/imageImports';
+import SectionMain from 'shared/components/SectionMain/SectionMain';
 
 import css from './AboutUs.module.scss';
 
 const AboutUs = () => {
   return (
-    <section className={css.section}>
+    <SectionMain>
       <Container className={css.container}>
         <h2 className={css.aboutUsTitle}>Про нас</h2>
 
@@ -181,7 +182,7 @@ const AboutUs = () => {
           </div>
         </div>
       </Container>
-    </section>
+    </SectionMain>
   );
 };
 
