@@ -21,7 +21,7 @@ const OurProducts = () => {
   }, [dispatch]);
 
   return (
-    <SectionMain id="ourProduct">
+    <SectionMain id="ourProducts">
       <Container>
         <MainTitle
           title={'Наша продукція'}

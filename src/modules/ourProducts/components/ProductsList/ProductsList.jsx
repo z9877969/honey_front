@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
 import { icons } from 'shared/icons';
-// import { selectIsLoading } from '@redux/products/selectors';
 import { useSelector } from 'react-redux';
 import { selectContacts } from '@redux/products/selectors';
 
@@ -11,13 +10,12 @@ const ProductsList = ({ currentCategory }) => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
   const productsList = useSelector(selectContacts);
-  // const isLoading = useSelector(selectIsLoading);
-
-  const showArrows = productsList.length > 3;
 
   const filteredProducts = productsList.filter(
     (product) => product.category === currentCategory
   );
+
+  const showArrows = filteredProducts.length > 3;
 
   useEffect(() => {
     const handleResize = () => {

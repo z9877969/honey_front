@@ -7,6 +7,8 @@ const ProductItem = ({ product }) => {
   const firstPriceValue = product.variants[0].price;
   const lastpriceValue = product.variants[product.variants.length - 1].price;
 
+  const checkLength = product.variants.length !== 1;
+
   return (
     <div className={style.productInfoBlock}>
       <img
@@ -19,13 +21,15 @@ const ProductItem = ({ product }) => {
         <div className={style.infoThumb}>
           <h4 className={style.titleInfo}>Вага:</h4>{' '}
           <p className={style.weight}>
-            {firstWeightValue} - {lastWeightValue}
+            <span>{firstWeightValue}</span>
+            {checkLength && <span> - {lastWeightValue}</span>}
           </p>
         </div>
         <div className={style.infoThumb}>
           <h4 className={style.titleInfo}>Ціна:</h4>{' '}
           <p className={style.price}>
-            {firstPriceValue} - {lastpriceValue}
+            <span>{firstPriceValue}</span>
+            {checkLength && <span> - {lastpriceValue}</span>}
           </p>
         </div>
       </div>
