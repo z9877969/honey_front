@@ -112,27 +112,6 @@ const creatorsData = [
     picture: anastasiiaPostiliak,
     link: 'https://www.linkedin.com/in/anastasiia-postilniak/',
   },
-  {
-    id: '14',
-    name: 'Name Surname',
-    position: 'Position',
-    picture: '',
-    link: 'https://www.linkedin.com/',
-  },
-  {
-    id: '15',
-    name: 'Name Surname',
-    position: 'Position',
-    picture: '',
-    link: 'https://www.linkedin.com/',
-  },
-  {
-    id: '16',
-    name: 'Name Surname',
-    position: 'Position',
-    picture: '',
-    link: 'https://www.linkedin.com/',
-  },
 ];
 
 export default creatorsData;
