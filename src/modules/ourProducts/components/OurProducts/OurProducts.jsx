@@ -5,20 +5,32 @@ import style from './OurProducts.module.scss';
 import dbCategories from 'modules/ourProducts/data/dbCategories';
 import { useEffect, useState } from 'react';
 import SectionMain from 'shared/components/SectionMain/SectionMain';
-import { useDispatch } from 'react-redux';
 import { getProducts } from 'modules/ourProducts/service/service';
+import { icons as sprite } from 'shared/icons';
 
 const OurProducts = () => {
   const [currentCategory, setCurrentCategory] = useState('Мед');
-  const dispatch = useDispatch();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleCategoryChange = (category) => {
     setCurrentCategory(category);
   };
 
   useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+    const fetchProducts = async () => {
+      try {
+        const productsData = await getProducts();
+        setProducts(productsData);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        throw new Error(error.message);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <SectionMain id="ourProducts">
@@ -32,7 +44,15 @@ const OurProducts = () => {
           chooseCategory={handleCategoryChange}
           currentCategory={currentCategory}
         />
-        <ProductsList currentCategory={currentCategory} />
+        {loading ? (
+          <div className={style.loaderContainer}>
+            <svg width="48" height="48" className={style.loader}>
+              <use xlinkHref={`${sprite}#logo`} />
+            </svg>
+          </div>
+        ) : (
+          <ProductsList currentCategory={currentCategory} data={products} />
+        )}
       </Container>
     </SectionMain>
   );

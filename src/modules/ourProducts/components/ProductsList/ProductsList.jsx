@@ -2,16 +2,12 @@ import { useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
 import { icons } from 'shared/icons';
-import { useSelector } from 'react-redux';
-import { selectContacts } from '@redux/products/selectors';
 
-const ProductsList = ({ currentCategory }) => {
+const ProductsList = ({ currentCategory, data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
-  const productsList = useSelector(selectContacts);
-
-  const filteredProducts = productsList.filter(
+  const filteredProducts = data.filter(
     (product) => product.category === currentCategory
   );
 

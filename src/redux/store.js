@@ -9,12 +9,10 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { persistedCartReducer } from './cart/cartSlice';
-import { productsReducer } from './products/productsSlice';
 
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
-    products: productsReducer,
   },
   middleware: (gdm) =>
     gdm({
