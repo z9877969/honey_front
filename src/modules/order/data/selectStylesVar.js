@@ -10,4 +10,5 @@ export const colorVariables = {
   placeholderColor: '#1f1b1aa6',
   primaryBlackColor: '#1f1b1a',
   primaryYellowColor: '#EBB41C',
+  scrollbarColor: '#facf5a1a',
 };

@@ -7,6 +7,7 @@ const {
   placeholderColor,
   primaryBlackColor,
   primaryYellowColor,
+  scrollbarColor,
 } = colorVariables;
 
 export const selectStyles = {
@@ -49,7 +50,20 @@ export const selectStyles = {
     height: 'fit-content',
     padding: 0,
   }),
-  menuList: (baseStyles) => ({ ...baseStyles, maxHeight: 362 }),
+  menuList: (baseStyles) => ({
+    ...baseStyles,
+    maxHeight: 362,
+    '&::-webkit-scrollbar': {
+      width: 4,
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: scrollbarColor,
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: primaryYellowColor,
+      borderRadius: 6,
+    },
+  }),
   input: (baseStyles) => ({
     ...baseStyles,
     ...fontStyles,

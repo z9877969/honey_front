@@ -37,12 +37,12 @@ const AddressForm = ({
         errorClassName={s.error}
         component={
           <Select
-            onMenuClose={() => setFieldTouched('deliveryType', true)}
             placeholder="Доставка до відділення"
             value={!deliveryType ? [] : valueForSelect.deliveryType}
             options={deliveryTypeOptions}
             components={{ DropdownIndicator }}
             styles={selectStyles}
+            onMenuClose={() => setFieldTouched('deliveryType', true)}
             onChange={(selectOption) => {
               setFieldValue('deliveryType', selectOption.value);
               setFieldValue('location', '');
@@ -62,7 +62,6 @@ const AddressForm = ({
         errorClassName={s.error}
         component={
           <AsyncSelect
-            onMenuClose={() => setFieldTouched('location', true)}
             isDisabled={!deliveryType}
             placeholder="Оберіть населений пункт"
             value={!deliveryType ? [] : valueForSelect.locationSelect}
@@ -73,6 +72,7 @@ const AddressForm = ({
             }
             components={{ DropdownIndicator }}
             styles={selectStyles}
+            onMenuClose={() => setFieldTouched('location', true)}
             onChange={(selectOption) => {
               setFieldValue('location', selectOption.value);
               setFieldValue('address', '');
@@ -99,7 +99,6 @@ const AddressForm = ({
           errorClassName={s.error}
           component={
             <AsyncSelect
-              onMenuClose={() => setFieldTouched('address', true)}
               isDisabled={!cityId}
               placeholder="Оберіть відділення"
               value={!deliveryType ? [] : valueForSelect.addressSelect}
@@ -110,6 +109,7 @@ const AddressForm = ({
               }
               components={{ DropdownIndicator }}
               styles={selectStyles}
+              onMenuClose={() => setFieldTouched('address', true)}
               onChange={(selectOption) => {
                 setFieldValue('address', selectOption.value);
                 setValueForSelect((prev) => ({
