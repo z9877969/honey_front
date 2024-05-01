@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectProducts } from '@redux/cart/cartSlice';
+import { selectProducts, selectTotalPrice } from '@redux/cart/cartSlice';
 import {
+  addOrUpdateProduct,
   deleteProduct,
-  increaseQuantity,
   decreaseQuantity,
 } from '@redux/cart/cartSlice';
-// import { Container } from "shared/components";
+import { ModalBackdrop } from 'shared/components';
 import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import sprite from '../../../../shared/icons/sprite.svg';
@@ -15,18 +15,15 @@ import s from './Cart.module.scss';
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(true);
   const products = useSelector(selectProducts);
+  const totalPrice = useSelector(selectTotalPrice);
   const dispatch = useDispatch();
-
-  const totalPrice = products.reduce((acc, el) => {
-    return acc + el.price * el.quantity;
-  }, 0);
 
   const handleClose = () => {
     setIsOpen(false);
   };
 
-  const handleIncrease = (id) => {
-    dispatch(increaseQuantity(id));
+  const handleAddOrUpdate = (id) => {
+    dispatch(addOrUpdateProduct({ id: id, quantity: 1 }));
   };
 
   const handleDecrease = (id) => {
@@ -48,34 +45,32 @@ const Cart = () => {
 
   return (
     isOpen && (
-      <section>
-        <div className={s.backdrop}>
-          <div className={s.modalContainer}>
-            <button
-              className={s.modalCloseBtn}
-              type="button"
-              onClick={handleClose}
-            >
-              <svg className={s.modalCloseIcon}>
-                <use xlinkHref={`${sprite}#cross-close`}></use>
-              </svg>
-            </button>
-            <h2 className={s.modalTitle}>Ваш кошик</h2>
-            {products.length > 0 ? (
-              <CartContainer
-                products={products}
-                handleIncrease={handleIncrease}
-                handleDecrease={handleDecrease}
-                handleDelete={handleDelete}
-                handleBackLink={handleBackLink}
-                totalPrice={totalPrice}
-              />
-            ) : (
-              <EmptyCart handleBackButton={handleBackButton} />
-            )}
-          </div>
+      <ModalBackdrop>
+        <div className={s.modalContainer}>
+          <button
+            className={s.modalCloseBtn}
+            type="button"
+            onClick={handleClose}
+          >
+            <svg className={s.modalCloseIcon}>
+              <use xlinkHref={`${sprite}#cross-close`}></use>
+            </svg>
+          </button>
+          <h2 className={s.modalTitle}>Ваш кошик</h2>
+          {products.length > 0 ? (
+            <CartContainer
+              products={products}
+              handleIncrease={handleAddOrUpdate}
+              handleDecrease={handleDecrease}
+              handleDelete={handleDelete}
+              handleBackLink={handleBackLink}
+              totalPrice={totalPrice}
+            />
+          ) : (
+            <EmptyCart handleBackButton={handleBackButton} />
+          )}
         </div>
-      </section>
+      </ModalBackdrop>
     )
   );
 };

@@ -48,22 +48,18 @@ const cartSlice = createSlice({
         price: 250,
       },
     ],
-    // totalPrice: 0,
   },
   reducers: {
-    addProduct(state, action) {
-      state.products.push(action.payload);
-    },
-    deleteProduct(state, action) {
-      state.products = state.products.filter(
-        (product) => product.id !== action.payload
+    addOrUpdateProduct(state, action) {
+      const { id, quantity } = action.payload;
+      const existingProduct = state.products.find(
+        (product) => product.id === id
       );
-    },
-    increaseQuantity(state, action) {
-      const productId = action.payload;
-      const product = state.products.find((prod) => prod.id === productId);
-      if (product) {
-        product.quantity += 1;
+
+      if (existingProduct) {
+        existingProduct.quantity += quantity;
+      } else {
+        state.products.push(action.payload);
       }
     },
     decreaseQuantity(state, action) {
@@ -73,16 +69,27 @@ const cartSlice = createSlice({
         product.quantity -= 1;
       }
     },
+    deleteProduct(state, action) {
+      state.products = state.products.filter(
+        (product) => product.id !== action.payload
+      );
+    },
   },
   selectors: {
     selectProducts: (state) => state.products,
+    selectTotalPrice: (state) =>
+      state.products.reduce((acc, el) => {
+        return acc + el.price * el.quantity;
+      }, 0),
+    selectProductsQuantity: (state) => state.products.length,
   },
 });
 
-export const { addProduct, deleteProduct, increaseQuantity, decreaseQuantity } =
+export const { addOrUpdateProduct, deleteProduct, decreaseQuantity } =
   cartSlice.actions;
 
-export const { selectProducts } = cartSlice.selectors;
+export const { selectProducts, selectTotalPrice, selectProductsQuantity } =
+  cartSlice.selectors;
 
 const cartPersistConfig = {
   key: 'cart',

@@ -1,3 +1,4 @@
+import SectionMain from 'shared/components/SectionMain/SectionMain';
 import { Container, MainTitle } from 'shared/components';
 import HoneyFeature from '../HoneyFeature/HoneyFeature';
 import ourHoneySet from '../../images/ourHoneySet.svg';
@@ -5,7 +6,7 @@ import s from './OurHoney.module.scss';
 
 const OurHoney = () => {
   return (
-    <section className={s.section}>
+    <SectionMain className={s.ourHoneySectionMain}>
       <Container className={s.container}>
         <MainTitle title={'Наш мед це'} className={s.honeyTitle} />
         <div className={s.honeyArea}>
@@ -28,7 +29,7 @@ const OurHoney = () => {
           />
         </div>
       </Container>
-    </section>
+    </SectionMain>
   );
 };
 
