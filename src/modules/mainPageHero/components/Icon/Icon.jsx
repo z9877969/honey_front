@@ -1,15 +1,29 @@
 import s from './Icon.module.scss';
+import { useState } from 'react';
 
 const Icon = ({ icon }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <>
-      <svg className={s.icon}>
+    <a
+      className={s.link}
+      href="#ourProducts"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <svg className={`${s.icon} ${isHovered ? s.hover : s.none}`}>
         <use xlinkHref={icon} />
       </svg>
-      <a className={s.iconTextLink} href="#">
-        Замовити
-      </a>
-    </>
+      <p className={s.iconText}>Замовити</p>
+    </a>
   );
 };
 

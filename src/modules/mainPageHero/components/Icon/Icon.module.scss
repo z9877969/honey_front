@@ -1,3 +1,7 @@
+.link {
+  color: inherit;
+}
+
 .icon {
   position: absolute;
   top: 0px;
@@ -19,10 +23,20 @@
   }
 }
 
-.iconTextLink {
+.hover {
+  fill: $primary-hover-color;
+  transition: fill $animation-duration $animation-time-function;
+}
+
+.none {
+  fill: $primary-accent-color;
+  transition: fill $animation-duration $animation-time-function;
+}
+
+.iconText {
   position: absolute;
   top: 54px;
-  left: 25px;
+  left: 20px;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5; // 150%
@@ -33,12 +47,12 @@
 
   @include media(tablet) {
     top: 20px;
-    left: 48px;
+    left: 42px;
   }
 
   @include media(desktop) {
     top: -12px;
-    left: 92px;
+    left: 88px;
     font-size: 18px;
     line-height: 1.56; // 156%
   }
