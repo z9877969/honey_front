@@ -1,3 +1,14 @@
+import { fontStyles } from '../data';
+import { colorVariables } from '../data';
+
+const {
+  primaryLightGreyColor,
+  primaryDarkGreyColor,
+  placeholderColor,
+  primaryBlackColor,
+  primaryYellowColor,
+} = colorVariables;
+
 export const selectStyles = {
   control: (baseStyles, state) => {
     return {
@@ -6,7 +17,7 @@ export const selectStyles = {
       paddingLeft: 8,
       paddingRight: 8,
       borderRadius: 12,
-      background: '#F6F6F6',
+      background: primaryLightGreyColor,
       borderStyle: state.IsFocused ? 'none' : 'none',
       boxShadow: state.IsFocused ? 'none' : 'none',
       transition: 'all 300ms',
@@ -16,11 +27,8 @@ export const selectStyles = {
   },
   placeholder: (baseStyles) => ({
     ...baseStyles,
-    color: 'rgba(31, 27, 26, 0.65)',
-    fontSize: 16,
-    lineHeight: 1.55,
-    letterSpacing: '0.04em',
-    '@media (min-width: 1440px)': { fontSize: 18 },
+    ...fontStyles,
+    color: placeholderColor,
   }),
   indicatorSeparator: (baseStyles) => ({
     ...baseStyles,
@@ -28,12 +36,12 @@ export const selectStyles = {
   }),
   dropdownIndicator: (baseStyles) => ({
     ...baseStyles,
-    stroke: '#1F1B1A',
+    stroke: primaryBlackColor,
     transform: 'rotate(-90deg)',
   }),
   menu: (baseStyles) => ({
     ...baseStyles,
-    backgroundColor: '#F6F6F6',
+    backgroundColor: primaryLightGreyColor,
     borderRadius: 0,
     borderStyle: 'none',
     boxShadow: 'none',
@@ -44,39 +52,38 @@ export const selectStyles = {
   menuList: (baseStyles) => ({ ...baseStyles, maxHeight: 362 }),
   input: (baseStyles) => ({
     ...baseStyles,
+    ...fontStyles,
     padding: 0,
-    fontSize: 16,
-    lineHeight: 1.55,
-    letterSpacing: '0.04em',
-    '@media (min-width: 1440px)': { fontSize: 18 },
   }),
   option: (baseStyles, state) => ({
     ...baseStyles,
-    color: state.isSelected ? '#EBB41C' : '#1F1B1A',
+    ...fontStyles,
+    color: state.isSelected ? primaryYellowColor : primaryBlackColor,
     paddingLeft: 16,
     paddingTop: 8,
     paddingBottom: 8,
     backgroundColor:
       state.isFocused & !state.isSelected
-        ? '#CACAC5'
+        ? primaryDarkGreyColor
         : state.isFocused & state.isSelected
-          ? '#F6F6F6'
-          : '#F6F6F6',
-    userSelect: 'red',
+          ? primaryLightGreyColor
+          : primaryLightGreyColor,
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
-    fontSize: 16,
-    lineHeight: 1.55,
-    letterSpacing: '0.04em',
-    '@media (min-width: 1440px)': { fontSize: 18 },
+    '&:active': { backgroundColor: primaryDarkGreyColor },
   }),
   singleValue: (baseStyles) => ({
     ...baseStyles,
-    color: '#EBB41C',
-    fontSize: 16,
-    lineHeight: 1.55,
-    letterSpacing: '0.04em',
-    '@media (min-width: 1440px)': { fontSize: 18 },
+    ...fontStyles,
+    color: primaryYellowColor,
+  }),
+  loadingMessage: (baseStyles) => ({
+    ...baseStyles,
+    ...fontStyles,
+  }),
+  noOptionsMessage: (baseStyles) => ({
+    ...baseStyles,
+    ...fontStyles,
   }),
 };

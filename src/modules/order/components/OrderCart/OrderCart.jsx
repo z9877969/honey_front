@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { selectProducts } from '@redux/cart/cartSlice';
-import { GoBackButton } from 'shared/components';
+import GoBackButton from 'shared/components/GoBackButton/GoBackButton';
 import OrderTitle from '../shared/OrderTitle/OrderTitle';
 import OrderCartItem from '../OrderCartItem/OrderCartItem';
 import s from './OrderCart.module.scss';

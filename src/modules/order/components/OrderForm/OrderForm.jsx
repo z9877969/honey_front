@@ -18,10 +18,14 @@ const OrderForm = () => {
       onSubmit={handleSubmit}
       validationSchema={contactFormValidationSchema}
     >
-      {({ setFieldValue, values }) => (
+      {({ setFieldValue, setFieldTouched, values }) => (
         <Form className={s.orderForm}>
           <ContactForm />
-          <AddressForm setFieldValue={setFieldValue} values={values} />
+          <AddressForm
+            setFieldValue={setFieldValue}
+            setFieldTouched={setFieldTouched}
+            values={values}
+          />
           <p className={s.userAgreement}>
             Підтверджуючи замовлення, ви даєте згоду на обробку своїх
             персональних даних відповідно до Закону України «Про захист

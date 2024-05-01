@@ -16,9 +16,9 @@ export const contactFormValidationSchema = Yup.object().shape({
   number: Yup.string()
     .matches(/^\+380\d{9}$/, 'Введіть коректний номер мобільного телефону')
     .required('Введіть коректний номер мобільного телефону'),
-  deliveryType: Yup.string().required(''),
-  location: Yup.object().required(''),
-  address: Yup.string().required('required'),
+  deliveryType: Yup.string().required(),
+  location: Yup.object().required(),
+  address: Yup.string().required(),
 });
 
 export const orderFormInitialValues = {

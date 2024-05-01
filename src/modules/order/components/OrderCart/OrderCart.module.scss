@@ -41,18 +41,15 @@
   flex-direction: column;
   gap: 16px;
   margin-bottom: 20px;
-  min-height: 344px;
+  max-height: 344px;
   overflow-y: auto;
-
   @include media(tablet) {
-    max-height: 628px;
+    max-height: 392px;
     margin-bottom: 24px;
-    gap: 24px;
   }
   @include media(desktop) {
-    max-height: 536px;
+    max-height: 428px;
     margin-bottom: 34px;
-    gap: 16px;
   }
 }
 .orderCartItem {

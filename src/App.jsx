@@ -1,6 +1,5 @@
 import { MainPage } from './pages';
 import { SharedLayout } from 'shared/components';
-import { OrderCheckoutPage } from 'modules/order';
 
 function App() {
   return (
@@ -8,7 +7,6 @@ function App() {
       <SharedLayout>
         <MainPage />
       </SharedLayout>
-      <OrderCheckoutPage />
     </>
   );
 }
