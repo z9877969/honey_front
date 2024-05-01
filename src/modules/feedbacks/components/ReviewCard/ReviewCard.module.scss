@@ -104,6 +104,7 @@
   justify-content: flex-start;
   height: 256px;
   margin: 0;
+  padding: 0px 32px;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 271px;
@@ -112,9 +113,10 @@
   @include media(tablet) {
     display: inline-flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     height: 160px;
     margin: 0;
+    padding: 0;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 404px;
@@ -124,7 +126,7 @@
   @include media(desktop) {
     display: inline-flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     height: 196px;
     padding: 28px 0px;
     margin-left: 32px;
@@ -155,6 +157,9 @@
 .name {
   font-family: $primary-font-family;
   font-weight: 600;
+  margin: 0;
+  padding: 0;
+
   @include font(18, 28);
 
   @include media(tablet) {
