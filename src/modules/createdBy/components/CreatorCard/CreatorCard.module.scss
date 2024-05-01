@@ -11,6 +11,10 @@
   @include media(tablet) {
     width: 306px;
   }
+
+  @include media(desktop) {
+    width: 312px;
+  }
 }
 
 .cardText {
