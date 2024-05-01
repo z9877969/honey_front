@@ -1,0 +1,35 @@
+.orderContainer {
+  height: 100%;
+  padding-top: calc(56px + 32px);
+  padding-bottom: 100px;
+  background-color: #fff;
+  @include media(tablet) {
+    padding-top: calc(72px + 48px);
+  }
+
+  @include media(desktop) {
+    padding-top: calc(76px + 84px);
+  }
+}
+.orderTitle {
+  margin-bottom: 24px;
+  max-width: 232px;
+  @include media(tablet) {
+    margin-bottom: 48px;
+    max-width: 435px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 64px;
+    max-width: 579px;
+  }
+}
+.orderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  @include media(desktop) {
+    flex-direction: row;
+    gap: 32px;
+  }
+}

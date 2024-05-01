@@ -1,0 +1,25 @@
+.orderHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 56px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(31, 27, 26, 0.05);
+
+  @include media(tablet) {
+    height: 72px;
+  }
+
+  @include media(desktop) {
+    height: 76px;
+  }
+}
+.orderContainer {
+  height: 100%;
+}
+.orderLogo {
+  height: 100%;
+  justify-content: flex-start;
+}
