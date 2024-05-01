@@ -1,13 +1,13 @@
 import s from './PopUpDetailedInfo.module.scss';
 import { icons } from 'shared/icons';
 import { useState } from 'react';
-import dbProducts from '../../data/dbProducts.js';
+// import dbProducts from '../../data/dbProducts.js';
 // import dbCategories from '../data/dbCategories';
 
 const PopUpDetailedInfo = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
-  const products = dbProducts;
+  const products = [];
 
   const currenrProduct = products[0];
 
