@@ -7,20 +7,22 @@
     @include font(16, 24);
     font-family: $primary-font-family;
     color: $primary-white-color;
-    transition: color $animation-duration $animation-time-function;
+
     &:focus {
       color: $primary-hover-color;
+    }
+
+    @include media(desktop) {
+      @include font(18, 28);
+      transition: color $animation-duration $animation-time-function;
     }
   }
 
   @media (hover: hover) {
-    &:hover {
-      color: $primary-hover-color;
-    }
-  }
-  @include media(desktop) {
     a {
-      @include font(18, 28);
+      &:hover {
+        color: $primary-hover-color;
+      }
     }
   }
 }

@@ -65,6 +65,22 @@
   max-width: 129px;
   margin: 40px auto 0;
   text-decoration: underline;
+  transform: none;
+
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+    transform: none;
+    color: $primary-hover-color;
+  }
+
+  @media (hover: hover) {
+    transition: color $animation-duration $animation-time-function;
+    &:hover {
+      color: $primary-hover-color;
+    }
+  }
 
   @include media(tablet) {
     @include font(18, 28);
