@@ -2,7 +2,7 @@
   position: absolute;
   border-radius: 50%;
   background-color: none;
-  top: 600px;
+  top: 525px;
   left: 140px;
   z-index: 2;
 
@@ -10,7 +10,7 @@
     position: absolute;
     border-radius: 50%;
     background-color: none;
-    top: 375px;
+    top: 250px;
     left: 40px;
     z-index: 2;
   }
@@ -19,7 +19,7 @@
     position: absolute;
     border-radius: 50%;
     background-color: none;
-    top: 450px;
+    top: 300px;
     left: 125px;
     z-index: 2;
   }
@@ -33,7 +33,7 @@
   position: absolute;
   border-radius: 50%;
   background-color: none;
-  top: 600px;
+  top: 525px;
   right: 140px;
   z-index: 1;
 
@@ -41,7 +41,7 @@
     position: absolute;
     border-radius: 50%;
     background-color: none;
-    top: 375px;
+    top: 250px;
     right: 40px;
     z-index: 1;
   }
@@ -50,7 +50,7 @@
     position: absolute;
     border-radius: 50%;
     background-color: none;
-    top: 450px;
+    top: 300px;
     right: 125px;
     z-index: 1;
   }
@@ -62,15 +62,15 @@
 
 .section {
   position: relative;
-  padding: 40px 20px;
+  padding: 0px 20px;
 
   @include media(tablet) {
     position: relative;
-    padding: 60px 32px;
+    padding: 0px 32px;
   }
   @include media(desktop) {
     position: relative;
-    padding: 74px 112px;
+    padding: 0px 112px;
   }
 }
 
@@ -95,5 +95,26 @@
     margin-bottom: 64px;
     font-weight: 600px;
     @include font(80, 80);
+  }
+}
+
+.centerDiv {
+  @include media(mobile) {
+    height: 524px;
+    padding: 32px;
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
+  }
+  @include media(tablet) {
+    height: 312px;
+    padding: 76px 64px;
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
+  }
+  @include media(desktop) {
+    height: 356px;
+    padding: 80px 104px;
+    border-radius: 24px;
+    background-color: $primary-background-accent-color;
   }
 }

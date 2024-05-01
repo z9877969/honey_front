@@ -3,30 +3,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 524px;
-    padding: 32px;
-    border-radius: 24px;
-    background-color: $primary-background-accent-color;
   }
 
   @include media(tablet) {
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 312px;
-    padding: 76px 64px;
-    border-radius: 24px;
-    background-color: $primary-background-accent-color;
+    height: 160px;
   }
 
   @include media(desktop) {
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 356px;
-    padding: 80px 104px;
-    border-radius: 24px;
-    background-color: $primary-background-accent-color;
+    height: 196px;
   }
 }
 
@@ -111,34 +101,59 @@
 .content {
   display: inline-flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  height: 256px;
   margin: 0;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 271px;
+  overflow-y: auto;
 
   @include media(tablet) {
     display: inline-flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 160px;
     margin: 0;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 404px;
+    overflow-y: auto;
   }
 
   @include media(desktop) {
     display: inline-flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 196px;
+    padding: 28px 0px;
     margin-left: 32px;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 764px;
+    overflow-y: auto;
   }
 }
 
+.content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: none;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: $primary-accent-color;
+  border-radius: 6px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-hover-color;
+}
+
 .name {
+  font-family: $primary-font-family;
   font-weight: 600;
   @include font(18, 28);
 
@@ -151,14 +166,20 @@
 }
 
 .review {
-  margin-top: 24px;
-  font-weight: 400;
-  @include font(16, 24);
+  @include media(mobile) {
+    font-family: $primary-font-family;
+    margin-top: 12px;
+    font-weight: 400;
+    @include font(16, 24);
+  }
 
   @include media(tablet) {
+    font-family: $primary-font-family;
     @include font(16, 24);
   }
   @include media(desktop) {
+    font-family: $primary-font-family;
+    margin-top: 24px;
     @include font(18, 28);
   }
 }
