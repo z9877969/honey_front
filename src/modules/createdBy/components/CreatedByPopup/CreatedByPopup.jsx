@@ -1,12 +1,14 @@
 import creatorsData from '../../data/creators.json';
-import CreatorCard from '../CreatorCard/CreatorCard';
+import CreatorsList from '../CreatorsList/CreatorsList';
 import s from './CreatedByPopup.module.scss';
 import IconButton from 'shared/components/IconButton/IconButton';
 
-//TODO: tabl and desc styles
-//TODO: put evth into commponents
+//TODO: Card images
 //TODO: Check everything
+//TODO: Клік по лого не перезавантажує
 //DONE: Animations duration -  SocIcons, links
+//DONE: put evth into components
+//DONE: desc styles
 //DONE: put img into div and add LI icon, style div, remove img styles
 //DONE: wrap cards into links + hover effects
 
@@ -20,15 +22,11 @@ const CreatedByPopup = ({ onClose }) => {
         id={'cross-close'}
         iconClassName={s.closeIcon}
         btnClassName={s.closeBtn}
-        iconHeight={32}
-        iconWidth={32}
+        iconHeight={36}
+        iconWidth={36}
         onClick={onClose}
       />
-      <ul className={s.cardList}>
-        {creators.map((item) => {
-          return <CreatorCard key={item.id} data={item} />;
-        })}
-      </ul>
+      <CreatorsList data={creators} />
     </div>
   );
 };
