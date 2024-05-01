@@ -21,34 +21,35 @@ const Reviews = () => {
     <SectionMain id="reviews">
       <Container className={s.section}>
         <MainTitle title={'Відгуки покупців'} className={s.sectionHeader} />
+        <div className={s.centerDiv}>
+          <button
+            className={s.prevButton}
+            onClick={() => swiper && swiper.slidePrev()}
+          >
+            <svg width="48" height="48">
+              <use xlinkHref={`${icons}#arrow-left`} />
+            </svg>
+          </button>
 
-        <button
-          className={s.prevButton}
-          onClick={() => swiper && swiper.slidePrev()}
-        >
-          <svg width="48" height="48">
-            <use xlinkHref={`${icons}#arrow-left`} />
-          </svg>
-        </button>
+          <Swiper onSwiper={setSwiper} slidesPerView={1}>
+            {data.map((data) => {
+              return (
+                <SwiperSlide key={data.id}>
+                  <ReviewCard data={data} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
 
-        <Swiper onSwiper={setSwiper} slidesPerView={1}>
-          {data.map((data) => {
-            return (
-              <SwiperSlide key={data.id}>
-                <ReviewCard data={data} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-
-        <button
-          className={s.nextButton}
-          onClick={() => swiper && swiper.slideNext()}
-        >
-          <svg width="48" height="48">
-            <use xlinkHref={`${icons}#arrow-right`} />
-          </svg>
-        </button>
+          <button
+            className={s.nextButton}
+            onClick={() => swiper && swiper.slideNext()}
+          >
+            <svg width="48" height="48">
+              <use xlinkHref={`${icons}#arrow-right`} />
+            </svg>
+          </button>
+        </div>
       </Container>
     </SectionMain>
   );

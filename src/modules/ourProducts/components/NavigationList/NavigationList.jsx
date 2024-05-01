@@ -13,13 +13,13 @@ const NavigationList = ({
           <li
             key={category.key}
             className={clsx(style.categoriesItem, {
-              [style.active]: category.key === currentCategory,
+              [style.active]: category.name === currentCategory,
             })}
           >
             <h3
-              onClick={() => chooseCategory(category.key)}
+              onClick={() => chooseCategory(category.name)}
               className={clsx(style.category, {
-                [style.active]: category.key === currentCategory,
+                [style.active]: category.name === currentCategory,
               })}
             >
               {category.name}

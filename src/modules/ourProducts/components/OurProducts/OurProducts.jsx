@@ -3,30 +3,38 @@ import NavigationList from '../NavigationList/NavigationList';
 import ProductsList from '../ProductsList/ProductsList';
 import style from './OurProducts.module.scss';
 import dbCategories from 'modules/ourProducts/data/dbCategories';
-import dbProducts from 'modules/ourProducts/data/dbProducts';
 import { useEffect, useState } from 'react';
 import SectionMain from 'shared/components/SectionMain/SectionMain';
+import { getProducts } from 'modules/ourProducts/service/service';
+import { icons as sprite } from 'shared/icons';
 
 const OurProducts = () => {
-  const [products, setProducts] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('Мед');
-
-  useEffect(() => {
-    setCurrentCategory(dbCategories[0].key);
-  }, []);
-
-  useEffect(() => {
-    setProducts(() =>
-      dbProducts.filter((product) => product.category === currentCategory)
-    );
-  }, [currentCategory]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleCategoryChange = (category) => {
     setCurrentCategory(category);
   };
 
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const productsData = await getProducts();
+        setProducts(productsData);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        // eslint-disable-next-line
+        console.log(error.message);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
-    <SectionMain>
+    <SectionMain id="ourProducts">
       <Container>
         <MainTitle
           title={'Наша продукція'}
@@ -37,7 +45,15 @@ const OurProducts = () => {
           chooseCategory={handleCategoryChange}
           currentCategory={currentCategory}
         />
-        <ProductsList productsList={products} />
+        {loading ? (
+          <div className={style.loaderContainer}>
+            <svg width="48" height="48" className={style.loader}>
+              <use xlinkHref={`${sprite}#logo`} />
+            </svg>
+          </div>
+        ) : (
+          <ProductsList currentCategory={currentCategory} data={products} />
+        )}
       </Container>
     </SectionMain>
   );
