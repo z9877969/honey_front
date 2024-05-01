@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import s from './CreatorCard.module.scss';
-import cardEmptyPhoto from '../../images/cardPhoto_empty.png';
+import { cardPhotoEmpty } from 'modules/createdBy/images';
 import { icons as sprite } from 'shared/icons';
 
 const CreatorCard = ({ data }) => {
@@ -10,7 +10,7 @@ const CreatorCard = ({ data }) => {
         <div className={s.cardImgWrap}>
           <img
             className={s.cardImg}
-            src={data.picture === '' ? cardEmptyPhoto : data.picture}
+            src={data.picture === '' ? cardPhotoEmpty : data.picture}
             alt={`${data.name} photo`}
           />
 

@@ -1,20 +1,17 @@
-import creatorsData from '../../data/creators.json';
+import creatorsData from '../../data/creators.js';
 import CreatorsList from '../CreatorsList/CreatorsList';
 import s from './CreatedByPopup.module.scss';
 import IconButton from 'shared/components/IconButton/IconButton';
 
-//TODO: Card images
 //TODO: Check everything
-//TODO: Клік по лого не перезавантажує
 //DONE: Animations duration -  SocIcons, links
 //DONE: put evth into components
 //DONE: desc styles
+//DONE: Card images
 //DONE: put img into div and add LI icon, style div, remove img styles
 //DONE: wrap cards into links + hover effects
 
 const CreatedByPopup = ({ onClose }) => {
-  const { creators } = creatorsData;
-
   return (
     <div className={s.container}>
       <h3 className={s.title}>Команда, яка створила сайт</h3>
@@ -26,7 +23,7 @@ const CreatedByPopup = ({ onClose }) => {
         iconWidth={36}
         onClick={onClose}
       />
-      <CreatorsList data={creators} />
+      <CreatorsList data={creatorsData} />
     </div>
   );
 };
