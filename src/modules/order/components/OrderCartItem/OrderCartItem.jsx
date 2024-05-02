@@ -1,18 +1,24 @@
+import {
+  createProductName,
+  createProductQuantity,
+} from 'modules/order/helpers';
 import s from './OrderCartItem.module.scss';
 
-const OrderCartItem = ({ product }) => {
+const OrderCartItem = ({
+  product: { image, title, weight, quantity, price },
+}) => {
   return (
     <>
       <div className={s.imgWrapper}>
-        <img src={product.image} alt={product.title} width={132} height={132} />
+        <img src={image} alt={title} width={132} height={132} />
       </div>
       <div className={s.textWrapper}>
-        <p>{product.title}</p>
+        <p>{createProductName(title)}</p>
         <p>
-          <span>{product.weight}</span>
-          <span>x{product.quantity}</span>
+          <span>{createProductQuantity(weight)}</span>
+          <span>&#215;{quantity}</span>
         </p>
-        <span>{`${product.price}грн`}</span>
+        <span>{`${price} грн`}</span>
       </div>
     </>
   );

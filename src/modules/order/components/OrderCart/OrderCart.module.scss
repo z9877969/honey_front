@@ -21,14 +21,31 @@
   display: flex;
   gap: 4px;
   align-items: center;
+  @include font(16, 24);
+  letter-spacing: 0.04em;
+  @include media(desktop) {
+    @include font(18, 28);
+  }
+  transition: color $animation-duration $animation-time-function;
   svg {
     width: 24px;
     height: 24px;
+    transition: stroke $animation-duration $animation-time-function;
     @include media(desktop) {
       width: 28px;
       height: 28px;
     }
   }
+}
+.orderGoBack:hover,
+.orderGoBack:active,
+.orderGoBack:focus {
+  color: $primary-hover-color;
+}
+.orderGoBack:hover svg,
+.orderGoBack:active svg,
+.orderGoBack:focus svg {
+  stroke: $primary-hover-color;
 }
 .orderCartTitle {
   margin-bottom: 20px;
@@ -52,6 +69,16 @@
     margin-bottom: 34px;
   }
 }
+.orderCartList::-webkit-scrollbar {
+  width: 4px;
+}
+.orderCartList::-webkit-scrollbar-thumb {
+  background-color: $primary-hover-color;
+  border-radius: 6px;
+}
+.orderCartList::-webkit-scrollbar-track {
+  background-color: $primary-background-accent-color;
+}
 .orderCartItem {
   display: flex;
   gap: 12px;
@@ -67,8 +94,8 @@
   align-items: center;
   span {
     @include font(16, 24);
-  }
-  @include media(desktop) {
-    @include font(18, 28);
+    @include media(desktop) {
+      @include font(18, 28);
+    }
   }
 }

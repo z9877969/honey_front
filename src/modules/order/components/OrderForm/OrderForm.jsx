@@ -1,4 +1,8 @@
 import { Formik, Form } from 'formik';
+// import { useSelector } from 'react-redux';
+// import { selectProducts } from '@redux/cart/cartSlice';
+// import { createOrderList } from 'modules/order/helpers';
+// import { createTgMessage } from 'helpers/createTgMessage';
 import {
   contactFormValidationSchema,
   orderFormInitialValues,
@@ -7,8 +11,14 @@ import { Button } from 'shared/components';
 import { ContactForm, AddressForm } from 'modules/order/components';
 import s from './OrderForm.module.scss';
 
-const OrderForm = () => {
+const OrderForm = ({ onClose }) => {
+  // const productList = useSelector(selectProducts);
+
   const handleSubmit = (values, actions) => {
+    // const { order, totalPrice } = createOrderList(productList);
+    // const tgMessage = createTgMessage(values, order, totalPrice);
+    // console.log(tgMessage);
+    onClose();
     actions.resetForm();
   };
 
