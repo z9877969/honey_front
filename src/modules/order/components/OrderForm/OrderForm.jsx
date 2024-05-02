@@ -3,21 +3,21 @@ import {
   contactFormValidationSchema,
   orderFormInitialValues,
 } from 'modules/order/data';
-import { createTgMessage } from 'helpers/createTgMessage';
+// import { createTgMessage } from 'helpers/createTgMessage';
 import { Button } from 'shared/components';
 import { ContactForm, AddressForm } from 'modules/order/components';
 import s from './OrderForm.module.scss';
-import { useSelector } from 'react-redux';
-import { selectProducts } from '@redux/cart/cartSlice';
-import { createOrderList } from 'modules/order/helpers';
+// import { useSelector } from 'react-redux';
+// import { selectProducts } from '@redux/cart/cartSlice';
+// import { createOrderList } from 'modules/order/helpers';
 
 const OrderForm = ({ onClose }) => {
-  const productList = useSelector(selectProducts);
+  // const productList = useSelector(selectProducts);
 
   const handleSubmit = (values, actions) => {
-    const { order, totalPrice } = createOrderList(productList);
-    const tgMessage = createTgMessage(values, order, totalPrice);
-    console.log(tgMessage);
+    // const { order, totalPrice } = createOrderList(productList);
+    // const tgMessage = createTgMessage(values, order, totalPrice);
+    // console.log(tgMessage);
     onClose();
     actions.resetForm();
   };
