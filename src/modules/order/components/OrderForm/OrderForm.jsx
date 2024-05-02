@@ -1,15 +1,15 @@
 import { Formik, Form } from 'formik';
+// import { useSelector } from 'react-redux';
+// import { selectProducts } from '@redux/cart/cartSlice';
+// import { createOrderList } from 'modules/order/helpers';
+// import { createTgMessage } from 'helpers/createTgMessage';
 import {
   contactFormValidationSchema,
   orderFormInitialValues,
 } from 'modules/order/data';
-// import { createTgMessage } from 'helpers/createTgMessage';
 import { Button } from 'shared/components';
 import { ContactForm, AddressForm } from 'modules/order/components';
 import s from './OrderForm.module.scss';
-// import { useSelector } from 'react-redux';
-// import { selectProducts } from '@redux/cart/cartSlice';
-// import { createOrderList } from 'modules/order/helpers';
 
 const OrderForm = ({ onClose }) => {
   // const productList = useSelector(selectProducts);
