@@ -1,18 +1,35 @@
 import s from './OrderCartItem.module.scss';
 
-const OrderCartItem = ({ product }) => {
+const OrderCartItem = ({
+  product: { image, title, weight, quantity, price },
+}) => {
+  const productName = title.includes('натуральний')
+    ? title.replace('натуральний', '')
+    : title.includes('Стільники')
+      ? `${title} (соти)`
+      : title;
+
+  const productQuantity =
+    weight === '100'
+      ? `${weight} г`
+      : weight === '250'
+        ? `${weight} мл`
+        : `${weight} л`;
+
+  const productTotalPrice = `${price * quantity} грн`;
+
   return (
     <>
       <div className={s.imgWrapper}>
-        <img src={product.image} alt={product.title} width={132} height={132} />
+        <img src={image} alt={title} width={132} height={132} />
       </div>
       <div className={s.textWrapper}>
-        <p>{product.title}</p>
+        <p>{productName}</p>
         <p>
-          <span>{product.weight}</span>
-          <span>x{product.quantity}</span>
+          <span>{productQuantity}</span>
+          <span>&#215;{quantity}</span>
         </p>
-        <span>{`${product.price}грн`}</span>
+        <span>{productTotalPrice}</span>
       </div>
     </>
   );

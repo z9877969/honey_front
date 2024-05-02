@@ -7,6 +7,10 @@ import s from './OrderCart.module.scss';
 
 const OrderCart = () => {
   const productList = useSelector(selectProducts);
+  const totalPrice =
+    productList.reduce((acc, { price }) => {
+      return acc + price;
+    }, 0) + 'грн';
 
   return (
     <div className={s.orderCartWrapper}>
@@ -26,8 +30,8 @@ const OrderCart = () => {
         })}
       </ul>
       <OrderTitle className={s.price}>
-        <span> Вартість</span>
-        100500
+        <span>Вартість</span>
+        {totalPrice}
       </OrderTitle>
     </div>
   );
