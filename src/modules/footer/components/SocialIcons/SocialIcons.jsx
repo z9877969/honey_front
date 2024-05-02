@@ -5,14 +5,14 @@ const SocialIcons = () => {
   return (
     <ul className={s.iconsList}>
       <li>
-        <a href="https://telegram.org/" target="_blank">
+        <a href="#footer">
           <svg width={32} height={32} className={s.icon}>
             <use xlinkHref={`${sprite}#telegram`}></use>
           </svg>
         </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/bdzhola_ta_shershen" target="_blank">
+        <a href="#footer">
           <svg width={32} height={32} className={s.icon}>
             <use xlinkHref={`${sprite}#instagram`}></use>
           </svg>
@@ -22,4 +22,6 @@ const SocialIcons = () => {
   );
 };
 
+// https://telegram.org/
+// https://www.instagram.com/bdzhola_ta_shershen
 export default SocialIcons;
