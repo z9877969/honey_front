@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 291px;
+
+  &:hover .cardText {
+    text-decoration: underline;
+  }
+
+  @include media(tablet) {
+    width: 306px;
+  }
+
+  @include media(desktop) {
+    width: 312px;
+  }
+}
+
+.cardText {
+  font-family: $primary-font-family;
+  letter-spacing: 0.04em;
+  color: $primary-black-color;
+
+  @include font(16, 24);
+
+  @include media(desktop) {
+    @include font(18, 28);
+  }
+}
+
+.cardLightText {
+  color: $primary-darkgrey-color;
+  opacity: 0.4;
+}
+
+.cardImg {
+  object-fit: cover;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.cardImgWrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+
+  @include media(tablet) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.cardImgIcon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

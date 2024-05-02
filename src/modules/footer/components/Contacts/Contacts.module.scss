@@ -11,16 +11,17 @@
     &:focus {
       color: $primary-hover-color;
     }
+
+    @include media(desktop) {
+      @include font(18, 28);
+      transition: color $animation-duration $animation-time-function;
+    }
   }
 
-  @include media(desktop) {
-    @media (hover: hover) {
-      a {
-        @include font(18, 28);
-
-        &:hover {
-          color: $primary-hover-color;
-        }
+  @media (hover: hover) {
+    a {
+      &:hover {
+        color: $primary-hover-color;
       }
     }
   }

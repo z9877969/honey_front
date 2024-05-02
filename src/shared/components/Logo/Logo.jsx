@@ -6,7 +6,7 @@ import { icons as sprite } from 'shared/icons';
 
 const Logo = ({ iconWidth, iconHeight, iconClassName, linkClassName }) => {
   return (
-    <a className={clsx(s.link, linkClassName && linkClassName)} href="#">
+    <a className={clsx(s.link, linkClassName && linkClassName)} href="/">
       <svg
         width={iconWidth}
         height={iconHeight}
