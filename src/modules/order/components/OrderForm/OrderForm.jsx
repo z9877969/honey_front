@@ -6,9 +6,17 @@ import {
 import { Button } from 'shared/components';
 import { ContactForm, AddressForm } from 'modules/order/components';
 import s from './OrderForm.module.scss';
+import { useModal } from 'hooks/useModal';
+import { useCallback } from 'react';
 
 const OrderForm = () => {
+  const setModal = useModal();
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
   const handleSubmit = (values, actions) => {
+    closeModal();
     actions.resetForm();
   };
 
