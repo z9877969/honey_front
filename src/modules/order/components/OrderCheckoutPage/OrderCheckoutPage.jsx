@@ -6,13 +6,15 @@ const OrderCheckoutPage = () => {
   return (
     <>
       <OrderHeader />
-      <Container className={s.orderContainer}>
-        <MainTitle title="Оформлення замовлення" className={s.orderTitle} />
-        <div className={s.orderWrapper}>
-          <OrderForm />
-          <OrderCart />
-        </div>
-      </Container>
+      <section className={s.orderSection}>
+        <Container className={s.orderContainer}>
+          <MainTitle title="Оформлення замовлення" className={s.orderTitle} />
+          <div className={s.orderWrapper}>
+            <OrderForm />
+            <OrderCart />
+          </div>
+        </Container>
+      </section>
     </>
   );
 };

@@ -77,7 +77,7 @@
   border-radius: 6px;
 }
 .orderCartList::-webkit-scrollbar-track {
-  background-color: #f7f5ed;
+  background-color: $primary-background-accent-color;
 }
 .orderCartItem {
   display: flex;
