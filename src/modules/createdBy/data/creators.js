@@ -36,7 +36,7 @@ const creatorsData = [
     name: 'Zenoviy Fil',
     position: 'Frontend Developer',
     picture: zenoviyFil,
-    link: '',
+    link: 'https://www.linkedin.com/in/zenoviy-fil/',
   },
   {
     id: '3',
