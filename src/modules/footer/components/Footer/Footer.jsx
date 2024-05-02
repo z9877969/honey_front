@@ -2,10 +2,23 @@ import { Button, Container, Logo } from 'shared/components';
 import s from './Footer.module.scss';
 import SocialIcons from '../SocialIcons/SocialIcons';
 import Contacts from '../Contacts/Contacts';
+import { useModal } from 'hooks/useModal';
+import { useCallback } from 'react';
+import CreatedByPopup from 'modules/createdBy/components/CreatedByPopup/CreatedByPopup';
 
 const Footer = () => {
+  const setModal = useModal();
+
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
+  const openModal = useCallback(() => {
+    setModal(<CreatedByPopup onClose={closeModal} />);
+  }, [setModal, closeModal]);
+
   return (
-    <footer className={s.footer}>
+    <footer className={s.footer} id="footer">
       <Container className={s.container}>
         <div className={s.contentWrap}>
           <Logo
@@ -24,7 +37,7 @@ const Footer = () => {
           type="button"
           className={s.createdByBtn}
           title={'Created by GoIT'}
-          onClick={() => {}}
+          onClick={openModal}
         />
       </Container>
     </footer>

@@ -11,7 +11,12 @@ a:focus .icon {
 .icon {
   fill: $primary-accent-color;
 
+  &:focus {
+    fill: $primary-hover-color;
+  }
+
   @media (hover: hover) {
+    transition: fill $animation-duration $animation-time-function;
     &:hover {
       fill: $primary-hover-color;
     }

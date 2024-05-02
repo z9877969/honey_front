@@ -116,7 +116,7 @@
   }
 }
 
-.linkWrapper {
+.btnWrapper {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -130,7 +130,7 @@
   }
 }
 
-.modalLink {
+.modalBackBtn {
   font-family: $primary-font-family;
   font-weight: 400;
   @include font(16, 24);
@@ -140,8 +140,8 @@
   align-items: center;
   gap: 4px;
   transition:
-    color $animation-time-function,
-    fill $animation-time-function;
+    color 200ms $animation-time-function,
+    fill 200ms $animation-time-function;
 
   &:hover,
   &:focus,
@@ -213,7 +213,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color $animation-time-function;
+  transition: background-color 200ms $animation-time-function;
 
   &:hover,
   &:focus,
