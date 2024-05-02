@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 160px;
+    height: 184px;
   }
 
   @include media(desktop) {
@@ -147,7 +147,7 @@
     display: inline-flex;
     align-items: flex-start;
     justify-content: center;
-    height: 160px;
+    height: 184px;
     margin: 0;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -168,13 +168,13 @@
 }
 
 .name {
-  font-family: $primary-font-family;
+  font-family: $secondary-font-family;
   font-weight: 600;
   margin: 0;
   padding: 0px 16px;
   @include font(18, 28);
   @include media(mobile) {
-    font-family: $primary-font-family;
+    font-family: $secondary-font-family;
     font-weight: 600;
     margin: 0;
     padding: 0px 32px;
@@ -182,11 +182,13 @@
   }
 
   @include media(tablet) {
+    font-family: $secondary-font-family;
     padding: 0;
     @include font(20, 28);
   }
 
   @include media(desktop) {
+    font-family: $secondary-font-family;
     @include font(24, 32);
   }
 }
