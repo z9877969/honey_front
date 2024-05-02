@@ -41,5 +41,9 @@
     &:hover {
       fill: $primary-hover-color;
     }
+
+    &:active {
+      fill: $primary-hover-color;
+    }
   }
 }
