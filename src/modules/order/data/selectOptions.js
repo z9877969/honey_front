@@ -2,6 +2,7 @@ export const deliveryTypeOptions = [
   { value: 'Доставка до відділення', label: 'Доставка до відділення' },
   { value: 'Доставка кур`єром', label: 'Доставка кур`єром' },
 ];
+
 export const defaultOptionsForLocationSelect = [
   {
     value: {
