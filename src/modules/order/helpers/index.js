@@ -1,4 +1,12 @@
 export { createSettlementDescription } from './createSettlementDescription';
-export { createOptionsForLocationSelect } from './createOptions';
-export { createOptionsForAddressSelect } from './createOptions';
+export {
+  createOptionsForLocationSelect,
+  createOptionsForAddressSelect,
+} from './createOptions';
+export { createOrderList } from './createOrderList';
 export { selectStyles } from './selectStyles';
+export {
+  createProductName,
+  createProductQuantity,
+  createTotalPrice,
+} from './createOrderCartElements';

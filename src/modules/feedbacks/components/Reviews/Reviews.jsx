@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { icons } from 'shared/icons';
 import SectionMain from 'shared/components/SectionMain/SectionMain';
 // import icon from '../../../../shared/icons/sprite.svg';
@@ -16,6 +16,41 @@ import SectionMain from 'shared/components/SectionMain/SectionMain';
 
 const Reviews = () => {
   const [swiper, setSwiper] = useState(null);
+  const [isStart, setStart] = useState(false);
+  const [isEnd, setEnd] = useState(false);
+
+  useEffect(() => {
+    const updateSliderState = () => {
+      if (swiper) {
+        setStart(swiper.isStart);
+        setEnd(swiper.isEnd);
+      }
+    };
+
+    updateSliderState();
+
+    if (swiper) {
+      swiper.on('slideChange', updateSliderState);
+    }
+
+    return () => {
+      if (swiper) {
+        swiper.off('slideChange', updateSliderState);
+      }
+    };
+  }, [swiper]);
+
+  const slidePrev = () => {
+    if (swiper) {
+      swiper.slidePrev();
+    }
+  };
+
+  const slideNext = () => {
+    if (swiper) {
+      swiper.slideNext();
+    }
+  };
 
   return (
     <SectionMain id="reviews">
@@ -23,10 +58,11 @@ const Reviews = () => {
         <MainTitle title={'Відгуки покупців'} className={s.sectionHeader} />
         <div className={s.centerDiv}>
           <button
-            className={s.prevButton}
-            onClick={() => swiper && swiper.slidePrev()}
+            className={`${s.prevButton} ${isStart ? s.disabled : ''}`}
+            onClick={slidePrev}
+            disabled={isStart}
           >
-            <svg width="48" height="48">
+            <svg width="32" height="32">
               <use xlinkHref={`${icons}#arrow-left`} />
             </svg>
           </button>
@@ -42,10 +78,11 @@ const Reviews = () => {
           </Swiper>
 
           <button
-            className={s.nextButton}
-            onClick={() => swiper && swiper.slideNext()}
+            className={`${s.nextButton} ${isEnd ? s.disabled : ''}`}
+            onClick={slideNext}
+            disabled={isEnd}
           >
-            <svg width="48" height="48">
+            <svg width="32" height="32">
               <use xlinkHref={`${icons}#arrow-right`} />
             </svg>
           </button>

@@ -20,6 +20,20 @@
   flex-direction: column;
   gap: 8px;
   justify-content: center;
+  p,
   span {
+    font-family: $primary-font-family;
+    @include font(16, 24);
+    letter-spacing: 0.04em;
+    @include media(desktop) {
+      @include font(18, 28);
+    }
   }
+  p:last-of-type {
+    display: flex;
+    gap: 16px;
+  }
+}
+.textWrapper > span {
+  font-weight: 600;
 }
