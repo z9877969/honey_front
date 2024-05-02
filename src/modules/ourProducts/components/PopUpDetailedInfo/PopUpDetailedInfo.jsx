@@ -1,12 +1,9 @@
-import s from './PopUpDetailedInfo.module.scss';
-import { icons } from 'shared/icons';
 import { useEffect, useState } from 'react';
-
-import honey_db from '../../../../shared/data/honey_db.json';
-import dbProducts from '../../data/dbProducts.js';
 import clsx from 'clsx';
-
-// import dbCategories from '../data/dbCategories';
+import { icons } from 'shared/icons';
+// import honey_db from 'shared/data/honey_db.json';
+import acacia_honey_img from '../../images/natural-acacia-honey.jpg';
+import s from './PopUpDetailedInfo.module.scss';
 
 const getInitialProductVariants = (currentProduct) => {
   const currentProductVariants = currentProduct.variants.reduce(
@@ -39,17 +36,18 @@ const getInitialProductVariants = (currentProduct) => {
   return currentProductVariants;
 };
 
-const PopUpDetailedInfo = () => {
+const PopUpDetailedInfo = ({ product, onClose }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [productVariants, setProductVariants] = useState([]);
 
-  const currentProduct = honey_db[0];
-  const currentWithPhoto = dbProducts[0];
+  // const currentProduct = honey_db[0];
+  const currentProduct = product;
+
   useEffect(() => {
     setProductVariants(getInitialProductVariants(currentProduct));
   }, [currentProduct]);
-  if (currentProduct && currentWithPhoto) {
-    currentProduct.img = currentWithPhoto.img;
+  if (currentProduct) {
+    currentProduct.img = acacia_honey_img;
   }
 
   const handleChooseVariant = (size) => {
@@ -106,6 +104,7 @@ const PopUpDetailedInfo = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    onClose();
   };
 
   return (
