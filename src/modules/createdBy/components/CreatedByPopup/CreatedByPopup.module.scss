@@ -1,0 +1,60 @@
+.container {
+  background-color: white;
+  max-height: 728px;
+  width: 335px;
+  padding: 40px 20px;
+  border-radius: 24px;
+  position: relative;
+
+  @include media(tablet) {
+    width: 704px;
+    max-height: 796.5px;
+    padding: 48px 32px;
+  }
+
+  @include media(desktop) {
+    width: 1212px;
+    padding: 80px 100px;
+    max-height: 772px;
+  }
+}
+
+.title {
+  @include font(18, 28);
+  width: 206px;
+  letter-spacing: 0.02em;
+
+  @include media(tablet) {
+    width: 306px;
+  }
+
+  @include media(desktop) {
+    @include font(24, 32);
+    width: 408px;
+  }
+}
+
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  @include media(tablet) {
+    top: 22px;
+    right: 22px;
+  }
+
+  @include media(desktop) {
+    top: 24px;
+    right: 20px;
+  }
+}
+
+.closeIcon {
+  fill: $primary-black-color;
+}
