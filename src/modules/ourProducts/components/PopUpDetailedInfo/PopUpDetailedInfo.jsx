@@ -2,7 +2,7 @@ import s from './PopUpDetailedInfo.module.scss';
 import { icons } from 'shared/icons';
 import { useEffect, useState } from 'react';
 
-import honey_db from '../../../../shared/data/honey_db.json';
+import honey_db from 'shared/data/honey_db.json';
 import dbProducts from '../../data/dbProducts.js';
 import clsx from 'clsx';
 
