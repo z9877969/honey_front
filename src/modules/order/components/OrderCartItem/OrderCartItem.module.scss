@@ -1,0 +1,25 @@
+.imgWrapper {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  img {
+    width: 104px;
+    height: 104px;
+    @include media(tablet) {
+      width: 120px;
+      height: 120px;
+    }
+    @include media(desktop) {
+      width: 132px;
+      height: 132px;
+    }
+  }
+}
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  span {
+  }
+}

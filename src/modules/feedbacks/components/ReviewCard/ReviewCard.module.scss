@@ -3,30 +3,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 524px;
-    padding: 32px;
-    border-radius: 24px;
-    background-color: $primary-background-accent-color;
   }
 
   @include media(tablet) {
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 312px;
-    padding: 76px 64px;
-    border-radius: 24px;
-    background-color: $primary-background-accent-color;
+    height: 160px;
   }
 
   @include media(desktop) {
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 356px;
-    padding: 80px 104px;
-    border-radius: 24px;
-    background-color: $primary-background-accent-color;
+    height: 196px;
   }
 }
 
@@ -111,16 +101,17 @@
 .content {
   display: inline-flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  height: 256px;
   margin: 0;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 271px;
 
   @include media(tablet) {
     display: inline-flex;
     align-items: flex-start;
     justify-content: center;
+    height: 160px;
     margin: 0;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -131,6 +122,8 @@
     display: inline-flex;
     align-items: flex-start;
     justify-content: center;
+    height: 196px;
+    padding: 28px 0px;
     margin-left: 32px;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -139,10 +132,15 @@
 }
 
 .name {
+  font-family: $primary-font-family;
   font-weight: 600;
+  margin: 0;
+  padding: 0px 32px;
+
   @include font(18, 28);
 
   @include media(tablet) {
+    padding: 0;
     @include font(20, 28);
   }
   @include media(desktop) {
@@ -151,14 +149,42 @@
 }
 
 .review {
-  margin-top: 24px;
-  font-weight: 400;
-  @include font(16, 24);
+  @include media(mobile) {
+    font-family: $primary-font-family;
+    margin-top: 12px;
+    font-weight: 400;
+    @include font(16, 24);
+    padding: 0px 32px;
+    overflow-y: auto;
+  }
 
   @include media(tablet) {
+    font-family: $primary-font-family;
     @include font(16, 24);
+    padding: 0;
+    overflow-y: auto;
   }
   @include media(desktop) {
+    font-family: $primary-font-family;
+    margin-top: 24px;
     @include font(18, 28);
+    overflow-y: auto;
   }
+}
+
+.review::-webkit-scrollbar {
+  width: 4px;
+}
+
+.review::-webkit-scrollbar-track {
+  background: none;
+}
+
+.review::-webkit-scrollbar-thumb {
+  background-color: $primary-accent-color;
+  border-radius: 6px;
+}
+
+.review::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-hover-color;
 }
