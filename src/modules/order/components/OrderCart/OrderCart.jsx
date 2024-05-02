@@ -4,9 +4,16 @@ import GoBackButton from 'shared/components/GoBackButton/GoBackButton';
 import OrderTitle from '../shared/OrderTitle/OrderTitle';
 import OrderCartItem from '../OrderCartItem/OrderCartItem';
 import s from './OrderCart.module.scss';
+import { useModal } from 'hooks/useModal';
+import { useCallback } from 'react';
 
 const OrderCart = () => {
   const productList = useSelector(selectProducts);
+  const setModal = useModal();
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
   const totalPrice =
     productList.reduce((acc, { price }) => {
       return acc + price;
@@ -18,6 +25,7 @@ const OrderCart = () => {
         id="arrow-link"
         title="Повернутися до покупок"
         className={s.orderGoBack}
+        onClick={closeModal}
       />
       <OrderTitle className={s.orderCartTitle}>Ваше замовлення:</OrderTitle>
       <ul className={s.orderCartList}>
