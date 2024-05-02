@@ -1,8 +1,8 @@
 import Product from '../Product/Product';
 import { useModal } from 'hooks/useModal';
 import { useCallback } from 'react';
-import OrderCheckoutPage from '../../../order/components/OrderCheckoutPage/OrderCheckoutPage';
-import sprite from '../../../../shared/icons/sprite.svg';
+import { OrderCheckoutPage } from 'modules/order';
+import { icons as sprite } from 'shared/icons';
 import s from './CartContainer.module.scss';
 
 const CartContainer = ({
