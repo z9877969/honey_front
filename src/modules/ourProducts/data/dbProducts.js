@@ -1,19 +1,7 @@
-import { pollen } from "../images";
-import { cashewHoney } from "../images";
-import { honeyWithAlmonds } from "../images";
-import { honeyWithHazelnuts } from "../images";
-import { honeyWithNutsMix } from "../images";
-import { honeyWithWalnuts } from "../images";
-import { honeycombs } from "../images";
-import { naturalAcaciaHoney } from "../images";
-import { naturalFloralHoney } from "../images";
-import { naturalRapeseedHoney } from "../images";
-import { naturalSunflowerHoney } from "../images";
-
 const dbProducts = [
     {
         id: 1,
-        img: naturalAcaciaHoney,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/natural-acacia-honey.webp",
         name: 'Мед акацієвий натуральний',
         weight: '0.25-3.0 л',
         price: '100 грн - 1000 грн',
@@ -21,7 +9,7 @@ const dbProducts = [
     },
     {
         id: 2,
-        img: naturalFloralHoney,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/natural-floral-honey.webp",
         name: 'Мед квітковий натуральний',
         weight: '0.25-3.0 л',
         price: '75 грн - 800 грн',
@@ -29,7 +17,7 @@ const dbProducts = [
     },
     {
         id: 3,
-        img: naturalRapeseedHoney,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/natural-rapeseed-honey.webp",
         name: 'Мед ріпаковий натуральний',
         weight: '0.25-3.0 л',
         price: '50 грн - 550 грн',
@@ -37,7 +25,7 @@ const dbProducts = [
     },
     {
         id: 4,
-        img: naturalSunflowerHoney,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/natural-sunflower-honey.webp",
         name: 'Мед соняшниковий натуральний',
         weight: '0.25-3.0 л',
         price: '50 грн - 550 грн',
@@ -46,7 +34,7 @@ const dbProducts = [
 
     {
         id: 5,
-        img: honeyWithWalnuts,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/honey-with-walnuts.webp",
         name: 'Мед з волоськимим горіхами',
         weight: '250 мл',
         price: '200 грн',
@@ -54,7 +42,7 @@ const dbProducts = [
     },
     {
         id: 6,
-        img: honeyWithAlmonds,
+        img: 'https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/honey-with-almonds.webp',
         name: 'Мед з мигдалем',
         weight: '250 мл',
         price: '200 грн',
@@ -62,7 +50,7 @@ const dbProducts = [
     },
     {
         id: 7,
-        img: cashewHoney,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/cashew-honey.webp",
         name: "Мед з кеш'ю",
         weight: '250 мл',
         price: '200 грн',
@@ -70,7 +58,7 @@ const dbProducts = [
     },
     {
         id: 8,
-        img: honeyWithHazelnuts,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/honey-with-hazelnuts.webp",
         name: 'Мед з ліщиною',
         weight: '250 мл',
         price: '200 грн',
@@ -78,7 +66,7 @@ const dbProducts = [
     },
     {
         id: 9,
-        img: honeyWithNutsMix,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/honey-with-nuts-mix.webp",
         name: 'Мед з горіхами мікс',
         weight: '250 мл',
         price: '200 грн',
@@ -87,7 +75,7 @@ const dbProducts = [
 
     {
         id: 10,
-        img: honeycombs,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/honeycombs.webp",
         name: 'Стільники з акацієвим медом',
         weight: '100 мл',
         price: '75 грн',
@@ -95,7 +83,7 @@ const dbProducts = [
     },
     {
         id: 11,
-        img: pollen,
+        img: "https://res.cloudinary.com/doxxxyqxs/image/upload/v1714652492/honey_img/products/pollen.webp",
         name: 'Пилок',
         weight: '100 мл',
         price: '50 грн',
