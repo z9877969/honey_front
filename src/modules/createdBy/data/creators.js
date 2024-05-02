@@ -12,6 +12,9 @@ import { sviatoslavMelnychuk } from '../images';
 import { yuliiaStoroniuk } from '../images';
 import { vladyslavBrataniuk } from '../images';
 import { yevhenKharchenko } from '../images';
+import { kostiantynZinchenko } from '../images';
+import { krystynaBaranik } from '../images';
+import { yuliiaKucher } from '../images';
 
 const creatorsData = [
   {
@@ -22,18 +25,25 @@ const creatorsData = [
     link: 'https://www.linkedin.com/in/maksym-nagornyi-19b84431/',
   },
   {
+    id: '17',
+    name: 'Yulia Kucher',
+    position: 'Designer',
+    picture: yuliiaKucher,
+    link: '',
+  },
+  {
     id: '2',
     name: 'Zenoviy Fil',
     position: 'Frontend Developer',
     picture: zenoviyFil,
-    link: 'https://www.linkedin.com/',
+    link: '',
   },
   {
     id: '3',
     name: 'Vladyslav Brataniuk',
     position: 'Frontend Developer',
     picture: vladyslavBrataniuk,
-    link: 'www.linkedin.com/in/vladyslav-brataniuk',
+    link: 'https://www.linkedin.com/in/vladyslav-brataniuk',
   },
   {
     id: '4',
@@ -43,74 +53,88 @@ const creatorsData = [
     link: 'https://www.linkedin.com/in/pasechnikpavel/',
   },
   {
-    id: '17',
+    id: '5',
     name: 'Yevhen Kharchenko',
     position: 'Frontend Developer',
     picture: yevhenKharchenko,
     link: 'https://www.linkedin.com/in/yevhen-kharchenko/',
   },
   {
-    id: '5',
+    id: '6',
     name: 'Oleksandra Husar',
     position: 'Frontend Developer',
     picture: oleksandraHusar,
     link: 'https://www.linkedin.com/in/o-husar-fsdev/',
   },
   {
-    id: '6',
+    id: '7',
     name: 'Sviatoslav Melnychuk',
     position: 'Frontend Developer',
     picture: sviatoslavMelnychuk,
     link: 'https://www.linkedin.com/in/sviatoslav-melnychuk/',
   },
   {
-    id: '7',
+    id: '8',
     name: 'Krystyna Hranovska',
     position: 'Frontend Developer',
     picture: krystynaHranovska,
     link: 'https://www.linkedin.com/in/krystyna-hranovska/',
   },
   {
-    id: '8',
+    id: '9',
     name: 'Nazar Dia',
     position: 'Frontend Developer',
     picture: nazarDia,
     link: 'https://www.linkedin.com/in/nazar-dia/',
   },
   {
-    id: '9',
+    id: '10',
     name: 'Oleksii Zhuravlov',
     position: 'Frontend Developer',
     picture: oleksiiZhuravlov,
-    link: 'www.linkedin.com/in/oleksii-zhuravlov-778315304',
+    link: 'https://www.linkedin.com/in/oleksii-zhuravlov-778315304',
   },
   {
-    id: '10',
+    id: '11',
+    name: 'Krystyna Baranik',
+    position: 'QA',
+    picture: krystynaBaranik,
+    link: 'https://www.linkedin.com/in/kristina-baranik-4a2883203/',
+  },
+  {
+    id: '12',
     name: 'Yuliia Storoniuk',
     position: 'QA',
     picture: yuliiaStoroniuk,
     link: 'https://www.linkedin.com/in/julia7on/',
   },
   {
-    id: '11',
+    id: '13',
     name: "Smal' Kateryna",
     position: 'QA',
     picture: smalKateryna,
     link: 'https://www.linkedin.com/in/kateryna-smal/',
   },
   {
-    id: '12',
+    id: '14',
     name: 'Iryna Akkaya',
     position: 'QA',
     picture: irynaAkkaya,
     link: 'https://www.linkedin.com/in/irina-akkaya-727029280/',
   },
   {
-    id: '13',
+    id: '15',
     name: 'Anastasiia Postilniak',
     position: 'QA',
     picture: anastasiiaPostiliak,
     link: 'https://www.linkedin.com/in/anastasiia-postilniak/',
+  },
+  {
+    id: '16',
+    name: 'Kostiantyn Zinchenko',
+    position: 'QA',
+    picture: kostiantynZinchenko,
+    link: 'https://www.linkedin.com/in/kostiantyn-zinchenko/',
   },
 ];
 
