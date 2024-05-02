@@ -34,7 +34,7 @@ const Cart = () => {
     dispatch(deleteProduct(id));
   };
 
-  const handleBackLink = (e) => {
+  const handleBackBtn = (e) => {
     e.preventDefault();
     setIsOpen(false);
   };
@@ -63,7 +63,8 @@ const Cart = () => {
               handleIncrease={handleAddOrUpdate}
               handleDecrease={handleDecrease}
               handleDelete={handleDelete}
-              handleBackLink={handleBackLink}
+              handleBackBtn={handleBackBtn}
+              handleClose={handleClose}
               totalPrice={totalPrice}
             />
           ) : (

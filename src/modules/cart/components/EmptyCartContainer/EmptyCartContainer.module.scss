@@ -136,7 +136,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color $animation-time-function;
+  transition: background-color 200ms $animation-time-function;
 
   &:hover,
   &:focus,
