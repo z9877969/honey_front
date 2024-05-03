@@ -15,10 +15,12 @@ a:focus .icon {
     fill: $primary-hover-color;
   }
 
-  @media (hover: hover) {
-    transition: fill $animation-duration $animation-time-function;
-    &:hover {
-      fill: $primary-hover-color;
+  @include media(desktop) {
+    @media (hover: hover) {
+      transition: fill $animation-duration $animation-time-function;
+      &:hover {
+        fill: $primary-hover-color;
+      }
     }
   }
 }

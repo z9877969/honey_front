@@ -67,7 +67,7 @@
       height: 3px;
       bottom: -2px;
       left: 50%;
-      transition: width 0.5s ease;
+      transition: width $animation-duration ease;
       transform: translateX(-50%);
     }
     &:hover::after,
