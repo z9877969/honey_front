@@ -53,10 +53,14 @@
     }
 }
 
-.shopCartIcon {
+.shopCartWrapper {
+    position: relative;
+}
 
+.shopCartIcon {
     width: 32px;
     height: 32px;
+    cursor: pointer;
 
     @include media(tablet) {
         width: 48px;
@@ -67,10 +71,6 @@
         width: 52px;
         height: 52px;
     }
-}
-
-.shopCartWrapper {
-    position: relative;
 }
 
 .shopCartText {
