@@ -1,16 +1,13 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL =
+  'https://honey-e1eaa-default-rtdb.europe-west1.firebasedatabase.app';
 
-export const fetchReviews = createAsyncThunk(
-  'reviews/fetchAll',
-  async (_, thunkApi) => {
-    try {
-      const res = await axios.get('/reviews');
-      return res.data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
-    }
+export const fetchReviews = async () => {
+  try {
+    const res = await axios.get('/reviews.json');
+    return res.data;
+  } catch (error) {
+    throw new Error(error.message);
   }
-);
+};

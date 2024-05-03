@@ -1,5 +1,4 @@
 import style from './ProductsItem.module.scss';
-import { naturalAcaciaHoney } from '../../images/index';
 
 const ProductItem = ({ product }) => {
   const firstWeightValue = product.variants[0].size;
@@ -11,11 +10,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className={style.productInfoBlock}>
-      <img
-        className={style.imgProduct}
-        src={naturalAcaciaHoney}
-        alt={product.name}
-      />
+      <img className={style.imgProduct} src={product.img} alt={product.name} />
       <div className={style.productInfo}>
         <h3 className={style.nameTitle}>{product.prodName}</h3>
         <div className={style.infoThumb}>

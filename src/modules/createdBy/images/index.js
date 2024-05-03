@@ -13,3 +13,6 @@ export { default as yuliiaStoroniuk } from './yuliia-storoniuk.jpeg';
 export { default as zenoviyFil } from './zenoviy-fil.jpeg';
 export { default as vladyslavBrataniuk } from './vladyslav-brataniuk.jpeg';
 export { default as yevhenKharchenko } from './yevhen-kharchenko.jpeg';
+export { default as kostiantynZinchenko } from './kostiantyn-zinchenko.jpeg';
+export { default as krystynaBaranik } from './krystyna-baranik.jpeg';
+export { default as yuliiaKucher } from './yulia-kucher.jpeg';
