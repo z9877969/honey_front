@@ -26,6 +26,10 @@ const ProductsList = ({ currentCategory, data }) => {
   const showArrows = filteredProducts.length > 3;
 
   useEffect(() => {
+    setCurrentIndex(0);
+  }, [currentCategory]);
+
+  useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 1024);
     };
