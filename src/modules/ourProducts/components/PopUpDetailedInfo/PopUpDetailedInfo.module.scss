@@ -6,10 +6,10 @@
   height: 100%;
 
   display: flex;
+  justify-content: center;
 
   @include media(desktop) {
     align-items: center;
-    justify-content: center;
   }
 
   background-color: rgba($primary-background-accent-color, 0.1);
@@ -20,7 +20,7 @@
 .modalContent {
   position: relative;
   width: 375px;
-  height: auto;
+  height: fit-content;
   padding: 64px 20px 20px 20px;
 
   display: flex;
@@ -30,18 +30,17 @@
 
   @include media(tablet) {
     width: 672px;
-
     padding: 48px;
     border-radius: 24px;
   }
 
   @include media(desktop) {
     flex-direction: row;
+
     width: 1216px;
-    height: 684px;
+    height: 656px;
     padding: 64px;
   }
-
 }
 
 .modalCloseBtn {
@@ -66,9 +65,8 @@
 }
 
 .modalCloseBtnIcon {
-  position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
 }
 
 .modalImage {
@@ -83,33 +81,61 @@
 
   @include media(desktop) {
     width: 528px;
-    height: 556px;
+    height: 528px;
   }
 
 }
 
-.descriptionArea {
+.dataArea {
   @include media(desktop) {
     padding-left: 64px;
   }
 }
 
+.textArea {
+  @include media(desktop) {
+    height: 268px;
+    overflow-y: auto;
+  }
+
+}
+
+.textArea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.textArea::-webkit-scrollbar-track {
+  background-color: $primary-background-accent-color;
+  height: 268px;
+  border-radius: 6px;
+}
+
+.textArea::-webkit-scrollbar-thumb {
+  background-color: $primary-accent-color;
+  height: 173px;
+  border-radius: 6px;
+}
+
+.textArea::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-hover-color;
+}
+
 .productName {
   padding-top: 20px;
   font-family: $secondary-font-family;
-  font-size: 18px;
   font-weight: 600;
-
+  font-size: 18px;
   line-height: 28px;
   letter-spacing: 2%;
   text-align: left;
 
   @include media(tablet) {
-    // font-size: 24px;
+    padding-top: 32px;
+    font-size: 20px;
   }
 
   @include media(desktop) {
-    // font-size: 32px;
+    padding-top: 0px;
   }
 }
 
@@ -120,6 +146,18 @@
   line-height: 24px;
   letter-spacing: 4%;
   font-weight: 400;
+
+  @include media(tablet) {
+    //nothing changes
+  }
+
+  @include media(desktop) {
+    padding-top: 24px;
+    padding-right: 12px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
 }
 
 .prodDescriptionHeader {
@@ -131,16 +169,26 @@
   font-weight: 600;
 
   @include media(tablet) {
-    // font-size: 24px;
+    //nothing changes
   }
 
   @include media(desktop) {
-    // font-size: 32px;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
 .weightContainer {
-  height: auto;
+  padding-top: 4px;
+  height: fit-content;
+
+  @include media(tablet) {
+    padding-top: 8px;
+  }
+
+  @include media(desktop) {
+    padding-top: 26px;
+  }
 }
 
 .weightList {
@@ -148,6 +196,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+
+  @include media(tablet) {
+    //nothing changes
+  }
+
+  @include media(desktop) {
+    padding-top: 16px;
+  }
 }
 
 .weightItem {
@@ -164,6 +220,17 @@
   font-weight: 400;
   border-radius: 8px;
   border: 1px solid $primary-grey-color;
+
+  @include media(tablet) {
+    //nothing changes
+  }
+
+  @include media(desktop) {
+    min-width: 80px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 28px;
+  }
 
   &:hover,
   :focus {
@@ -182,6 +249,14 @@
   align-items: center;
   justify-content: left;
   gap: 12px;
+
+  @include media(tablet) {
+    padding: 24px 0 24px 0;
+  }
+
+  @include media(desktop) {
+    //? dont touched yet
+  }
 }
 
 .prodQtyHeader {
@@ -192,11 +267,11 @@
   font-weight: 600;
 
   @include media(tablet) {
-    // font-size: 24px;
+    //nothing changes
   }
 
   @include media(desktop) {
-    // font-size: 32px;
+    //? dont touched yet
   }
 }
 
@@ -210,42 +285,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include media(tablet) {
+    //nothing changes
+  }
+
+  @include media(desktop) {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.qtyView {
+  font-family: $primary-font-family;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 4%;
+  font-weight: 400;
 }
 
 .counterIcon {
   width: 32px;
   height: 32px;
-}
-
-.basement {
-  padding-top: 20px;
-  border-top: 3px solid rgb($primary-darkgrey-color, 0.25);
-
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-}
-
-.orderContainer {
-  padding-top: 12px;
-  display: flex;
-  flex-direction: row;
-}
-
-.addToCartBtn {
-  width: 198px;
-  height: 48px;
-  padding: 12px 32px 12px 32px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $primary-font-family;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 4%;
-  font-weight: 600;
-
-
-  background-color: $primary-accent-color;
 }
