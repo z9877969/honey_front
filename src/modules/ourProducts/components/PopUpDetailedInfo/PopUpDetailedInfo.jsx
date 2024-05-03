@@ -4,7 +4,7 @@ import { icons } from 'shared/icons';
 
 import s from './PopUpDetailedInfo.module.scss';
 
-import acacia_honey_img from '../../images/natural-acacia-honey.jpg';
+import { acaciaHoneyImg } from '../../images';
 
 import { ModalBackdrop } from 'shared/components';
 import { Cart } from 'modules/cart';
@@ -47,7 +47,7 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
     setProductVariants(getInitialProductVariants(product));
   }, [product]);
   if (product) {
-    product.img = acacia_honey_img;
+    product.img = acaciaHoneyImg;
   }
 
   const handleChooseVariant = (size) => {
