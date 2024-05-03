@@ -4,8 +4,6 @@ import { icons } from 'shared/icons';
 
 import s from './PopUpDetailedInfo.module.scss';
 
-import { acaciaHoneyImg } from '../../images';
-
 import { ModalBackdrop } from 'shared/components';
 import { Cart } from 'modules/cart';
 import PopUpDetailedBasemet from '../PopUpDetailedBasemet/PopUpDetailedBasemet';
@@ -46,9 +44,6 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
   useEffect(() => {
     setProductVariants(getInitialProductVariants(product));
   }, [product]);
-  if (product) {
-    product.img = acaciaHoneyImg;
-  }
 
   const handleChooseVariant = (size) => {
     const locArr = productVariants.map((item) => {
