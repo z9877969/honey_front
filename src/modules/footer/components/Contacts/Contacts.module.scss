@@ -15,13 +15,11 @@
     @include media(desktop) {
       @include font(18, 28);
       transition: color $animation-duration $animation-time-function;
-    }
-  }
 
-  @media (hover: hover) {
-    a {
-      &:hover {
-        color: $primary-hover-color;
+      @media (hover: hover) {
+        &:hover {
+          color: $primary-hover-color;
+        }
       }
     }
   }

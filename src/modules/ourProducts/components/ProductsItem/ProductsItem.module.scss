@@ -7,12 +7,6 @@
 .imgProduct {
   border-radius: 24px;
   margin-bottom: 24px;
-
-  @include media(desktop) {
-    // &:hover {
-    //   transform: scale(1.05);
-    // }
-  }
 }
 
 .productInfo {
