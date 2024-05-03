@@ -1,0 +1,131 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-darkgrey-color;
+  z-index: 999;
+}
+.modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #ffffff;
+  padding: 48px 24px 24px 24px;
+  border-radius: 24px;
+  width: $mobile;
+  @include media(tablet) {
+    width: $tablet;
+    padding: 48px;
+  }
+}
+.closeBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.closeIcon {
+  width: 18px;
+  height: 18px;
+  @include media(tablet) {
+    width: 32px;
+    height: 32px;
+  }
+}
+.thanksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.modalTitle {
+  @include media(tablet) {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+  }
+}
+.modalText {
+  text-align: center;
+  @include media(tablet) {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+}
+.horizontalLine {
+  border: 1px solid $primary-darkgrey-color;
+  width: 287px;
+  height: 0px;
+  margin-bottom: 0px;
+  @include media(tablet) {
+    border: 1px solid $primary-darkgrey-color;
+    width: 576px;
+    height: 0px;
+  }
+}
+.contacts {
+  margin-top: 24px;
+}
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  @include media(tablet) {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+a {
+  @include font(16, 24);
+  font-family: $secondary-font-family;
+  color: $primary-black-color;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+
+  &:focus {
+    color: $primary-hover-color;
+  }
+  &:hover {
+    color: $primary-hover-color;
+  }
+
+  @include media(desktop) {
+    @include font(18, 28);
+    transition: color $animation-duration $animation-time-function;
+  }
+}
+
+a:focus .icon {
+  fill: $primary-hover-color;
+}
+.contactsIcons {
+  display: flex;
+  gap: 15px;
+}
+.icon {
+  fill: $primary-accent-color;
+
+  &:focus {
+    fill: $primary-hover-color;
+  }
+
+  @media (hover: hover) {
+    transition: fill $animation-duration $animation-time-function;
+    &:hover {
+      fill: $primary-hover-color;
+    }
+  }
+}
+.contactsDetails:hover,
+.contactsDetails:focus {
+  color: $primary-hover-color;
+}
