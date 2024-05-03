@@ -9,3 +9,4 @@ export { default as naturalAcaciaHoney } from './natural-acacia-honey.jpg';
 export { default as naturalFloralHoney } from './natural-floral-honey.jpg';
 export { default as naturalRapeseedHoney } from './natural-rapeseed-honey.jpg';
 export { default as naturalSunflowerHoney } from './natural-sunflower-honey.jpg';
+export { default as shopCartSet } from './shopCartSet.svg';
