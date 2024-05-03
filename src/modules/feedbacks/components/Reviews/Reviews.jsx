@@ -39,7 +39,7 @@ const Reviews = () => {
             className={s.prevButton}
             onClick={() => swiper && swiper.slidePrev()}
           >
-            <svg width="32" height="32">
+            <svg className={s.svg}>
               <use xlinkHref={`${icons}#arrow-left`} />
             </svg>
           </button>
@@ -58,7 +58,7 @@ const Reviews = () => {
             className={s.nextButton}
             onClick={() => swiper && swiper.slideNext()}
           >
-            <svg width="32" height="32">
+            <svg className={s.svg}>
               <use xlinkHref={`${icons}#arrow-right`} />
             </svg>
           </button>
