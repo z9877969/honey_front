@@ -3,7 +3,12 @@ import s from './SocialLinks.module.scss';
 const SocialLinks = ({ icon1, icon2 }) => {
   return (
     <div className={s.social}>
-      <a className={s.link} href="#" target="blank" rel="noreferrer">
+      <a
+        className={s.link}
+        href="https://t.me/anastasiia_plokha"
+        target="blank"
+        rel="noreferrer"
+      >
         <svg className={s.icon}>
           <use xlinkHref={icon1} />
         </svg>

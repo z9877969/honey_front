@@ -38,6 +38,11 @@ const ContactForm = () => {
         placeholder="+ 380"
         wrapperClassName={s.inputWrapper}
         invalidClassName={s.invalid}
+        onFocus={(e) => {
+          if (e.target.value === '') {
+            e.target.value = '+380';
+          }
+        }}
       />
     </div>
   );

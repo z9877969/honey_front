@@ -1,8 +1,6 @@
 .orderTitle {
   @include font(18, 28);
   width: 280px;
-  // margin-bottom: 32px;
-  font-style: normal;
   font-weight: 600;
   letter-spacing: 0.02em;
   @include media(tablet) {

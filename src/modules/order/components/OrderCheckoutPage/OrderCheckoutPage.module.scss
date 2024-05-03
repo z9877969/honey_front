@@ -1,5 +1,21 @@
+.orderSection {
+  background-color: $light-bg-color;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.orderSection::-webkit-scrollbar {
+  width: 4px;
+}
+.orderSection::-webkit-scrollbar-thumb {
+  background-color: $primary-hover-color;
+  border-radius: 6px;
+}
+.orderSection::-webkit-scrollbar-track {
+  background-color: $primary-background-accent-color;
+}
+
 .orderContainer {
-  height: 100%;
   padding-top: calc(56px + 32px);
   padding-bottom: 100px;
   background-color: #fff;

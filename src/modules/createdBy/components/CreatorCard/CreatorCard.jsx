@@ -6,7 +6,11 @@ import { icons as sprite } from 'shared/icons';
 const CreatorCard = ({ data }) => {
   return (
     <li>
-      <a href={data.link} className={s.card} target="_blank">
+      <a
+        href={data.link}
+        className={clsx(s.card, data.link === '' && s.linkInactive)}
+        target="_blank"
+      >
         <div className={s.cardImgWrap}>
           <img
             className={s.cardImg}

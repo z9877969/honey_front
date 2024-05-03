@@ -17,6 +17,11 @@
   }
 }
 
+.linkInactive {
+  pointer-events: none;
+  cursor: default;
+}
+
 .cardText {
   font-family: $primary-font-family;
   letter-spacing: 0.04em;
