@@ -29,7 +29,7 @@ const creatorsData = [
     name: 'Yulia Kucher',
     position: 'Designer',
     picture: yuliiaKucher,
-    link: '',
+    link: 'https://www.linkedin.com/in/yulia-kucher-294aa8306/',
   },
   {
     id: '2',
