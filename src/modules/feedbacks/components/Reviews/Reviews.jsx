@@ -44,7 +44,7 @@ const Reviews = () => {
             </svg>
           </button>
           {
-            <Swiper onSwiper={setSwiper} slidesPerView={1}>
+            <Swiper rewind={true} onSwiper={setSwiper} slidesPerView={1}>
               {Array.isArray(data) &&
                 data &&
                 data.map((data) => (
