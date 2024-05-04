@@ -4,14 +4,11 @@
   margin-top: 24px;
 }
 
-a:focus .icon {
-  fill: $primary-hover-color;
-}
-
 .icon {
   fill: $primary-accent-color;
 
-  &:focus {
+  &:focus,
+  &:active {
     fill: $primary-hover-color;
   }
 
