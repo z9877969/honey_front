@@ -1,7 +1,7 @@
 import SectionMain from 'shared/components/SectionMain/SectionMain';
 import { Container, MainTitle } from 'shared/components';
-import HoneyFeature from '../HoneyFeature/HoneyFeature';
-import ourHoneySet from '../../images/ourHoneySet.svg';
+import { HoneyFeature } from 'modules/ourHoney';
+import { ourHoneySet } from '../../images';
 import s from './OurHoney.module.scss';
 
 const OurHoney = () => {
