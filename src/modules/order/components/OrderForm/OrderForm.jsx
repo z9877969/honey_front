@@ -60,7 +60,7 @@ const OrderForm = ({ onClose }) => {
         <Form className={s.orderForm}>
           {/* // **********************************************
   // Added By Nazar Dia for applying Thanks 4 Order Pop-Up */}
-          {isError && <p className={s.error}>Ошибка при отправке формы</p>}
+          {isError && <p className={s.error}>Виникла помилка :( Спробуйте ще раз.</p>}
           {/* // ********************************************** */}
           <ContactForm />
           <AddressForm
