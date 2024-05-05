@@ -5,6 +5,7 @@
   top: 575px;
   left: 50px;
   z-index: 2;
+  transition: background-color $animation-duration cubic-bezier(0.4, 0, 0.2, 1);
 
   @include media(mobile) {
     position: absolute;
@@ -45,6 +46,7 @@
   top: 575px;
   right: 50px;
   z-index: 1;
+  transition: background-color $animation-duration cubic-bezier(0.4, 0, 0.2, 1);
 
   @include media(mobile) {
     position: absolute;

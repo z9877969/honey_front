@@ -7,7 +7,6 @@ const Header = () => {
     <header id="header" className={s.header}>
       <Container className={s.flex}>
         <Logo className={s.logo} />
-
         <HeaderNav />
       </Container>
     </header>
