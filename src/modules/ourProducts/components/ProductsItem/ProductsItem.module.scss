@@ -1,5 +1,6 @@
 .productInfoBlock {
   @include media(desktop) {
+    border-bottom: 1px solid $primary-darkgrey-color;
     width: 384px;
   }
 }
