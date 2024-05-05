@@ -1,5 +1,6 @@
 .title {
   font-weight: 600;
+  letter-spacing: 0.02em;
   @include font(16, 24);
 
   &.light {
@@ -7,9 +8,7 @@
   }
 
   @include media(tablet) {
-
     @include font(20, 32);
-
   }
 
   @include media(desktop) {

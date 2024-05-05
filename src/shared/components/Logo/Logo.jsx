@@ -15,7 +15,7 @@ const Logo = ({ iconWidth, iconHeight, iconClassName, linkClassName }) => {
       >
         <use xlinkHref={`${sprite}#logo`} />
       </svg>
-      <LogoText title={'Бджола та Шершень'} />
+      <LogoText className={s.logoHover} title={'Бджола та Шершень'} />
     </a>
   );
 };
