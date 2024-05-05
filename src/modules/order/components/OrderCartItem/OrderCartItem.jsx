@@ -1,6 +1,6 @@
 import {
   createProductName,
-  createProductQuantity,
+  createProductTotalPrice,
 } from 'modules/order/helpers';
 import s from './OrderCartItem.module.scss';
 
@@ -15,10 +15,10 @@ const OrderCartItem = ({
       <div className={s.textWrapper}>
         <p>{createProductName(title)}</p>
         <p>
-          <span>{createProductQuantity(weight)}</span>
+          <span>{weight}</span>
           <span>&#215;{quantity}</span>
         </p>
-        <span>{`${price} грн`}</span>
+        <span>{`${createProductTotalPrice(quantity, price)} грн`}</span>
       </div>
     </>
   );

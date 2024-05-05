@@ -19,6 +19,12 @@ export const contactFormValidationSchema = Yup.object().shape({
   deliveryType: Yup.string().required(),
   location: Yup.object().required(),
   address: Yup.string().required(),
+  comment: Yup.string()
+    .max(300, 'Максимальна довжина тексту - 300 символів')
+    .matches(
+      /^[а-яА-ЯґҐєЄіІїЇ0-9 .,-/"()!?]+$/,
+      'Коментар може містити лише символи кирилиці, цифри та знаки .,!?/-"()'
+    ),
 });
 
 export const orderFormInitialValues = {
