@@ -1,7 +1,28 @@
+import { useDispatch } from 'react-redux';
+import {
+  addOrUpdateProduct,
+  deleteProduct,
+  decreaseQuantity,
+} from '@redux/cart/cartSlice';
 import sprite from '../../../../shared/icons/sprite.svg';
 import s from './Product.module.scss';
 
-const Product = ({ item, handleIncrease, handleDecrease, handleDelete }) => {
+const Product = ({ item }) => {
+  const dispatch = useDispatch();
+
+  const handleIncrease = (id) => {
+    if (item.quantity >= 10) return;
+    dispatch(addOrUpdateProduct({ id: id, quantity: 1 }));
+  };
+
+  const handleDecrease = (id) => {
+    dispatch(decreaseQuantity(id));
+  };
+
+  const handleDelete = (id) => {
+    dispatch(deleteProduct(id));
+  };
+
   return (
     <>
       <div className={s.imgWrapper}>

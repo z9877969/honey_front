@@ -7,9 +7,6 @@ import s from './CartContainer.module.scss';
 
 const CartContainer = ({
   products,
-  handleIncrease,
-  handleDecrease,
-  handleDelete,
   handleBackBtn,
   totalPrice,
   handleClose,
@@ -31,12 +28,7 @@ const CartContainer = ({
           {products.map((item) => {
             return (
               <li key={item.id} className={s.listItem}>
-                <Product
-                  item={item}
-                  handleIncrease={handleIncrease}
-                  handleDecrease={handleDecrease}
-                  handleDelete={handleDelete}
-                />
+                <Product item={item} />
               </li>
             );
           })}

@@ -1,53 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { honey } from 'modules/cart/images';
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    products: [
-      {
-        id: 1,
-        title: 'Мед квітковий натуральний',
-        image: honey,
-        weight: '0,25 л',
-        quantity: 2,
-        price: 100,
-      },
-      {
-        id: 2,
-        title: 'Мед з волоськимим горіхами',
-        image: honey,
-        weight: '0,25 л',
-        quantity: 2,
-        price: 200,
-      },
-      {
-        id: 3,
-        title: 'Мед акацієвий натуральний',
-        image: honey,
-        weight: '0,25 л',
-        quantity: 3,
-        price: 100,
-      },
-      {
-        id: 4,
-        title: 'Мед ріпаковий натуральний',
-        image: honey,
-        weight: '0,25 л',
-        quantity: 1,
-        price: 500,
-      },
-      {
-        id: 5,
-        title: 'Мед соняшниковий натуральний',
-        image: honey,
-        weight: '0,25 л',
-        quantity: 1,
-        price: 250,
-      },
-    ],
+    products: [],
   },
   reducers: {
     addOrUpdateProduct(state, action) {
