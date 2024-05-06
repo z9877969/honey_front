@@ -1,29 +1,21 @@
+// .wrapper .os-scrollbar {
+//     --os-size: 6px;
+//     --os-track-bg: #f7f5ed;
+//     --os-track-bg-hover: #f7f5ed;
+//     --os-handle-bg: #facf5a;
+//     --os-handle-bg-hover: #facf5a;
+
+//     --os-track-border-radius: 6px;
+//     --os-handle-border-radius: 6px;
+
+//     --os-handle-bg-hover: #ebb41c;
+//     --os-handle-bg-active: #ebb41c;
+// }
+
 .descriptionArea {
     @include media(desktop) {
         height: 268px;
-        overflow-y: auto;
     }
-
-}
-
-.descriptionArea::-webkit-scrollbar {
-    width: 4px;
-}
-
-.descriptionArea::-webkit-scrollbar-track {
-    background-color: $primary-background-accent-color;
-    height: 268px;
-    border-radius: 6px;
-}
-
-.descriptionArea::-webkit-scrollbar-thumb {
-    background-color: $primary-accent-color;
-    height: 173px;
-    border-radius: 6px;
-}
-
-.descriptionArea::-webkit-scrollbar-thumb:hover {
-    background-color: $primary-hover-color;
 }
 
 .productName {
