@@ -18,23 +18,25 @@ const Cart = ({ onClose }) => {
   };
 
   return (
-    <div className={s.modalContainer}>
-      <button className={s.modalCloseBtn} type="button" onClick={handleClose}>
-        <svg className={s.modalCloseIcon}>
-          <use xlinkHref={`${sprite}#cross-close`}></use>
-        </svg>
-      </button>
-      <h2 className={s.modalTitle}>Ваш кошик</h2>
-      {products.length > 0 ? (
-        <CartContainer
-          products={products}
-          handleBackBtn={handleBackBtn}
-          handleClose={handleClose}
-          totalPrice={totalPrice}
-        />
-      ) : (
-        <EmptyCart handleBackButton={handleBackBtn} />
-      )}
+    <div className={s.modalBackdrop}>
+      <div className={s.modalContainer}>
+        <button className={s.modalCloseBtn} type="button" onClick={handleClose}>
+          <svg className={s.modalCloseIcon}>
+            <use xlinkHref={`${sprite}#cross-close`}></use>
+          </svg>
+        </button>
+        <h2 className={s.modalTitle}>Ваш кошик</h2>
+        {products.length > 0 ? (
+          <CartContainer
+            products={products}
+            handleBackBtn={handleBackBtn}
+            handleClose={handleClose}
+            totalPrice={totalPrice}
+          />
+        ) : (
+          <EmptyCart handleBackButton={handleBackBtn} />
+        )}
+      </div>
     </div>
   );
 };
