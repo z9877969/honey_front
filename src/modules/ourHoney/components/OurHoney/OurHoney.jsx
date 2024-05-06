@@ -1,11 +1,8 @@
 import SectionMain from 'shared/components/SectionMain/SectionMain';
 import { Container, MainTitle } from 'shared/components';
 import { HoneyFeature } from 'modules/ourHoney';
-// import { ourHoneySet } from '../../images';
 import s from './OurHoney.module.scss';
 import { icons as sprite } from 'shared/icons';
-
-// console.log('ourHoneySet :>> ', ourHoneySet);
 
 const OurHoney = () => {
   return (
