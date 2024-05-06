@@ -52,6 +52,5 @@
 .inputWrapper.invalid > span {
   @include font(14, 20);
   color: $error-input-color;
-  font-style: normal;
   letter-spacing: 0.01em;
 }

@@ -1,16 +1,16 @@
 .orderCartWrapper {
   width: 100%;
-  padding: 20px 16px;
+  padding: 20px 0 20px 16px;
   position: relative;
   background-color: $primary-lightgrey-color;
   border-radius: 24px;
   height: fit-content;
   @include media(tablet) {
-    padding: 32px;
+    padding: 32px 16px 32px 32px;
   }
   @include media(desktop) {
     width: calc((100% - 32px) / 2);
-    padding: 64px 32px;
+    padding: 64px 16px 64px 32px;
   }
 }
 .orderGoBack {
@@ -37,12 +37,12 @@
     }
   }
 }
-.orderGoBack:hover,
+
 .orderGoBack:active,
 .orderGoBack:focus {
   color: $primary-hover-color;
 }
-.orderGoBack:hover svg,
+
 .orderGoBack:active svg,
 .orderGoBack:focus svg {
   stroke: $primary-hover-color;
@@ -53,32 +53,29 @@
     margin-bottom: 32px;
   }
 }
+.orderCartListWrapper {
+  margin-bottom: 20px;
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+  @include media(desktop) {
+    margin-bottom: 34px;
+  }
+}
 .orderCartList {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 20px;
   max-height: 344px;
-  overflow-y: auto;
+
   @include media(tablet) {
     max-height: 392px;
-    margin-bottom: 24px;
   }
   @include media(desktop) {
     max-height: 428px;
-    margin-bottom: 34px;
   }
 }
-.orderCartList::-webkit-scrollbar {
-  width: 4px;
-}
-.orderCartList::-webkit-scrollbar-thumb {
-  background-color: $primary-hover-color;
-  border-radius: 6px;
-}
-.orderCartList::-webkit-scrollbar-track {
-  background-color: $primary-background-accent-color;
-}
+
 .orderCartItem {
   display: flex;
   gap: 12px;
@@ -93,6 +90,7 @@
   justify-content: space-between;
   align-items: center;
   span {
+    font-family: $primary-font-family;
     @include font(16, 24);
     @include media(desktop) {
       @include font(18, 28);

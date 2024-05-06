@@ -7,6 +7,6 @@ export { createOrderList } from './createOrderList';
 export { selectStyles } from './selectStyles';
 export {
   createProductName,
-  createProductQuantity,
+  createProductTotalPrice,
   createTotalPrice,
 } from './createOrderCartElements';

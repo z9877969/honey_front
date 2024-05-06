@@ -27,7 +27,7 @@
     @include font(18, 28);
   }
 }
-.orderButton:hover,
+.orderButton:focus,
 .orderButton:active {
   background-color: $primary-hover-color;
 }

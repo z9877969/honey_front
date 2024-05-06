@@ -121,12 +121,15 @@ const AddressForm = ({
           }
         />
       )}
-      <Field
-        as="textarea"
-        name="comment"
-        placeholder="Додати коментар до замовлення"
-        className={s.comment}
-      />
+
+      <Field name="comment">
+        {({ field, meta }) => (
+          <div className={s.comment}>
+            <textarea {...field} placeholder="Додати коментар до замовлення" />
+            {meta.error && meta.touched && <span>{meta.error}</span>}
+          </div>
+        )}
+      </Field>
     </div>
   );
 };
