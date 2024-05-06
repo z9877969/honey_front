@@ -15,7 +15,7 @@ const Product = ({ item, handleIncrease, handleDecrease, handleDelete }) => {
       </div>
       <div className={s.descriptionWrapper}>
         <h3 className={s.itemTitle}>{item.title}</h3>
-        <p className={s.itemVolume}>{item.weight} л</p>
+        <p className={s.itemVolume}>{item.weight}</p>
         <div className={s.itemQuantityWrapper}>
           <p className={s.itemQuantityText}>Кількість</p>
           <button
@@ -43,7 +43,7 @@ const Product = ({ item, handleIncrease, handleDecrease, handleDelete }) => {
           </button>
         </div>
         <div className={s.itemBottomWrapper}>
-          <p className={s.itemPrice}>{item.price} грн</p>
+          <p className={s.itemPrice}>{item.price * item.quantity} грн</p>
           <button
             className={s.deleteBtn}
             type="button"

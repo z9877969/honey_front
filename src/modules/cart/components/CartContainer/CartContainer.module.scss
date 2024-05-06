@@ -143,8 +143,6 @@
     color 200ms $animation-time-function,
     fill 200ms $animation-time-function;
 
-  &:hover,
-  &:focus,
   &:active {
     color: $primary-hover-color;
     fill: $primary-hover-color;
@@ -215,8 +213,6 @@
   justify-content: center;
   transition: background-color 200ms $animation-time-function;
 
-  &:hover,
-  &:focus,
   &:active {
     background-color: $primary-hover-color;
   }
