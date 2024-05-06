@@ -1,33 +1,37 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
 import { icons } from 'shared/icons';
-import { ModalBackdrop } from 'shared/components';
 import { PopUpDetailedInfo } from 'modules/ourProducts/';
+import { useModal } from 'hooks/useModal';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const ProductsList = ({ currentCategory, data }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [swiper, setSwiper] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
-  const [isDetailedInfoOpen, setIsDetailedInfoOpen] = useState(false);
-  const [productToDetail, setProductToDetail] = useState({});
-  const handleDetailedInfo = (product) => {
-    setIsDetailedInfoOpen(true);
-    setProductToDetail(product);
-  };
-  const handleDetailedInfoClose = () => {
-    setIsDetailedInfoOpen(false);
+  const setModal = useModal();
+
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
+  const openModal = useCallback(
+    (product) => {
+      setModal(<PopUpDetailedInfo product={product} onClose={closeModal} />);
+    },
+    [setModal, closeModal]
+  );
+  const handleDetailedInfo = (productToDetail) => {
+    openModal(productToDetail);
   };
 
   const filteredProducts = data.filter(
     (product) => product.category === currentCategory
   );
-
   const showArrows = filteredProducts.length > 3;
-
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [currentCategory]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,27 +44,9 @@ const ProductsList = ({ currentCategory, data }) => {
     };
   }, []);
 
-  const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
-  };
-
-  const handleNextClick = () => {
-    setCurrentIndex((prevIndex) =>
-      Math.min(filteredProducts.length - 3, prevIndex + 1)
-    );
-  };
-
   if (!isDesktop) {
     return (
       <>
-        {isDetailedInfoOpen && (
-          <ModalBackdrop>
-            <PopUpDetailedInfo
-              product={productToDetail}
-              onClose={handleDetailedInfoClose}
-            />
-          </ModalBackdrop>
-        )}
         {filteredProducts.length > 0 && (
           <ul className={style.productsList}>
             {filteredProducts.map((product) => (
@@ -80,21 +66,11 @@ const ProductsList = ({ currentCategory, data }) => {
 
   return (
     <>
-      {isDetailedInfoOpen && (
-        <ModalBackdrop>
-          <PopUpDetailedInfo
-            product={productToDetail}
-            onClose={handleDetailedInfoClose}
-          />
-        </ModalBackdrop>
-      )}
-
       <div className={style.thumbList}>
         {showArrows && (
           <button
             className={style.prevButton}
-            onClick={handlePrevClick}
-            disabled={currentIndex === 0}
+            onClick={() => swiper && swiper.slidePrev()}
           >
             <svg width="48" height="48">
               <use xlinkHref={`${icons}#arrow-left`} />
@@ -103,26 +79,28 @@ const ProductsList = ({ currentCategory, data }) => {
         )}
 
         {filteredProducts.length > 0 && (
-          <ul className={style.swiperWrapper}>
-            {filteredProducts
-              .slice(currentIndex, currentIndex + 3)
-              .map((product) => (
-                <li
-                  key={product.id}
-                  className={style.listDesctop}
-                  onClick={() => handleDetailedInfo(product)}
-                >
-                  <ProductItem product={product} />
-                </li>
-              ))}
-          </ul>
+          <Swiper
+            rewind={true}
+            onSwiper={setSwiper}
+            slidesPerView={3}
+            className={style.swiperWrapper}
+          >
+            {filteredProducts.map((product) => (
+              <SwiperSlide
+                key={product.id}
+                className={style.listDesctop}
+                onClick={() => handleDetailedInfo(product)}
+              >
+                <ProductItem product={product} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         )}
 
         {showArrows && (
           <button
             className={style.nextButton}
-            onClick={handleNextClick}
-            disabled={currentIndex === filteredProducts.length - 3}
+            onClick={() => swiper && swiper.slideNext()}
           >
             <svg width="48" height="48">
               <use xlinkHref={`${icons}#arrow-right`} />

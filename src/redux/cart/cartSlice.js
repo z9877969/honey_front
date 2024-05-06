@@ -1,53 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { honey } from 'modules/cart/images';
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    products: [
-      {
-        id: 1,
-        title: 'Мед квітковий натуральний',
-        image: honey,
-        weight: '0,25',
-        quantity: 1,
-        price: 100,
-      },
-      {
-        id: 2,
-        title: 'Мед з волоськимим горіхами',
-        image: honey,
-        weight: '0,25',
-        quantity: 1,
-        price: 200,
-      },
-      {
-        id: 3,
-        title: 'Мед акацієвий натуральний',
-        image: honey,
-        weight: '0,25',
-        quantity: 1,
-        price: 100,
-      },
-      {
-        id: 4,
-        title: 'Мед ріпаковий натуральний',
-        image: honey,
-        weight: '0,25',
-        quantity: 1,
-        price: 500,
-      },
-      {
-        id: 5,
-        title: 'Мед соняшниковий натуральний',
-        image: honey,
-        weight: '0,25',
-        quantity: 1,
-        price: 250,
-      },
-    ],
+    products: [],
   },
   reducers: {
     addOrUpdateProduct(state, action) {
@@ -74,6 +32,9 @@ const cartSlice = createSlice({
         (product) => product.id !== action.payload
       );
     },
+    removeAllProducts(state) {
+      state.products = [];
+    },
   },
   selectors: {
     selectProducts: (state) => state.products,
@@ -85,8 +46,12 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addOrUpdateProduct, deleteProduct, decreaseQuantity } =
-  cartSlice.actions;
+export const {
+  addOrUpdateProduct,
+  deleteProduct,
+  decreaseQuantity,
+  removeAllProducts,
+} = cartSlice.actions;
 
 export const { selectProducts, selectTotalPrice, selectProductsQuantity } =
   cartSlice.selectors;

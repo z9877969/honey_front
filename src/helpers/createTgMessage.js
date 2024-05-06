@@ -1,4 +1,5 @@
-export function createTgMessage(message, orderList, totalPrice) {
+export function createTgMessage(message) {
+  const { values, order, totalPrice } = message;
   const {
     firstName,
     lastName,
@@ -7,7 +8,7 @@ export function createTgMessage(message, orderList, totalPrice) {
     location,
     address,
     comment,
-  } = message;
+  } = values;
 
   const addressType =
     deliveryType === 'Доставка до відділення'
@@ -16,15 +17,15 @@ export function createTgMessage(message, orderList, totalPrice) {
 
   const tgMessage = `
     Нова заявка:
-    1) Ім'я: ${firstName};
-    2) Прізвище: ${lastName};
-    3) Номер телефону: ${number};
-    4) Тип доставки: ${deliveryType};
-    5) Населений пункт: ${location.city};
-    6) ${addressType}: ${address};
-    7) Замовлення: ${orderList};
-    8) Загальна вартість замовлення: ${totalPrice};
-    ${comment ? `9) Коментар: ${comment}` : ``} `;
+    <b>1) Ім'я:</b> ${firstName};
+    <b>2) Прізвище:</b> ${lastName};
+    <b>3) Номер телефону:</b> ${number};
+    <b>4) Тип доставки:</b> ${deliveryType};
+    <b>5) Населений пункт:</b> ${location.city};
+    <b>6) ${addressType}:</b> ${address};
+    <b>7) Замовлення:</b> ${order};
+    <b>8) Загальна вартість замовлення:</b> ${totalPrice} грн;
+    ${comment ? `\n<b>9) Коментар:</b> ${comment}` : ``}`;
 
   return tgMessage;
 }

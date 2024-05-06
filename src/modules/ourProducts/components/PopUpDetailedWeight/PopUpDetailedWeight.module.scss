@@ -1,0 +1,64 @@
+.weightContainer {
+  padding-top: 20px;
+  height: fit-content;
+
+  @include media(tablet) {
+    padding-top: 24px;
+  }
+}
+
+.weightDescriptionHeader {
+  font-family: $primary-font-family;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 4%;
+  font-weight: 600;
+
+  @include media(desktop) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.weightList {
+  padding-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @include media(desktop) {
+    padding-top: 16px;
+  }
+}
+
+.weightItem {
+  padding: 8px;
+  min-width: 74px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $primary-font-family;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 4%;
+  font-weight: 400;
+  border-radius: 8px;
+  border: 1px solid $primary-grey-color;
+
+  @include media(desktop) {
+    min-width: 80px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &:hover,
+  :focus {
+    cursor: pointer;
+  }
+}
+
+.weightItemActive {
+  background-color: $primary-accent-color;
+}

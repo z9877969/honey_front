@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { shopCartSet } from '../../images';
-import s from './PopUpDetailedBasemet.module.scss';
-
 import {
   addOrUpdateProduct,
   selectProductsQuantity,
 } from '@redux/cart/cartSlice';
-import { retCalc } from 'modules/ourProducts/service/service';
+import { returnCalculations } from 'modules/ourProducts/service/service';
+import { shopCartSet } from 'modules/ourProducts/images';
+import s from './PopUpDetailedBasemet.module.scss';
 
 const PopUpDetailedBasemet = ({ product, productVariants, handleOpenCart }) => {
   const qtyOfProductsInCart = useSelector(selectProductsQuantity);
@@ -14,22 +13,23 @@ const PopUpDetailedBasemet = ({ product, productVariants, handleOpenCart }) => {
 
   const handleAddToCart = () => {
     const idx = productVariants.findIndex((item) => item.isActive === true);
-    if (idx >= 0) {
-      const dataToCart = {
-        id: product.id,
-        title: product.prodName,
-        image: product.img,
-        weight: productVariants[idx].size,
-        quantity: productVariants[idx].quantity,
-        price: productVariants[idx].price,
-      };
-      dispach(addOrUpdateProduct(dataToCart));
-    }
+    if (idx === -1) return;
+    const dataToCart = {
+      id: product.id,
+      title: product.prodName,
+      image: product.img,
+      weight: productVariants[idx].size,
+      quantity: productVariants[idx].quantity,
+      price: productVariants[idx].price,
+    };
+    dispach(addOrUpdateProduct(dataToCart));
   };
 
   return (
     <div className={s.basement}>
-      <span className={s.finalCountSum}>{retCalc(productVariants, 'sum')}</span>
+      <span className={s.finalCountSum}>
+        {returnCalculations(productVariants, 'sum')}
+      </span>
       <div className={s.shopCart}>
         <div className={s.shopCartWrapper}>
           {qtyOfProductsInCart > 0 && (
@@ -40,7 +40,7 @@ const PopUpDetailedBasemet = ({ product, productVariants, handleOpenCart }) => {
                   xlinkHref={`${shopCartSet}#shop-bag-full`}
                 />
               </svg>
-              <span className={s.shopCartText}>{qtyOfProductsInCart}</span>
+              <span className={s.shopCartQty}>{qtyOfProductsInCart}</span>
             </>
           )}
         </div>
