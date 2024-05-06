@@ -1,8 +1,8 @@
 import SectionMain from 'shared/components/SectionMain/SectionMain';
 import { Container, MainTitle } from 'shared/components';
 import { HoneyFeature } from 'modules/ourHoney';
-import { ourHoneySet } from '../../images';
 import s from './OurHoney.module.scss';
+import { icons as sprite } from 'shared/icons';
 
 const OurHoney = () => {
   return (
@@ -11,17 +11,17 @@ const OurHoney = () => {
         <MainTitle title={'Наш мед це'} className={s.honeyTitle} />
         <div className={s.honeyArea}>
           <HoneyFeature
-            svg={`${ourHoneySet}#leaves`}
+            svg={`${sprite}#leaves`}
             firstLine={'Цілющі властивості'}
             secondLine={'Наш мед зібраний з цвітінь кращих полів Подніпровʼя.'}
           />
           <HoneyFeature
-            svg={`${ourHoneySet}#honeyCan`}
+            svg={`${sprite}#honeyCan`}
             firstLine={'Родинні традиції'}
             secondLine={'Зберігає традиції та має свою сімейну історію.'}
           />
           <HoneyFeature
-            svg={`${ourHoneySet}#happyBox`}
+            svg={`${sprite}#happyBox`}
             firstLine={'Чудовий подарунок'}
             secondLine={
               'Для близьких людей, адже цей мед про турботу та любов!'
