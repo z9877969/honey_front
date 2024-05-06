@@ -138,8 +138,6 @@
   justify-content: center;
   transition: background-color 200ms $animation-time-function;
 
-  &:hover,
-  &:focus,
   &:active {
     background-color: $primary-hover-color;
   }
