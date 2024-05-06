@@ -8,5 +8,4 @@ export { selectStyles } from './selectStyles';
 export {
   createProductName,
   createProductTotalPrice,
-  createTotalPrice,
 } from './createOrderCartElements';

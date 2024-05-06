@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux';
-import { selectProducts } from '@redux/cart/cartSlice';
+import { selectProducts, selectTotalPrice } from '@redux/cart/cartSlice';
 import { GoBackButton } from 'shared/components';
 import OrderTitle from '../shared/OrderTitle/OrderTitle';
 import OrderCartItem from '../OrderCartItem/OrderCartItem';
 import s from './OrderCart.module.scss';
-import { createTotalPrice } from 'modules/order/helpers';
 import CustomScrollWrapper from 'shared/components/CustomScrollWrapper/CustomScrollWrapper';
 
 const OrderCart = ({ onClose }) => {
   const productList = useSelector(selectProducts);
+  const totalPrice = useSelector(selectTotalPrice);
 
   return (
     <div className={s.orderCartWrapper}>
@@ -32,7 +32,7 @@ const OrderCart = ({ onClose }) => {
       </CustomScrollWrapper>
       <OrderTitle className={s.price}>
         <span>Вартість</span>
-        {createTotalPrice(productList)}
+        {`${totalPrice}грн`}
       </OrderTitle>
     </div>
   );

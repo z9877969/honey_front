@@ -32,6 +32,9 @@ const cartSlice = createSlice({
         (product) => product.id !== action.payload
       );
     },
+    removeAllProducts(state) {
+      state.products = [];
+    },
   },
   selectors: {
     selectProducts: (state) => state.products,
@@ -43,8 +46,12 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addOrUpdateProduct, deleteProduct, decreaseQuantity } =
-  cartSlice.actions;
+export const {
+  addOrUpdateProduct,
+  deleteProduct,
+  decreaseQuantity,
+  removeAllProducts,
+} = cartSlice.actions;
 
 export const { selectProducts, selectTotalPrice, selectProductsQuantity } =
   cartSlice.selectors;
