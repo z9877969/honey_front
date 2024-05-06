@@ -16,6 +16,5 @@ export const sendMessageTg = async (message) => {
     parse_mode: 'html',
     text: createTgMessage(message),
   });
-
   return data;
 };

@@ -1,8 +1,11 @@
 import { Formik, Form } from 'formik';
-// import { useSelector } from 'react-redux';
-// import { selectProducts } from '@redux/cart/cartSlice';
-// import { createOrderList } from 'modules/order/helpers';
-// import { createTgMessage } from 'helpers/createTgMessage';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectProducts,
+  selectTotalPrice,
+  removeAllProducts,
+} from '@redux/cart/cartSlice';
+import { createOrderList } from 'modules/order/helpers';
 import {
   contactFormValidationSchema,
   orderFormInitialValues,
@@ -11,19 +14,31 @@ import { Button } from 'shared/components';
 import { ContactForm, AddressForm } from 'modules/order/components';
 import ThanksForOrder from 'modules/cart/components/ThanksForOrder/ThanksForOrder';
 import { useModal } from 'hooks/useModal';
+import { sendMessageTg } from 'services/tgApi';
+import { toastify } from 'helpers/tostify';
 import s from './OrderForm.module.scss';
 
 const OrderForm = ({ onClose }) => {
   const setModal = useModal();
-  // const productList = useSelector(selectProducts);
+  const dispatch = useDispatch();
+  const productList = useSelector(selectProducts);
+  const totalPrice = useSelector(selectTotalPrice);
 
-  const handleSubmit = (values, actions) => {
-    // const { order, totalPrice } = createOrderList(productList);
-    // const tgMessage = createTgMessage(values, order, totalPrice);
-    // console.log(tgMessage);
+  const handleSubmit = async (values, actions) => {
+    const order = createOrderList(productList);
+    const message = { values, order, totalPrice };
     onClose();
-    actions.resetForm();
-    setModal(<ThanksForOrder handleClose={onClose} />);
+    try {
+      const result = await sendMessageTg(message);
+      setModal(<ThanksForOrder handleClose={onClose} />);
+      dispatch(removeAllProducts());
+      actions.resetForm();
+      return result;
+    } catch (error) {
+      toastify.error(
+        'При оформленні замовлення виникла помилка. Будь ласка, спробуйте ще раз'
+      );
+    }
   };
 
   return (
