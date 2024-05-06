@@ -198,46 +198,24 @@
   margin-top: 12px;
   font-weight: 400;
   padding: 0px 16px;
-  overflow-y: auto;
   @include font(16, 24);
   @include media(mobile) {
     font-family: $primary-font-family;
     margin-top: 12px;
     font-weight: 400;
     padding: 0px 50px 0px 32px;
-    overflow-y: auto;
     @include font(16, 24);
   }
 
   @include media(tablet) {
     font-family: $primary-font-family;
     padding: 0px 26px 0px 0px;
-    overflow-y: auto;
     @include font(16, 24);
   }
   @include media(desktop) {
     font-family: $primary-font-family;
     margin-top: 24px;
     padding: 0px 56px 0px 0px;
-    overflow-y: auto;
     @include font(18, 28);
   }
-}
-
-.review::-webkit-scrollbar {
-  width: 4px;
-  border-radius: 6px;
-}
-
-.review::-webkit-scrollbar-track {
-  background-color: $primary-background-accent-color;
-}
-
-.review::-webkit-scrollbar-thumb {
-  background-color: $primary-accent-color;
-  border-radius: 6px;
-}
-
-.review::-webkit-scrollbar-thumb:hover {
-  background-color: $primary-hover-color;
 }
