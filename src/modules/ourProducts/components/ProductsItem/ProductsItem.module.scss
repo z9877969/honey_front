@@ -1,12 +1,27 @@
 .productInfoBlock {
   @include media(desktop) {
+    border-bottom: 1px solid $primary-darkgrey-color;
     width: 384px;
   }
 }
+.imgThumb {
+  height: 343px;
+  width: 100%;
 
-.imgProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
   border-radius: 24px;
   margin-bottom: 24px;
+
+  @include media(tablet) {
+    height: 336px;
+  }
+  @include media(desktop) {
+    height: 384px;
+  }
 }
 
 .productInfo {

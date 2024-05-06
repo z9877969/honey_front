@@ -21,9 +21,6 @@
   left: -60px;
   border-radius: 24px;
   transition: background-color $animation-duration cubic-bezier(0.4, 0, 0.2, 1);
-  &:disabled {
-    fill: $primary-grey-color;
-  }
   &:hover,
   :focus {
     background-color: $primary-background-accent-color;
@@ -37,9 +34,6 @@
   right: -60px;
   border-radius: 24px;
   transition: background-color $animation-duration cubic-bezier(0.4, 0, 0.2, 1);
-  &:disabled {
-    fill: $primary-grey-color;
-  }
   &:hover,
   :focus {
     background-color: $primary-background-accent-color;
@@ -56,13 +50,10 @@
 
 .listDesctop {
   @include media(desktop) {
-    border-bottom: 1px solid $primary-darkgrey-color;
-    box-shadow: none;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
     transition: transform $animation-duration cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    &:hover,
-    :focus {
-      transform: scale(1.05);
-    }
   }
 }
