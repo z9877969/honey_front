@@ -1,4 +1,3 @@
-// import sota from '../../images/ourHoneySet.svg';
 import { icons as sprite } from 'shared/icons';
 import s from './HoneyFeature.module.scss';
 
