@@ -35,7 +35,7 @@ const ProductsList = ({ currentCategory, data }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 1024);
+      setIsDesktop(window.innerWidth > 1440);
     };
 
     window.addEventListener('resize', handleResize);
