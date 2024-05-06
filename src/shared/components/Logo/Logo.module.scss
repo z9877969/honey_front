@@ -1,4 +1,3 @@
-
 .link {
   text-decoration: none;
   color: inherit;
@@ -24,4 +23,8 @@
     width: 36px;
     height: 36px;
   }
+}
+.logoHover:hover,
+.logoHover:focus {
+  color: $primary-grey-color;
 }
