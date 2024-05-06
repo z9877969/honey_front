@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectProducts, selectTotalPrice } from '@redux/cart/cartSlice';
 import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
-import sprite from '../../../../shared/icons/sprite.svg';
+import { icons as sprite } from 'shared/icons';
 import s from './Cart.module.scss';
 
 const Cart = ({ onClose }) => {
