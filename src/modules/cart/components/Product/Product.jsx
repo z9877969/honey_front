@@ -4,7 +4,7 @@ import {
   deleteProduct,
   decreaseQuantity,
 } from '@redux/cart/cartSlice';
-import sprite from '../../../../shared/icons/sprite.svg';
+import { icons as sprite } from 'shared/icons';
 import s from './Product.module.scss';
 
 const Product = ({ item }) => {
