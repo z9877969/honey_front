@@ -1,6 +1,6 @@
 .burgerIcon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 
   @include media(tablet) {
     width: 36px;
@@ -12,9 +12,8 @@
   }
 }
 .cartIcon {
-  width: 24px;
-  height: 24px;
-  position: relative;
+  width: 32px;
+  height: 32px;
 
   @include media(tablet) {
     width: 36px;
@@ -97,27 +96,51 @@
     display: flex;
   }
 }
-.cartButton {
-  position: relative;
-}
 .cartButton:hover,
-.cartButton:focus {
+.cartButton:focus,
+.cartButton:active {
   background-color: $primary-background-accent-color;
   border-radius: 12px;
 }
-
-.orderCount {
+.cartButton {
+  position: relative;
+}
+.shopCartText {
   position: absolute;
+  bottom: 2px;
+  right: 0px;
+  font-family: $secondary-font-family;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.3;
+  text-align: center;
+  color: $primary-text-color;
+  background: $primary-accent-color;
+  padding: 4px;
+  border-radius: 12px;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
-  background-color: $primary-accent-color;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  z-index: 1;
-  font-size: 12px;
-  bottom: 0px;
-  right: 0px;
+
+  &.moreThanNine {
+    border-radius: 8px;
+    padding: 0px 4px;
+    width: 21px;
+    bottom: 4px;
+    right: -6px;
+  }
+  @include media(tablet) {
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
+    &.moreThanNine {
+      border-radius: 8px;
+      padding: 0px 4px;
+      width: 21px;
+      bottom: 5px;
+      right: -3px;
+    }
+  }
 }

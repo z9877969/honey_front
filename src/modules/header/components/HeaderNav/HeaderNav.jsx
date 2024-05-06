@@ -2,8 +2,11 @@ import s from './HeaderNav.module.scss';
 import sprite from '../../../../shared/icons/sprite.svg';
 import { useState, useRef, useEffect } from 'react';
 import { Cart } from 'modules/cart';
+import { useSelector } from 'react-redux';
+import { selectProductsQuantity } from '@redux/cart/cartSlice';
 
 const HeaderNav = () => {
+  const qtyOfProductsInCart = useSelector(selectProductsQuantity);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const navRef = useRef(null);
 
@@ -26,6 +29,12 @@ const HeaderNav = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   });
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
 
   return (
     <div className={s.desktopHeader} ref={navRef}>
@@ -65,12 +74,20 @@ const HeaderNav = () => {
           )}
         </li>
       </ul>
-      <button className={s.cartButton} onClick={Cart.isOpen}>
+      <button className={s.cartButton} onClick={openCart}>
         <svg className={s.cartIcon}>
           <use xlinkHref={`${sprite}#basket`} />
         </svg>
-        {/* <span className={s.orderCount}>{}</span> */}
+        {qtyOfProductsInCart > 0 && (
+          <span
+            className={`${s.shopCartText} ${qtyOfProductsInCart > 9 ? s.moreThanNine : ''}`}
+          >
+            {qtyOfProductsInCart > 9 ? '9+' : qtyOfProductsInCart}
+          </span>
+        )}
       </button>
+
+      {isCartOpen && <Cart />}
     </div>
   );
 };
