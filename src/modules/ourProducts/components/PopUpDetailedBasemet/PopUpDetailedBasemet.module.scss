@@ -20,20 +20,10 @@
     letter-spacing: 2%;
     font-weight: 600;
 
-    @include media(tablet) {
-        //nothing changes
-    }
-
     @include media(desktop) {
         font-size: 28px;
         line-height: 32px;
     }
-}
-
-.orderContainer {
-    padding-top: 12px;
-    display: flex;
-    flex-direction: row;
 }
 
 .shopCart {
@@ -73,7 +63,7 @@
     }
 }
 
-.shopCartText {
+.shopCartQty {
     position: absolute;
     top: 11px;
     left: 20px;
@@ -108,10 +98,6 @@
     letter-spacing: 4%;
     font-weight: 600;
     background-color: $primary-accent-color;
-
-    @include media(tablet) {
-        //nothing changes
-    }
 
     @include media(desktop) {
         width: 214;

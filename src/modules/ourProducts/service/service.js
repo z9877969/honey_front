@@ -12,24 +12,53 @@ export const getProducts = async () => {
   }
 };
 
-export const retCalc = (productVariants, calcVariant) => {
+export const returnCalculations = (productVariants, calcVariant) => {
   let result = '';
   const idx = productVariants.findIndex((item) => item.isActive === true);
-  if (idx >= 0) {
-    switch (calcVariant) {
-      case 'qty':
-        result = productVariants[idx].quantity;
-        break;
-      case 'sum':
-        result =
-          (
-            productVariants[idx].quantity * productVariants[idx].price
-          ).toString() + ' грн';
-        break;
-      default:
-        result = '';
-        break;
-    }
+
+  if (idx === -1) return result;
+  if (!productVariants[idx].quantity || !productVariants[idx].price)
+    return result;
+
+  switch (calcVariant) {
+    case 'qty':
+      result = productVariants[idx].quantity;
+      break;
+    case 'sum':
+      result =
+        (
+          productVariants[idx].quantity * productVariants[idx].price
+        ).toString() + ' грн';
+      break;
+    default:
+      result = '';
+      break;
   }
   return result;
+};
+
+export const getInitialProductVariants = (product) => {
+  const productVariants = product.variants.reduce((accumulator, product) => {
+    const { size, price } = product;
+    let priceN = 0;
+    if (price) {
+      const idx = price.indexOf('грн');
+      if (idx) {
+        priceN = Number(price.slice(0, idx));
+      }
+    }
+    if (!accumulator.includes(size)) {
+      accumulator.push({
+        size: size,
+        price: priceN,
+        quantity: 1,
+        isActive: false,
+      });
+    }
+    return accumulator;
+  }, []);
+
+  if (!productVariants.length) return [{ size: 'Товар тимчасово недоступний' }];
+  productVariants[0].isActive = true;
+  return productVariants;
 };

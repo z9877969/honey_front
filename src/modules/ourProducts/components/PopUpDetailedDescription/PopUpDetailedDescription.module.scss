@@ -1,0 +1,77 @@
+.descriptionArea {
+    @include media(desktop) {
+        height: 268px;
+        overflow-y: auto;
+    }
+
+}
+
+.descriptionArea::-webkit-scrollbar {
+    width: 4px;
+}
+
+.descriptionArea::-webkit-scrollbar-track {
+    background-color: $primary-background-accent-color;
+    height: 268px;
+    border-radius: 6px;
+}
+
+.descriptionArea::-webkit-scrollbar-thumb {
+    background-color: $primary-accent-color;
+    height: 173px;
+    border-radius: 6px;
+}
+
+.descriptionArea::-webkit-scrollbar-thumb:hover {
+    background-color: $primary-hover-color;
+}
+
+.productName {
+    padding-top: 20px;
+    font-family: $secondary-font-family;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 2%;
+    text-align: left;
+
+    @include media(tablet) {
+        padding-top: 32px;
+        font-size: 20px;
+    }
+
+    @include media(desktop) {
+        padding-top: 0px;
+    }
+}
+
+.productText {
+    padding-top: 16px;
+    font-family: $primary-font-family;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 4%;
+    font-weight: 400;
+
+    @include media(desktop) {
+        padding-top: 24px;
+        padding-right: 12px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+}
+
+.prodDescriptionHeader {
+    padding-top: 16px;
+    font-family: $primary-font-family;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 4%;
+    font-weight: 600;
+
+    @include media(desktop) {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}

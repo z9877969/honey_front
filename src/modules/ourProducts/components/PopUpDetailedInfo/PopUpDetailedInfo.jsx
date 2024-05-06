@@ -1,54 +1,41 @@
-import { useEffect, useState } from 'react';
-import clsx from 'clsx';
-import { icons } from 'shared/icons';
-
-import s from './PopUpDetailedInfo.module.scss';
-
-import { acaciaHoneyImg } from '../../images';
-
-import { ModalBackdrop } from 'shared/components';
+import { useCallback, useEffect, useState } from 'react';
+//old
+// import { ModalBackdrop } from 'shared/components';
+//old
 import { Cart } from 'modules/cart';
-import PopUpDetailedBasemet from '../PopUpDetailedBasemet/PopUpDetailedBasemet';
-import { retCalc } from 'modules/ourProducts/service/service';
-
-const getInitialProductVariants = (product) => {
-  const productVariants = product.variants.reduce((accumulator, product) => {
-    const { size, price } = product;
-    let priceN = 0;
-    if (price) {
-      const idx = price.indexOf('грн');
-      if (idx) {
-        priceN = Number(price.slice(0, idx));
-      }
-    }
-    if (!accumulator.includes(size)) {
-      accumulator.push({
-        size: size,
-        price: priceN,
-        quantity: 1,
-        isActive: false,
-      });
-    }
-    return accumulator;
-  }, []);
-
-  if (productVariants.length > 0) {
-    productVariants[0].isActive = true;
-  }
-
-  return productVariants;
-};
+import {
+  PopUpDetailedBasemet,
+  PopUpDetailedDescription,
+  PopUpDetailedQuantity,
+  PopUpDetailedWeight,
+} from 'modules/ourProducts';
+import { getInitialProductVariants } from 'modules/ourProducts/service/service';
+import { icons } from 'shared/icons';
+import s from './PopUpDetailedInfo.module.scss';
+import { useModal } from 'hooks/useModal';
 
 const PopUpDetailedInfo = ({ product, onClose }) => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // const [isCartOpen, setIsCartOpen] = useState(false);
   const [productVariants, setProductVariants] = useState([]);
 
   useEffect(() => {
     setProductVariants(getInitialProductVariants(product));
   }, [product]);
-  if (product) {
-    product.img = acaciaHoneyImg;
-  }
+
+  //new
+  const setModal = useModal();
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
+  const openModal = useCallback(() => {
+    setModal(<Cart onClose={closeModal} />);
+  }, [setModal, closeModal]);
+  // const handleDetailedInfo = (product) => {
+  //   setProductToDetail(product);
+  //   openModal();
+  // };
+  //new
 
   const handleChooseVariant = (size) => {
     const locArr = productVariants.map((item) => {
@@ -83,26 +70,27 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
     setProductVariants(locArr);
   };
 
-  const closeModal = () => {
-    onClose();
-  };
+  // const closeModal = () => {
+  //   onClose();
+  // };
 
   const handleOpenCart = () => {
-    setIsCartOpen(!isCartOpen);
+    openModal();
+    // setIsCartOpen(!isCartOpen);
   };
 
   return (
     <>
-      {isCartOpen && (
+      {/* {isCartOpen && (
         <ModalBackdrop>
           <Cart onClose={handleOpenCart} />
         </ModalBackdrop>
-      )}
+      )} */}
 
       <div className={s.backdrop}>
         <div className={s.modalContent}>
           <button type="button" className={s.modalCloseBtn}>
-            <svg className={s.modalCloseBtnIcon} onClick={closeModal}>
+            <svg className={s.modalCloseBtnIcon} onClick={onClose}>
               <use xlinkHref={`${icons}#cross-close`} />
             </svg>
           </button>
@@ -110,73 +98,15 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
           <img className={s.modalImage} src={product.img} alt="Product image" />
 
           <div className={s.dataArea}>
-            <div className={s.textArea}>
-              <h3 className={s.productName}>{product.prodName}</h3>
-              <p className={s.productText}>{product.descr}</p>
-              <p className={s.productText}>
-                <span className={s.prodDescriptionHeader}>
-                  Смакові особливості:
-                </span>
-                {` ${product.flavor}`}
-              </p>
-              <p className={s.productText}>
-                <span className={s.prodDescriptionHeader}>
-                  Корисні властивості:
-                </span>
-                {` ${product.advantage}`}
-              </p>
-              <p className={s.productText}>
-                <span className={s.prodDescriptionHeader}>Особливості:</span>
-                {` ${product.features}`}
-              </p>
-            </div>
-            <div className={s.weightContainer}>
-              <h3 className={s.prodDescriptionHeader}>Вага</h3>
-              <ul className={s.weightList}>
-                {productVariants.map((variant, index) => (
-                  <li
-                    key={index}
-                    className={clsx(
-                      s.weightItem,
-                      variant.isActive && s.weightItemActive
-                    )}
-                    onClick={() => {
-                      handleChooseVariant(variant.size);
-                    }}
-                  >
-                    {variant.size}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={s.quantityContainer}>
-              <h3 className={clsx(s.prodQtyHeader, s.mR12)}>Кількість</h3>
-              <button
-                type="button"
-                className={s.qtyBtn}
-                onClick={() => handleIncrement(false)}
-              >
-                <svg className={s.counterIcon}>
-                  <use
-                    xlinkHref={`${icons}#minus`}
-                    width="32"
-                    height="32"
-                  ></use>
-                </svg>
-              </button>
-              <span className={s.qtyView}>
-                {retCalc(productVariants, 'qty')}
-              </span>
-              <button
-                type="button"
-                className={s.qtyBtn}
-                onClick={() => handleIncrement(true)}
-              >
-                <svg className={s.counterIcon}>
-                  <use xlinkHref={`${icons}#plus`} width="32" height="32" />
-                </svg>
-              </button>
-            </div>
+            <PopUpDetailedDescription product={product} />
+            <PopUpDetailedWeight
+              productVariants={productVariants}
+              handleChooseVariant={handleChooseVariant}
+            />
+            <PopUpDetailedQuantity
+              productVariants={productVariants}
+              handleIncrement={handleIncrement}
+            />
             <PopUpDetailedBasemet
               product={product}
               productVariants={productVariants}

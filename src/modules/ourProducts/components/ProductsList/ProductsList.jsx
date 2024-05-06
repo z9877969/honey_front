@@ -1,22 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ProductItem from '../ProductsItem/ProductsItem';
 import style from './ProductsList.module.scss';
 import { icons } from 'shared/icons';
-import { ModalBackdrop } from 'shared/components';
 import { PopUpDetailedInfo } from 'modules/ourProducts/';
+import { useModal } from 'hooks/useModal';
 
 const ProductsList = ({ currentCategory, data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
-  const [isDetailedInfoOpen, setIsDetailedInfoOpen] = useState(false);
-  const [productToDetail, setProductToDetail] = useState({});
-  const handleDetailedInfo = (product) => {
-    setIsDetailedInfoOpen(true);
-    setProductToDetail(product);
-  };
-  const handleDetailedInfoClose = () => {
-    setIsDetailedInfoOpen(false);
+  const setModal = useModal();
+
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
+  const openModal = useCallback(
+    (product) => {
+      setModal(<PopUpDetailedInfo product={product} onClose={closeModal} />);
+    },
+    [setModal, closeModal]
+  );
+  const handleDetailedInfo = (productToDetail) => {
+    openModal(productToDetail);
   };
 
   const filteredProducts = data.filter(
@@ -53,14 +59,6 @@ const ProductsList = ({ currentCategory, data }) => {
   if (!isDesktop) {
     return (
       <>
-        {isDetailedInfoOpen && (
-          <ModalBackdrop>
-            <PopUpDetailedInfo
-              product={productToDetail}
-              onClose={handleDetailedInfoClose}
-            />
-          </ModalBackdrop>
-        )}
         {filteredProducts.length > 0 && (
           <ul className={style.productsList}>
             {filteredProducts.map((product) => (
@@ -80,15 +78,6 @@ const ProductsList = ({ currentCategory, data }) => {
 
   return (
     <>
-      {isDetailedInfoOpen && (
-        <ModalBackdrop>
-          <PopUpDetailedInfo
-            product={productToDetail}
-            onClose={handleDetailedInfoClose}
-          />
-        </ModalBackdrop>
-      )}
-
       <div className={style.thumbList}>
         {showArrows && (
           <button
