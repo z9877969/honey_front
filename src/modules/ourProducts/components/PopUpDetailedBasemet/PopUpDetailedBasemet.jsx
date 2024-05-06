@@ -28,7 +28,7 @@ const PopUpDetailedBasemet = ({ product, productVariants, handleOpenCart }) => {
   return (
     <div className={s.basement}>
       <span className={s.finalCountSum}>
-        {returnCalculations(productVariants, 'sum')}
+        {returnCalculations(productVariants, 'total')}
       </span>
       <div className={s.shopCart}>
         <div className={s.shopCartWrapper}>

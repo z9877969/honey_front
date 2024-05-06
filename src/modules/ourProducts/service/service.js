@@ -24,7 +24,7 @@ export const returnCalculations = (productVariants, calcVariant) => {
     case 'qty':
       result = productVariants[idx].quantity;
       break;
-    case 'sum':
+    case 'total':
       result =
         (
           productVariants[idx].quantity * productVariants[idx].price
