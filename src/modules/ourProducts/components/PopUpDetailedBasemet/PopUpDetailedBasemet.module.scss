@@ -49,6 +49,21 @@
   }
 }
 
+.classBtnSize {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media(desktop) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
 .addToCartBtn {
   width: 198px;
   height: 48px;
