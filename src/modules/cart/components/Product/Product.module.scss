@@ -41,6 +41,8 @@
   height: 56px;
   font-family: $secondary-font-family;
   font-weight: 600;
+  text-align: left;
+
   @include font(18, 28);
   letter-spacing: 0.02em;
   color: $primary-text-color;
@@ -63,6 +65,7 @@
 .itemVolume {
   font-family: $primary-font-family;
   font-weight: 400;
+  text-align-last: left;
   @include font(16, 24);
   margin-bottom: 8px;
   letter-spacing: 0.04em;

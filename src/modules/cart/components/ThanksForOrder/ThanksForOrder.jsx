@@ -35,8 +35,9 @@ const ThanksForOrder = ({ handleClose }) => {
             <div className={s.thanksContainer}>
               <h2 className={s.modalTitle}>Дякуємо!</h2>
               <p className={s.modalText}>
-                Ваше замовлення прийняте. Ми зв’яжемося з вами найблищим часом
-                для уточнення деталей.
+                Ваше замовлення прийняте.
+                <br className={s.mobileBreak} /> Ми зв’яжемося з вами
+                <br /> найближчим часом для уточнення деталей.
               </p>
               <hr className={s.horizontalLine} />
             </div>
