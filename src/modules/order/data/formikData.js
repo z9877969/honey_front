@@ -18,7 +18,7 @@ export const contactFormValidationSchema = Yup.object().shape({
     .required('Введіть коректний номер мобільного телефону'),
   deliveryType: Yup.string().required(),
   location: Yup.object().required(),
-  address: Yup.string().required(),
+  address: Yup.string().max(300).required(),
   comment: Yup.string()
     .max(300, 'Максимальна довжина тексту - 300 символів')
     .matches(

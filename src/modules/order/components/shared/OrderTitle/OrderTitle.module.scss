@@ -1,11 +1,11 @@
 .orderTitle {
   @include font(18, 28);
-  width: 280px;
+  max-width: 280px;
   font-weight: 600;
   letter-spacing: 0.02em;
   @include media(tablet) {
     @include font(20, 28);
-    width: 100%;
+    max-width: 100%;
   }
   @include media(desktop) {
     @include font(24, 32);
