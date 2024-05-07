@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Cart } from 'modules/cart';
 import { useSelector } from 'react-redux';
 import { selectProductsQuantity } from '@redux/cart/cartSlice';
+import { BasketButton } from 'shared/components';
 
 const HeaderNav = () => {
   const qtyOfProductsInCart = useSelector(selectProductsQuantity);
@@ -74,6 +75,7 @@ const HeaderNav = () => {
           )}
         </li>
       </ul>
+      <BasketButton />
       <button className={s.cartButton} onClick={openCart}>
         <svg className={s.cartIcon}>
           <use xlinkHref={`${sprite}#basket`} />

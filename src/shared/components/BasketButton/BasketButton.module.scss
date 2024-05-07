@@ -1,0 +1,46 @@
+.hangToButton {
+    position: relative;
+}
+
+.basketCartIcon {
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+
+.basketCartCircle {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $primary-accent-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media(tablet) {
+        top: 16px;
+        left: 17px;
+    }
+
+    @include media(desktop) {
+        top: 18px;
+        left: 17px;
+    }
+
+}
+
+.basketCartQty {
+    font-family: $primary-font-family;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 4%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}

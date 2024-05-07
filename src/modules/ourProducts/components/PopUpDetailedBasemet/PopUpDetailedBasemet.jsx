@@ -3,19 +3,20 @@ import {
   addOrUpdateProduct,
   selectProductsQuantity,
 } from '@redux/cart/cartSlice';
+import { BasketButton } from 'shared/components';
 import { returnCalculations } from 'modules/ourProducts/service/service';
-import { shopCartSet } from 'modules/ourProducts/images';
 import s from './PopUpDetailedBasemet.module.scss';
 
-const PopUpDetailedBasemet = ({ product, productVariants, handleOpenCart }) => {
+const PopUpDetailedBasemet = ({ product, productVariants }) => {
   const qtyOfProductsInCart = useSelector(selectProductsQuantity);
   const dispach = useDispatch();
 
   const handleAddToCart = () => {
     const idx = productVariants.findIndex((item) => item.isActive === true);
+
     if (idx === -1) return;
     const dataToCart = {
-      id: product.id,
+      id: productVariants[idx].id,
       title: product.prodName,
       image: product.img,
       weight: productVariants[idx].size,
@@ -31,19 +32,7 @@ const PopUpDetailedBasemet = ({ product, productVariants, handleOpenCart }) => {
         {returnCalculations(productVariants, 'total')}
       </span>
       <div className={s.shopCart}>
-        <div className={s.shopCartWrapper}>
-          {qtyOfProductsInCart > 0 && (
-            <>
-              <svg className={s.shopCartIcon} onClick={handleOpenCart}>
-                <use
-                  className={s.shopCartIcon}
-                  xlinkHref={`${shopCartSet}#shop-bag-full`}
-                />
-              </svg>
-              <span className={s.shopCartQty}>{qtyOfProductsInCart}</span>
-            </>
-          )}
-        </div>
+        {qtyOfProductsInCart > 0 && <BasketButton />}
         <button
           type="button"
           className={s.addToCartBtn}
