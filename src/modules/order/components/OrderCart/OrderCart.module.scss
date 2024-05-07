@@ -84,11 +84,18 @@
   }
 }
 .price {
+  width: 303px;
   padding-top: 20px;
   border-top: 1px solid $primary-darkgrey-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include media(tablet) {
+    width: 640px;
+  }
+  @include media(desktop) {
+    width: 528px;
+  }
   span {
     font-family: $primary-font-family;
     @include font(16, 24);
