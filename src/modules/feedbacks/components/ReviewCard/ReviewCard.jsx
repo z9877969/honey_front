@@ -1,3 +1,4 @@
+import CustomScrollWrapper from 'shared/components/CustomScrollWrapper/CustomScrollWrapper';
 import s from './ReviewCard.module.scss';
 import { icons as sprite } from 'shared/icons';
 
@@ -15,7 +16,9 @@ const ReviewCard = ({ data: { photo, name, review } }) => {
       </div>
       <div className={s.content}>
         <h3 className={s.name}>{name}</h3>
-        <p className={s.review}>{review}</p>
+        <CustomScrollWrapper>
+          <p className={s.review}>{review}</p>
+        </CustomScrollWrapper>
       </div>
     </div>
   );
