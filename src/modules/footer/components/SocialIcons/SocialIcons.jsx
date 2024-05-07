@@ -5,7 +5,7 @@ const SocialIcons = () => {
   return (
     <ul className={s.iconsList}>
       <li>
-        <a href="https://telegram.org/" target="_blank">
+        <a href="https://t.me/anastasiia_plokha" target="_blank">
           <svg width={32} height={32} className={s.icon}>
             <use xlinkHref={`${sprite}#telegram`}></use>
           </svg>
