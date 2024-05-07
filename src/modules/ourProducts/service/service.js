@@ -39,7 +39,7 @@ export const returnCalculations = (productVariants, calcVariant) => {
 
 export const getInitialProductVariants = (product) => {
   const productVariants = product.variants.reduce((accumulator, product) => {
-    const { size, price } = product;
+    const { size, price, id } = product;
     let priceN = 0;
     if (price) {
       const idx = price.indexOf('грн');
@@ -49,6 +49,7 @@ export const getInitialProductVariants = (product) => {
     }
     if (!accumulator.includes(size)) {
       accumulator.push({
+        id: id,
         size: size,
         price: priceN,
         quantity: 1,

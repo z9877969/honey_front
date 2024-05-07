@@ -20,10 +20,6 @@
   letter-spacing: 2%;
   font-weight: 600;
 
-  @include media(tablet) {
-    //nothing changes
-  }
-
   @include media(desktop) {
     font-size: 28px;
     line-height: 32px;
@@ -53,47 +49,6 @@
   }
 }
 
-.shopCartWrapper {
-  position: relative;
-}
-
-.shopCartIcon {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-
-  @include media(tablet) {
-    width: 48px;
-    height: 48px;
-  }
-
-  @include media(desktop) {
-    width: 52px;
-    height: 52px;
-  }
-}
-
-.shopCartText {
-  position: absolute;
-  top: 11px;
-  left: 20px;
-  font-family: $primary-font-family;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 4%;
-  font-weight: 600;
-
-  @include media(tablet) {
-    top: 24px;
-    left: 32px;
-  }
-
-  @include media(desktop) {
-    top: 27px;
-    left: 35px;
-  }
-}
-
 .addToCartBtn {
   width: 198px;
   height: 48px;
@@ -108,10 +63,6 @@
   letter-spacing: 4%;
   font-weight: 600;
   background-color: $primary-accent-color;
-
-  @include media(tablet) {
-    //nothing changes
-  }
 
   @include media(desktop) {
     width: 214;

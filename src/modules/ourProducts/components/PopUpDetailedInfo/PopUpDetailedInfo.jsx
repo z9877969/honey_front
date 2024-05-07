@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
-import { Cart } from 'modules/cart';
+import { useEffect, useState } from 'react';
 import {
   PopUpDetailedBasemet,
   PopUpDetailedDescription,
@@ -8,7 +7,6 @@ import {
 } from 'modules/ourProducts';
 import { getInitialProductVariants } from 'modules/ourProducts/service/service';
 import { icons } from 'shared/icons';
-import { useModal } from 'hooks/useModal';
 import s from './PopUpDetailedInfo.module.scss';
 
 const PopUpDetailedInfo = ({ product, onClose }) => {
@@ -17,15 +15,6 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
   useEffect(() => {
     setProductVariants(getInitialProductVariants(product));
   }, [product]);
-
-  const setModal = useModal();
-  const closeModal = useCallback(() => {
-    setModal();
-  }, [setModal]);
-
-  const openModal = useCallback(() => {
-    setModal(<Cart onClose={closeModal} />);
-  }, [setModal, closeModal]);
 
   const handleChooseVariant = (size) => {
     const locArr = productVariants.map((item) => {
@@ -60,10 +49,6 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
     setProductVariants(locArr);
   };
 
-  const handleOpenCart = () => {
-    openModal();
-  };
-
   return (
     <div className={s.backdrop}>
       <div className={s.modalContent}>
@@ -88,7 +73,6 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
           <PopUpDetailedBasemet
             product={product}
             productVariants={productVariants}
-            handleOpenCart={handleOpenCart}
           />
         </div>
       </div>

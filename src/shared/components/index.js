@@ -6,3 +6,4 @@ export { default as Toastify } from './Toastify/Toastify';
 export { default as SharedLayout } from './SharedLayout/SharedLayout';
 export { default as ModalBackdrop } from './ModalBackdrop/ModalBackdrop';
 export { default as GoBackButton } from './GoBackButton/GoBackButton';
+export { default as BasketButton } from './BasketButton/BasketButton';
