@@ -32,7 +32,9 @@ const PopUpDetailedBasemet = ({ product, productVariants }) => {
         {returnCalculations(productVariants, 'total')}
       </span>
       <div className={s.shopCart}>
-        {qtyOfProductsInCart > 0 && <BasketButton />}
+        {qtyOfProductsInCart > 0 && (
+          <BasketButton classBtnSize={s.classBtnSize} />
+        )}
         <button
           type="button"
           className={s.addToCartBtn}
