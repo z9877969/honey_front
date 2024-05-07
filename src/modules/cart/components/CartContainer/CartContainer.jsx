@@ -1,6 +1,7 @@
 import Product from '../Product/Product';
 import { useModal } from 'hooks/useModal';
 import { useCallback } from 'react';
+import CustomScrollWrapper from 'shared/components/CustomScrollWrapper/CustomScrollWrapper';
 import { OrderCheckoutPage } from 'modules/order';
 import { icons as sprite } from 'shared/icons';
 import s from './CartContainer.module.scss';
@@ -23,7 +24,7 @@ const CartContainer = ({
 
   return (
     <>
-      <div className={s.listContainer}>
+      <CustomScrollWrapper wrapClassName={s.scrollbarWrapper}>
         <ul className={s.list}>
           {products.map((item) => {
             return (
@@ -33,7 +34,7 @@ const CartContainer = ({
             );
           })}
         </ul>
-      </div>
+      </CustomScrollWrapper>
       <div className={s.listBorder}></div>
       <div className={s.modalBottomWrapper}>
         <div className={s.btnWrapper}>
