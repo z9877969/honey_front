@@ -1,7 +1,7 @@
 .backgroundWrapper {
   width: 335px;
   height: 256px;
-  margin-top: 164px;
+  margin-top: 140px;
   margin-bottom: 24px;
   margin-right: auto;
   margin-left: 0;
@@ -18,7 +18,7 @@
   @include media(tablet) {
     height: 404px;
     width: 576px;
-    margin-top: 64px;
+    margin-top: 32px;
     margin-bottom: 32px;
     margin-left: auto;
     padding-right: 48px;
@@ -31,6 +31,7 @@
   }
 
   @include media(desktop) {
+    margin-top: 0;
     margin-bottom: 24px;
     padding-right: 64px;
     background-position: center;

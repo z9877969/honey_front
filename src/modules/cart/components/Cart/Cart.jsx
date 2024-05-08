@@ -28,8 +28,19 @@ const Cart = ({ onClose }) => {
     onClose();
   };
 
+  const scrollToShopping = () => {
+    const productsSection = document.getElementById('ourProducts');
+    if (productsSection) {
+      window.scrollTo({
+        top: productsSection.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const handleBackBtn = () => {
     onClose();
+    scrollToShopping();
   };
 
   return (
