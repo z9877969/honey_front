@@ -25,15 +25,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  width: 223px;
+
+  @include media(tablet) {
+    padding-top: 16px;
+    width: 375px;
+  }
 
   @include media(desktop) {
-    padding-top: 16px;
+    width: 400px;
   }
 }
 
 .weightItem {
   padding: 8px;
-  min-width: 74px;
+  min-width: 61px;
   height: 32px;
   display: flex;
   align-items: center;
@@ -46,8 +52,13 @@
   border-radius: 8px;
   border: 1px solid $primary-grey-color;
 
+  @include media(tablet) {
+    min-width: 64px;
+    height: 32px;
+  }
+
   @include media(desktop) {
-    min-width: 80px;
+    min-width: 66px;
     height: 36px;
     font-size: 18px;
     line-height: 28px;
