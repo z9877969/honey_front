@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
-  PopUpDetailedBasemet,
+  PopUpDetailedBasement,
   PopUpDetailedDescription,
   PopUpDetailedQuantity,
   PopUpDetailedWeight,
@@ -79,7 +79,7 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
             productVariants={productVariants}
             handleIncrement={handleIncrement}
           />
-          <PopUpDetailedBasemet
+          <PopUpDetailedBasement
             product={product}
             productVariants={productVariants}
           />
