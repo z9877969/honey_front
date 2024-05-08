@@ -18,6 +18,14 @@
     }
 }
 
+.cursorPointer {
+    cursor: pointer;
+}
+
+.cursorDefault {
+    cursor: default;
+}
+
 .hangToBtn {
     position: relative;
 }
@@ -27,7 +35,7 @@
     height: 32px;
     top: 50%;
     left: 50%;
-    cursor: pointer;
+
 }
 
 .basketCartCircle {
@@ -63,4 +71,5 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
+
 }

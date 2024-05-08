@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
+import clsx from 'clsx';
 import { selectProductsQuantity } from '@redux/cart/cartSlice';
 import { useModal } from 'hooks/useModal';
 import { Cart } from 'modules/cart';
 import { icons as sprite } from 'shared/icons';
 import s from './BasketButton.module.scss';
 
-const BasketButton = ({ classBtnSize }) => {
+const BasketButton = ({ classBtnSize, blockOpenCart = false }) => {
   const qtyOfProductsInCart = useSelector(selectProductsQuantity);
   const setModal = useModal();
 
@@ -19,6 +20,8 @@ const BasketButton = ({ classBtnSize }) => {
   }, [setModal, closeModal]);
 
   const handleOpenCart = () => {
+    if (blockOpenCart) return;
+
     openModal();
   };
 
@@ -30,8 +33,15 @@ const BasketButton = ({ classBtnSize }) => {
   };
 
   return (
-    <div className={chooseClass()} onClick={handleOpenCart}>
-      <button type="button" className={s.hangToBtn}>
+    <div
+      className={clsx(
+        chooseClass(),
+        blockOpenCart ? s.cursorDefault : s.cursorPointer
+      )}
+      onClick={handleOpenCart}
+    >
+      {/* <button type="button" className={s.hangToBtn}> */}
+      <div className={s.hangToBtn}>
         <svg className={s.basketCartIcon}>
           <use xlinkHref={`${sprite}#basket`} />
         </svg>
@@ -42,7 +52,8 @@ const BasketButton = ({ classBtnSize }) => {
             </span>
           </span>
         )}
-      </button>
+      </div>
+      {/* </button> */}
     </div>
   );
 };
