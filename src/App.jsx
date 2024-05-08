@@ -8,21 +8,13 @@ import { Cart } from 'modules/cart';
 
 function App() {
   const isOpen = useSelector(selectIsOpen);
-  const setModal = useModal();
-
-  const closeModal = useCallback(() => {
-    setModal();
-  }, [setModal]);
-
-  const openModal = useCallback(() => {
-    setModal(<Cart onClose={closeModal} />);
-  }, [setModal, closeModal]);
+  const setModal = useModal();  
 
   useEffect(() => {
     if (isOpen) {
-      openModal();
+      setModal(<Cart onClose={() => setModal()} />);
     }
-  }, [isOpen, openModal]);
+  }, [isOpen, setModal]);
 
   return (
     <>
