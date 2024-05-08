@@ -1,4 +1,24 @@
-.hangToButton {
+.classBtnSize {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media(tablet) {
+        width: 48px;
+        height: 48px;
+    }
+
+    @include media(desktop) {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+.hangToBtn {
     position: relative;
 }
 
@@ -36,7 +56,7 @@
 }
 
 .basketCartQty {
-    font-family: $primary-font-family;
+    font-family: $secondary-font-family;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 4%;
