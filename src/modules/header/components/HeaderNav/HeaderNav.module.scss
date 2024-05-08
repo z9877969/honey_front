@@ -1,10 +1,10 @@
 .burgerIcon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 
   @include media(tablet) {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   @include media(desktop) {

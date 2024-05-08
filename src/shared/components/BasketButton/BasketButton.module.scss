@@ -31,15 +31,23 @@
 }
 
 .basketCartIcon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   top: 50%;
   left: 50%;
+  @include media(tablet) {
+    width: 48px;
+    height: 48px;
+  }
+  @include media(desktop) {
+    width: 52px;
+    height: 52px;
+  }
 }
 .basketCartCircle {
   position: absolute;
-  top: 17px;
-  left: 16px;
+  top: 20px;
+  left: 21px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -50,13 +58,13 @@
   justify-content: center;
 
   @include media(tablet) {
-    top: 16px;
-    left: 17px;
+    top: 25px;
+    left: 25px;
   }
 
   @include media(desktop) {
-    top: 18px;
-    left: 17px;
+    top: 28px;
+    left: 28px;
   }
 }
 
@@ -68,4 +76,11 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
+}
+.basketCartIcon:hover,
+.basketCartIcon:focus {
+  @include media(desktop) {
+    background-color: $primary-background-accent-color;
+    border-radius: 12px;
+  }
 }
