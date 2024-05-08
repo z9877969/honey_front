@@ -5,6 +5,16 @@
   padding: 40px 20px;
   border-radius: 24px;
   position: relative;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+
+  &.closing {
+    transform: scale(0.5);
+    opacity: 0;
+  }
 
   @include media(tablet) {
     width: 704px;
