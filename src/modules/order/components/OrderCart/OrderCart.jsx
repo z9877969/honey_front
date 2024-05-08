@@ -6,6 +6,8 @@ import OrderCartItem from '../OrderCartItem/OrderCartItem';
 import s from './OrderCart.module.scss';
 import CustomScrollWrapper from 'shared/components/CustomScrollWrapper/CustomScrollWrapper';
 
+import { scrollToOurProducts } from 'helpers/scrollToOurProducts';
+
 const OrderCart = ({ onClose }) => {
   const productList = useSelector(selectProducts);
   const totalPrice = useSelector(selectTotalPrice);
@@ -16,7 +18,10 @@ const OrderCart = ({ onClose }) => {
         id="arrow-link"
         title="Повернутися до покупок"
         className={s.orderGoBack}
-        onClick={onClose}
+        onClick={() => {
+          onClose();
+          scrollToOurProducts();
+        }}
       />
       <OrderTitle className={s.orderCartTitle}>Ваше замовлення:</OrderTitle>
       <CustomScrollWrapper wrapClassName={s.orderCartListWrapper}>
@@ -32,7 +37,7 @@ const OrderCart = ({ onClose }) => {
       </CustomScrollWrapper>
       <OrderTitle className={s.price}>
         <span>Вартість</span>
-        {`${totalPrice}грн`}
+        {`${totalPrice} грн`}
       </OrderTitle>
     </div>
   );
