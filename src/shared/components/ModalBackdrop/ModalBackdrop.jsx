@@ -14,7 +14,8 @@ const ModalBackdrop = ({ children, onClose }) => {
   const handleCloseModal = useCallback(
     (e) => {
       if (e.target === e.currentTarget || e.code === 'Escape') {
-        onClose();
+        setActive(false);
+        setTimeout(() => onClose(), 300);
       }
     },
     [onClose]
