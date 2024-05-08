@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectProducts,
@@ -15,7 +15,6 @@ const Cart = ({ onClose }) => {
   const products = useSelector(selectProducts);
   const totalPrice = useSelector(selectTotalPrice);
   const dispatch = useDispatch();
-  const [closing, setClosing] = useState(false);
 
   useEffect(() => {
     dispatch(setIsOpen());
@@ -26,21 +25,27 @@ const Cart = ({ onClose }) => {
   }, [dispatch]);
 
   const handleClose = () => {
-    setClosing(true);
-    setTimeout(() => onClose(), 500);
+    onClose();
+  };
+
+  const scrollToShopping = () => {
+    const productsSection = document.getElementById('ourProducts');
+    if (productsSection) {
+      window.scrollTo({
+        top: productsSection.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const handleBackBtn = () => {
-    setClosing(true);
-    setTimeout(() => onClose(), 500);
+    onClose();
+    scrollToShopping();
   };
 
   return (
-    <div className={s.modalBackdrop} onClick={handleClose}>
-      <div
-        className={`${s.modalContainer} ${closing ? s.closing : ''}`}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className={s.modalBackdrop}>
+      <div className={s.modalContainer}>
         <button className={s.modalCloseBtn} type="button" onClick={handleClose}>
           <svg className={s.modalCloseIcon}>
             <use xlinkHref={`${sprite}#cross-close`}></use>
