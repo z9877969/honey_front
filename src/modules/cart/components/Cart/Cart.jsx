@@ -4,22 +4,29 @@ import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import { icons as sprite } from 'shared/icons';
 import s from './Cart.module.scss';
+import { useState } from 'react';
 
 const Cart = ({ onClose }) => {
   const products = useSelector(selectProducts);
   const totalPrice = useSelector(selectTotalPrice);
+  const [closing, setClosing] = useState(false);
 
   const handleClose = () => {
-    onClose();
+    setClosing(true);
+    setTimeout(() => onClose(), 500);
   };
 
   const handleBackBtn = () => {
-    onClose();
+    setClosing(true);
+    setTimeout(() => onClose(), 500);
   };
 
   return (
-    <div className={s.modalBackdrop}>
-      <div className={s.modalContainer}>
+    <div className={s.modalBackdrop} onClick={handleClose}>
+      <div
+        className={`${s.modalContainer} ${closing ? s.closing : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className={s.modalCloseBtn} type="button" onClick={handleClose}>
           <svg className={s.modalCloseIcon}>
             <use xlinkHref={`${sprite}#cross-close`}></use>

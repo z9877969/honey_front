@@ -11,6 +11,12 @@ import s from './PopUpDetailedInfo.module.scss';
 
 const PopUpDetailedInfo = ({ product, onClose }) => {
   const [productVariants, setProductVariants] = useState([]);
+  const [closing, setClosing] = useState(false);
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => onClose(), 500);
+  };
 
   useEffect(() => {
     setProductVariants(getInitialProductVariants(product));
@@ -50,10 +56,13 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
   };
 
   return (
-    <div className={s.backdrop}>
-      <div className={s.modalContent}>
-        <button type="button" className={s.modalCloseBtn}>
-          <svg className={s.modalCloseBtnIcon} onClick={onClose}>
+    <div className={s.backdrop} onClick={handleClose}>
+      <div
+        className={`${s.modalContent}  ${closing ? s.closing : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button type="button" className={s.modalCloseBtn} onClick={handleClose}>
+          <svg className={s.modalCloseBtnIcon}>
             <use xlinkHref={`${icons}#cross-close`} />
           </svg>
         </button>
