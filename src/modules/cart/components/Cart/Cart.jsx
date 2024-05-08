@@ -1,5 +1,11 @@
-import { useSelector } from 'react-redux';
-import { selectProducts, selectTotalPrice } from '@redux/cart/cartSlice';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectProducts,
+  selectTotalPrice,
+  setIsClose,
+  setIsOpen,
+} from '@redux/cart/cartSlice';
 import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import { icons as sprite } from 'shared/icons';
@@ -8,13 +14,33 @@ import s from './Cart.module.scss';
 const Cart = ({ onClose }) => {
   const products = useSelector(selectProducts);
   const totalPrice = useSelector(selectTotalPrice);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setIsOpen());
+
+    return () => {
+      dispatch(setIsClose());
+    };
+  }, [dispatch]);
 
   const handleClose = () => {
     onClose();
   };
 
+  const scrollToShopping = () => {
+    const productsSection = document.getElementById('ourProducts');
+    if (productsSection) {
+      window.scrollTo({
+        top: productsSection.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const handleBackBtn = () => {
     onClose();
+    scrollToShopping();
   };
 
   return (

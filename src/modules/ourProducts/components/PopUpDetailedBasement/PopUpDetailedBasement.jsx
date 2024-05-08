@@ -5,11 +5,24 @@ import {
 } from '@redux/cart/cartSlice';
 import { BasketButton } from 'shared/components';
 import { returnCalculations } from 'modules/ourProducts/service/service';
-import s from './PopUpDetailedBasemet.module.scss';
+import s from './PopUpDetailedBasement.module.scss';
+import { useModal } from 'hooks/useModal';
+import { useCallback } from 'react';
+import { Cart } from 'modules/cart';
 
-const PopUpDetailedBasemet = ({ product, productVariants }) => {
+const PopUpDetailedBasement = ({ product, productVariants }) => {
   const qtyOfProductsInCart = useSelector(selectProductsQuantity);
   const dispach = useDispatch();
+
+  const setModal = useModal();
+
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
+
+  const openModal = useCallback(() => {
+    setModal(<Cart onClose={closeModal} />);
+  }, [setModal, closeModal]);
 
   const handleAddToCart = () => {
     const idx = productVariants.findIndex((item) => item.isActive === true);
@@ -24,6 +37,7 @@ const PopUpDetailedBasemet = ({ product, productVariants }) => {
       price: productVariants[idx].price,
     };
     dispach(addOrUpdateProduct(dataToCart));
+    openModal();
   };
 
   return (
@@ -33,7 +47,7 @@ const PopUpDetailedBasemet = ({ product, productVariants }) => {
       </span>
       <div className={s.shopCart}>
         {qtyOfProductsInCart > 0 && (
-          <BasketButton classBtnSize={s.classBtnSize} />
+          <BasketButton classBtnSize={s.classBtnSize} blockOpenCart={true} />
         )}
         <button
           type="button"
@@ -47,4 +61,4 @@ const PopUpDetailedBasemet = ({ product, productVariants }) => {
   );
 };
 
-export default PopUpDetailedBasemet;
+export default PopUpDetailedBasement;

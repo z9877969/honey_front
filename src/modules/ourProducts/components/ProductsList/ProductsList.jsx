@@ -10,7 +10,7 @@ import 'swiper/css';
 
 const ProductsList = ({ currentCategory, data }) => {
   const [swiper, setSwiper] = useState(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1440);
 
   const setModal = useModal();
 
@@ -35,7 +35,7 @@ const ProductsList = ({ currentCategory, data }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 1440);
+      setIsDesktop(window.innerWidth >= 1440);
     };
 
     window.addEventListener('resize', handleResize);

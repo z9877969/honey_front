@@ -8,6 +8,13 @@
   place-items: center;
   background-color: rgba($primary-background-accent-color, 0.1);
   overflow: auto;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+
+  &.closing {
+    opacity: 0;
+    transition-delay: 0.3s;
+  }
 }
 
 .modalContainer {
@@ -23,6 +30,12 @@
   display: flex;
   flex-direction: column;
 
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+
   @include media(tablet) {
     width: 672px;
     padding: 48px;
@@ -35,32 +48,21 @@
     padding: 64px;
     padding-right: 48px;
   }
+  &.closing {
+    transform: scale(0.5);
+    opacity: 0;
+    transition-delay: 0.3s;
+  }
 }
 
-// .modalContainer {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   //   width: 375px;
-//   padding: 32px 20px 24px 20px;
-//   padding-right: 0;
-//   border-radius: 0;
-//   background-color: $light-bg-color;
+.closing .backdrop {
+  opacity: 0;
+}
 
-//   @include media(tablet) {
-//     // width: 672px;
-//     padding: 48px;
-//     padding-right: 32px;
-//     border-radius: 24px;
-//   }
-
-//   @include media(desktop) {
-//     // width: 1216px;
-//     padding: 64px;
-//     padding-right: 48px;
-//   }
-// }
+.closing .modalContainer {
+  transform: scale(0.5);
+  opacity: 0;
+}
 
 .modalCloseBtn {
   position: absolute;
