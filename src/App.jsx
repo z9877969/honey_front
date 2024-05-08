@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useModal } from 'hooks/useModal';
 import { selectIsOpen } from '@redux/cart/cartSlice';
@@ -8,7 +8,7 @@ import { Cart } from 'modules/cart';
 
 function App() {
   const isOpen = useSelector(selectIsOpen);
-  const setModal = useModal();  
+  const setModal = useModal();
 
   useEffect(() => {
     if (isOpen) {
