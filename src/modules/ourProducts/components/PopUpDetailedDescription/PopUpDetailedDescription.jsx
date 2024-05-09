@@ -3,7 +3,6 @@ import s from './PopUpDetailedDescription.module.scss';
 
 const PopUpDetailedDescription = ({ product }) => {
   return (
-    // <CustomScrollWrapper wrapClassName={s.myScroll}>
     <CustomScrollWrapper>
       <div className={s.descriptionArea}>
         {product.prodName && (
