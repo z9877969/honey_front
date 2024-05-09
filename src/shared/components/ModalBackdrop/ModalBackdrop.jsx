@@ -1,13 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import s from './ModalBackdrop.module.scss';
 import clsx from 'clsx';
+import { ANIMATION } from 'shared/constants';
 
 const ModalBackdrop = ({ children, onClose }) => {
   const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setActive(true), 300);
-  }, []);
 
   const dinamicStyle = clsx(s.backdrop, active && s.active);
 
@@ -15,11 +12,18 @@ const ModalBackdrop = ({ children, onClose }) => {
     (e) => {
       if (e.target === e.currentTarget || e.code === 'Escape') {
         setActive(false);
-        setTimeout(() => onClose(), 300);
+        onClose();
       }
     },
     [onClose]
   );
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setActive(true);
+      clearTimeout(id);
+    }, ANIMATION.DURATION);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('keydown', handleCloseModal);

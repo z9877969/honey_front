@@ -28,6 +28,10 @@ const Cart = ({ onClose }) => {
     onClose();
   };
 
+  const handleBackdropClick = (e) => {
+    e.target === e.currentTarget && onClose();
+  };
+
   const scrollToShopping = () => {
     const productsSection = document.getElementById('ourProducts');
     if (productsSection) {
@@ -44,7 +48,7 @@ const Cart = ({ onClose }) => {
   };
 
   return (
-    <div className={s.modalBackdrop}>
+    <div className={s.modalBackdrop} onClick={handleBackdropClick}>
       <div className={s.modalContainer}>
         <button className={s.modalCloseBtn} type="button" onClick={handleClose}>
           <svg className={s.modalCloseIcon}>

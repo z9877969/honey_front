@@ -6,23 +6,10 @@ import {
 import { BasketButton } from 'shared/components';
 import { returnCalculations } from 'modules/ourProducts/service/service';
 import s from './PopUpDetailedBasement.module.scss';
-import { useModal } from 'hooks/useModal';
-import { useCallback } from 'react';
-import { Cart } from 'modules/cart';
 
 const PopUpDetailedBasement = ({ product, productVariants }) => {
   const qtyOfProductsInCart = useSelector(selectProductsQuantity);
   const dispach = useDispatch();
-
-  const setModal = useModal();
-
-  const closeModal = useCallback(() => {
-    setModal();
-  }, [setModal]);
-
-  const openModal = useCallback(() => {
-    setModal(<Cart onClose={closeModal} />);
-  }, [setModal, closeModal]);
 
   const handleAddToCart = () => {
     const idx = productVariants.findIndex((item) => item.isActive === true);
@@ -37,7 +24,6 @@ const PopUpDetailedBasement = ({ product, productVariants }) => {
       price: productVariants[idx].price,
     };
     dispach(addOrUpdateProduct(dataToCart));
-    openModal();
   };
 
   return (
@@ -47,7 +33,7 @@ const PopUpDetailedBasement = ({ product, productVariants }) => {
       </span>
       <div className={s.shopCart}>
         {qtyOfProductsInCart > 0 && (
-          <BasketButton classBtnSize={s.classBtnSize} blockOpenCart={true} />
+          <BasketButton classBtnSize={s.classBtnSize} />
         )}
         <button
           type="button"
