@@ -6,10 +6,11 @@ import {
   setIsClose,
   setIsOpen,
 } from '@redux/cart/cartSlice';
-import CartContainer from '../CartContainer/CartContainer';
-import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import { icons as sprite } from 'shared/icons';
 import { ANIMATION } from 'shared/constants';
+import { scrollToOurProducts } from 'helpers/scrollToOurProducts';
+import CartContainer from '../CartContainer/CartContainer';
+import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import s from './Cart.module.scss';
 
 const Cart = ({ onClose }) => {
@@ -30,19 +31,9 @@ const Cart = ({ onClose }) => {
     onClose();
   };
 
-  const scrollToShopping = () => {
-    const productsSection = document.getElementById('ourProducts');
-    if (productsSection) {
-      window.scrollTo({
-        top: productsSection.offsetTop,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   const handleBackBtn = () => {
     onClose();
-    scrollToShopping();
+    scrollToOurProducts();
   };
 
   const handleCloseAnimation = () => {
