@@ -3,13 +3,17 @@ import creatorsData from '../../data/creators.js';
 import CreatorsList from '../CreatorsList/CreatorsList';
 import s from './CreatedByPopup.module.scss';
 import IconButton from 'shared/components/IconButton/IconButton';
+import { ANIMATION } from 'shared/constants/index.js';
 
 const CreatedByPopup = ({ onClose }) => {
   const [closing, setClosing] = useState(false);
 
   const handleClose = () => {
     setClosing(true);
-    setTimeout(() => onClose(), 500);
+    const id = setTimeout(() => {
+      onClose();
+      clearTimeout(id);
+    }, ANIMATION.DURATION);
   };
 
   return (
