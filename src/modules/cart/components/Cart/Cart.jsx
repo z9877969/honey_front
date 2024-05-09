@@ -30,10 +30,6 @@ const Cart = ({ onClose }) => {
     onClose();
   };
 
-  const handleBackdropClick = (e) => {
-    e.target === e.currentTarget && onClose();
-  };
-
   const scrollToShopping = () => {
     const productsSection = document.getElementById('ourProducts');
     if (productsSection) {
@@ -58,7 +54,7 @@ const Cart = ({ onClose }) => {
   };
 
   return (
-    <div className={s.modalBackdrop} onClick={handleBackdropClick}>
+    <div className={s.modalBackdrop} onClick={handleCloseAnimation}>
       <div
         className={`${s.modalContainer} ${closing ? s.closing : ''}`}
         onClick={(e) => e.stopPropagation()}
