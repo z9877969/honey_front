@@ -39,7 +39,6 @@ const BasketButton = ({ classBtnSize, blockOpenCart = false }) => {
       )}
       onClick={handleOpenCart}
     >
-      {/* <button type="button" className={s.hangToBtn}> */}
       <div className={s.hangToBtn}>
         <svg className={s.basketCartIcon}>
           <use xlinkHref={`${sprite}#basket`} />
@@ -52,7 +51,6 @@ const BasketButton = ({ classBtnSize, blockOpenCart = false }) => {
           </span>
         )}
       </div>
-      {/* </button> */}
     </div>
   );
 };
