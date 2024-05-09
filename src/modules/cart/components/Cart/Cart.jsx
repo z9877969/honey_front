@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectProducts,
@@ -9,12 +9,14 @@ import {
 import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import { icons as sprite } from 'shared/icons';
+import { ANIMATION } from 'shared/constants';
 import s from './Cart.module.scss';
 
 const Cart = ({ onClose }) => {
   const products = useSelector(selectProducts);
   const totalPrice = useSelector(selectTotalPrice);
   const dispatch = useDispatch();
+  const [closing, setClosing] = useState(false);
 
   useEffect(() => {
     dispatch(setIsOpen());
@@ -26,10 +28,6 @@ const Cart = ({ onClose }) => {
 
   const handleClose = () => {
     onClose();
-  };
-
-  const handleBackdropClick = (e) => {
-    e.target === e.currentTarget && onClose();
   };
 
   const scrollToShopping = () => {
@@ -47,10 +45,25 @@ const Cart = ({ onClose }) => {
     scrollToShopping();
   };
 
+  const handleCloseAnimation = () => {
+    setClosing(true);
+    const id = setTimeout(() => {
+      onClose();
+      clearTimeout(id);
+    }, ANIMATION.DURATION);
+  };
+
   return (
-    <div className={s.modalBackdrop} onClick={handleBackdropClick}>
-      <div className={s.modalContainer}>
-        <button className={s.modalCloseBtn} type="button" onClick={handleClose}>
+    <div className={s.modalBackdrop} onClick={handleCloseAnimation}>
+      <div
+        className={`${s.modalContainer} ${closing ? s.closing : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className={s.modalCloseBtn}
+          type="button"
+          onClick={handleCloseAnimation}
+        >
           <svg className={s.modalCloseIcon}>
             <use xlinkHref={`${sprite}#cross-close`}></use>
           </svg>
