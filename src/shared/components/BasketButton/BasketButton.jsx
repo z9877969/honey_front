@@ -21,7 +21,6 @@ const BasketButton = ({ classBtnSize, blockOpenCart = false }) => {
 
   const handleOpenCart = () => {
     if (blockOpenCart) return;
-
     openModal();
   };
 
