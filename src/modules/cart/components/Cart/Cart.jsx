@@ -36,6 +36,9 @@ const Cart = ({ onClose }) => {
     scrollToOurProducts();
   };
 
+  const handleCloseBackdrop = (e) =>
+    e.target === e.currentTarget && handleCloseAnimation();
+
   const handleCloseAnimation = () => {
     setClosing(true);
     const id = setTimeout(() => {
@@ -45,11 +48,8 @@ const Cart = ({ onClose }) => {
   };
 
   return (
-    <div className={s.modalBackdrop} onClick={handleCloseAnimation}>
-      <div
-        className={`${s.modalContainer} ${closing ? s.closing : ''}`}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className={s.modalBackdrop} onClick={handleCloseBackdrop}>
+      <div className={`${s.modalContainer} ${closing ? s.closing : ''}`}>
         <button
           className={s.modalCloseBtn}
           type="button"
