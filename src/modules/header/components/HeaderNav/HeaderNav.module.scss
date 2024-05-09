@@ -1,10 +1,10 @@
 .burgerIcon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 
   @include media(tablet) {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
   }
 
   @include media(desktop) {
@@ -51,7 +51,14 @@
     gap: 40px;
   }
 }
-
+.navListItem {
+  height: 28px;
+}
+.navListItem:hover {
+  @include media(desktop) {
+    border-bottom: 1px solid $primary-hover-color;
+  }
+}
 .navListLink {
   color: $primary-text-color;
   font-family: $primary-font-family;
@@ -69,12 +76,7 @@
     font-size: 18px;
   }
 }
-.navListLink:hover,
-.navListLink:focus {
-  text-decoration: underline;
-  text-decoration-color: $primary-hover-color;
-  text-underline-offset: 0.25em;
-}
+
 .navListOpen {
   display: flex;
   flex-direction: column;
@@ -92,8 +94,11 @@
   }
 }
 .desktopHeader {
+  display: flex;
   @include media(desktop) {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 .cartButton:hover,

@@ -1,75 +1,86 @@
 .classBtnSize {
-    position: relative;
+  position: relative;
 
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @include media(tablet) {
-        width: 48px;
-        height: 48px;
-    }
+  @include media(tablet) {
+    width: 48px;
+    height: 48px;
+  }
 
-    @include media(desktop) {
-        width: 52px;
-        height: 52px;
-    }
+  @include media(desktop) {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .cursorPointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .cursorDefault {
-    cursor: default;
+  cursor: default;
 }
 
 .hangToBtn {
-    position: relative;
+  position: relative;
 }
 
 .basketCartIcon {
-    width: 32px;
-    height: 32px;
-    top: 50%;
-    left: 50%;
-
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  @include media(tablet) {
+    width: 48px;
+    height: 48px;
+  }
+  @include media(desktop) {
+    width: 52px;
+    height: 52px;
+  }
 }
-
 .basketCartCircle {
-    position: absolute;
-    top: 17px;
-    left: 16px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: $primary-accent-color;
+  position: absolute;
+  top: 20px;
+  left: 21px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $primary-accent-color;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @include media(tablet) {
-        top: 16px;
-        left: 17px;
-    }
+  @include media(tablet) {
+    top: 25px;
+    left: 25px;
+  }
 
-    @include media(desktop) {
-        top: 18px;
-        left: 17px;
-    }
-
+  @include media(desktop) {
+    top: 28px;
+    left: 28px;
+  }
 }
 
 .basketCartQty {
-    font-family: $secondary-font-family;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 4%;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-
+  font-family: $secondary-font-family;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 4%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.basketCartIcon:hover,
+.basketCartIcon:focus {
+  @include media(desktop) {
+    background-color: $primary-background-accent-color;
+    border-radius: 12px;
+  }
 }
