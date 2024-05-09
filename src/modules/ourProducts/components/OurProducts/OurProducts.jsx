@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import SectionMain from 'shared/components/SectionMain/SectionMain';
 import { getProducts } from 'modules/ourProducts/service/service';
 import { icons as sprite } from 'shared/icons';
+import { toastify } from 'helpers/tostify';
 
 const OurProducts = () => {
   const [currentCategory, setCurrentCategory] = useState('Мед');
@@ -22,11 +23,10 @@ const OurProducts = () => {
       try {
         const productsData = await getProducts();
         setProducts(productsData);
-        setLoading(false);
       } catch (error) {
+        toastify.error('Щось пішло не так :( Перезавантажте сторінку.');
+      } finally {
         setLoading(false);
-        // eslint-disable-next-line
-        console.log(error.message);
       }
     };
 
