@@ -32,50 +32,52 @@ const ThanksForOrder = ({ handleClose }) => {
                 </svg>
               </button>
             </div>
-            <div className={s.thanksContainer}>
-              <h2 className={s.modalTitle}>Дякуємо!</h2>
-              <p className={s.modalText}>
-                Ваше замовлення прийняте.
-                <br className={s.mobileBreak} /> Ми зв’яжемося з вами
-                <br /> найближчим часом для уточнення деталей.
-              </p>
-              <hr className={s.horizontalLine} />
-            </div>
-            <div className={s.contacts}>
-              <ul className={s.contactsList}>
-                <li>
-                  <a
-                    className={s.contactsDetails}
-                    href="mailto:plokhaanastasiia@gmail.com"
-                  >
-                    plokhaanastasiia@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a className={s.contactsDetails} href="tel:+380968880739">
-                    +38 096 888 07 39
-                  </a>
-                </li>
-                <div className={s.contactsIcons}>
-                  <li>
-                    <a href="https://telegram.org/" target="_blank">
-                      <svg width={32} height={32} className={s.icon}>
-                        <use xlinkHref={`${sprite}#telegram`}></use>
-                      </svg>
-                    </a>
-                  </li>
+            <div className={s.mainContent}>
+              <div className={s.thanksContainer}>
+                <h2 className={s.modalTitle}>Дякуємо!</h2>
+                <p className={s.modalText}>
+                  Ваше замовлення прийняте.
+                  <br className={s.mobileBreak} /> Ми зв’яжемося з вами
+                  <br /> найближчим часом для уточнення деталей.
+                </p>
+              </div>
+              <div className={s.contacts}>
+                <hr className={s.horizontalLine} />
+                <ul className={s.contactsList}>
                   <li>
                     <a
-                      href="https://www.instagram.com/bdzhola_ta_shershen"
-                      target="_blank"
+                      className={s.contactsDetails}
+                      href="mailto:plokhaanastasiia@gmail.com"
                     >
-                      <svg width={32} height={32} className={s.icon}>
-                        <use xlinkHref={`${sprite}#instagram`}></use>
-                      </svg>
+                      plokhaanastasiia@gmail.com
                     </a>
                   </li>
-                </div>
-              </ul>
+                  <li>
+                    <a className={s.contactsDetails} href="tel:+380968880739">
+                      +38 096 888 07 39
+                    </a>
+                  </li>
+                  <div className={s.contactsIcons}>
+                    <li>
+                      <a href="https://telegram.org/" target="_blank">
+                        <svg width={32} height={32} className={s.icon}>
+                          <use xlinkHref={`${sprite}#telegram`}></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/bdzhola_ta_shershen"
+                        target="_blank"
+                      >
+                        <svg width={32} height={32} className={s.icon}>
+                          <use xlinkHref={`${sprite}#instagram`}></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

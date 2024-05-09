@@ -8,6 +8,7 @@ import {
 import { getInitialProductVariants } from 'modules/ourProducts/service/service';
 import { icons } from 'shared/icons';
 import s from './PopUpDetailedInfo.module.scss';
+import { ANIMATION } from 'shared/constants';
 
 const PopUpDetailedInfo = ({ product, onClose }) => {
   const [productVariants, setProductVariants] = useState([]);
@@ -15,7 +16,10 @@ const PopUpDetailedInfo = ({ product, onClose }) => {
 
   const handleClose = () => {
     setClosing(true);
-    setTimeout(() => onClose(), 500);
+    const id = setTimeout(() => {
+      onClose();
+      clearTimeout(id);
+    }, ANIMATION.DURATION);
   };
 
   useEffect(() => {

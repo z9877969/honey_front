@@ -1,6 +1,7 @@
 import { createContext, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ModalBackdrop } from 'shared/components';
+import { ANIMATION } from 'shared/constants';
 
 export const ModalConext = createContext();
 const modalRoot = document.querySelector('#modal-root');
@@ -8,7 +9,10 @@ const modalRoot = document.querySelector('#modal-root');
 export const ModalProvider = ({ children }) => {
   const [modal, setModal] = useState(null);
   const handleSetModal = useCallback((modal = null) => {
-    setModal(modal);
+    const id = setTimeout(() => {
+      setModal(modal);
+      clearTimeout(id);
+    }, ANIMATION.DURATION);
   }, []);
   return (
     <ModalConext.Provider value={handleSetModal}>
