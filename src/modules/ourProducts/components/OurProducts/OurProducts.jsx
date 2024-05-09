@@ -25,8 +25,7 @@ const OurProducts = () => {
         setLoading(false);
       } catch (error) {
         setLoading(false);
-        // eslint-disable-next-line
-        console.log(error.message);
+        throw new Error(error.message);
       }
     };
 
