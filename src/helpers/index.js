@@ -1,5 +1,5 @@
 export { toastify } from './tostify';
-export { scrollToTop } from './scrollToTop';
+export { scrollToElementById } from './scrollToElementById';
 export { createTgMessage } from './createTgMessage';
 
 // export { sortByAvailability } from './sortByAvailability';
