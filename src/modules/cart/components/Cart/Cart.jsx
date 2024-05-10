@@ -8,7 +8,7 @@ import {
 } from '@redux/cart/cartSlice';
 import { icons as sprite } from 'shared/icons';
 import { ANIMATION } from 'shared/constants';
-import { scrollToElementById } from 'helpers/scrollToElementById';
+import { scrollToElementById } from 'helpers';
 import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import s from './Cart.module.scss';
