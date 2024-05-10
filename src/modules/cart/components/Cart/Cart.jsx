@@ -8,7 +8,7 @@ import {
 } from '@redux/cart/cartSlice';
 import { icons as sprite } from 'shared/icons';
 import { ANIMATION } from 'shared/constants';
-import { scrollToOurProducts } from 'helpers/scrollToOurProducts';
+import { scrollToTop } from 'helpers/scrollToTop';
 import CartContainer from '../CartContainer/CartContainer';
 import EmptyCart from '../EmptyCartContainer/EmptyCartContainer';
 import s from './Cart.module.scss';
@@ -33,7 +33,7 @@ const Cart = ({ onClose }) => {
 
   const handleBackBtn = () => {
     onClose();
-    scrollToOurProducts();
+    scrollToTop('#ourProducts');
   };
 
   const handleCloseBackdrop = (e) =>

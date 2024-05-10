@@ -6,7 +6,7 @@ import OrderCartItem from '../OrderCartItem/OrderCartItem';
 import s from './OrderCart.module.scss';
 import CustomScrollWrapper from 'shared/components/CustomScrollWrapper/CustomScrollWrapper';
 
-import { scrollToOurProducts } from 'helpers/scrollToOurProducts';
+import { scrollToTop } from 'helpers/scrollToTop';
 
 const OrderCart = ({ onClose }) => {
   const productList = useSelector(selectProducts);
@@ -20,7 +20,7 @@ const OrderCart = ({ onClose }) => {
         className={s.orderGoBack}
         onClick={() => {
           onClose();
-          scrollToOurProducts();
+          scrollToTop('#ourProducts');
         }}
       />
       <OrderTitle className={s.orderCartTitle}>Ваше замовлення:</OrderTitle>

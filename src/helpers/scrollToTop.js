@@ -1,5 +1,6 @@
-export const scrollToOurProducts = () => {
-  const ourProducts = document.querySelector('#ourProducts');
+export const scrollToTop = (id) => {
+  const ourProducts = document.querySelector(id);
+  if (!ourProducts) return;
   const isMobileView = window.innerWidth < 768;
   const isTabletView = window.innerWidth >= 768 && window.innerWidth < 1440;
   const topOffset = isMobileView ? 56 : isTabletView ? 72 : 76;
