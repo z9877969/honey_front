@@ -6,7 +6,7 @@ import OrderCartItem from '../OrderCartItem/OrderCartItem';
 import s from './OrderCart.module.scss';
 import CustomScrollWrapper from 'shared/components/CustomScrollWrapper/CustomScrollWrapper';
 
-import { scrollToElementById } from 'helpers/scrollToElementById';
+import { scrollToElementById } from 'helpers';
 
 const OrderCart = ({ onClose }) => {
   const productList = useSelector(selectProducts);
