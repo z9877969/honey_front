@@ -2,6 +2,7 @@ import s from './HeaderNav.module.scss';
 import sprite from '../../../../shared/icons/sprite.svg';
 import { useState, useRef, useEffect } from 'react';
 import { BasketButton } from 'shared/components';
+import { scrollToElementById } from 'helpers/scrollToElementById';
 
 const HeaderNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -26,6 +27,10 @@ const HeaderNav = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   });
+  const handleNavLinkClick = (id) => {
+    scrollToElementById(id);
+    closeNav();
+  };
 
   return (
     <div className={s.desktopHeader} ref={navRef}>
@@ -36,22 +41,34 @@ const HeaderNav = () => {
       </button>
       <ul className={`${s.navList} ${isNavOpen ? s.navListOpen : ''}`}>
         <li className={s.navListItem}>
-          <a className={s.navListLink} href="#ourProducts" onClick={closeNav}>
+          <a
+            className={s.navListLink}
+            onClick={() => handleNavLinkClick('ourProducts')}
+          >
             Каталог
           </a>
         </li>
         <li className={s.navListItem}>
-          <a className={s.navListLink} href="#aboutUS" onClick={closeNav}>
+          <a
+            className={s.navListLink}
+            onClick={() => handleNavLinkClick('aboutUS')}
+          >
             Про нас
           </a>
         </li>
         <li className={s.navListItem}>
-          <a className={s.navListLink} href="#reviews" onClick={closeNav}>
+          <a
+            className={s.navListLink}
+            onClick={() => handleNavLinkClick('reviews')}
+          >
             Відгуки
           </a>
         </li>
         <li className={s.navListItem}>
-          <a className={s.navListLink} href="#footer" onClick={closeNav}>
+          <a
+            className={s.navListLink}
+            onClick={() => handleNavLinkClick('footer')}
+          >
             Контакти
           </a>
         </li>
