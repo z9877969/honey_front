@@ -25,7 +25,7 @@ export function createTgMessage(message) {
     <b>6) ${addressType}:</b> ${address};
     <b>7) Замовлення:</b> ${order};
     <b>8) Загальна вартість замовлення:</b> ${totalPrice} грн;
-    ${comment ? `\n<b>9) Коментар:</b> ${comment}` : ``}`;
+    ${comment ? `<b>9) Коментар:</b> ${comment}` : ``}`;
 
   return tgMessage;
 }
