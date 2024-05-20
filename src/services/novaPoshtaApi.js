@@ -4,8 +4,10 @@ const axiosInstance = axios.create({
   baseURL: `https://api.novaposhta.ua/v2.0/json/`,
 });
 
+const API_KEY = import.meta.env.VITE_NOVAPOSHTA_API_KEY;
+
 const params = {
-  apiKey: '6e62026c53e899af4a129224065bbe73',
+  apiKey: API_KEY,
   modelName: 'Address',
   calledMethod: '',
   methodProperties: {
